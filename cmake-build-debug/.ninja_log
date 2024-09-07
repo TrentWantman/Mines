@@ -1,0 +1,6 @@
+# ninja log v5
+10	443	1682282875313189961	Mines	24681eb31fad9c4f
+9	1522	7473918157785446	CMakeFiles/Mines.dir/random.cpp.obj	731e54f8e0822587
+5	1822	7473918161086619	CMakeFiles/Mines.dir/texture.cpp.obj	abddf393afee5d87
+0	2643	7473918169534040	CMakeFiles/Mines.dir/main.cpp.obj	1cbc0d9b2ca77a9c
+2644	3260	7473918175717503	Mines.exe	f902e0273c3cc2c4
