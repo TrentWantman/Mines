@@ -11,8 +11,6 @@
 #include "multiplier.h"
 #include "minesOption.h"
 #include "random.h"
-
-
 using namespace std;
 
 int main()
