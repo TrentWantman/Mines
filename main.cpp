@@ -15,6 +15,11 @@ using namespace std;
 
 int main()
 {
+    /* States Explaines
+     * State 0: Setup State
+     * State 1: Play State
+     * State 14: End of Game State
+     */
 
     /*-------------------Create Window----------------*/
     sf::RenderWindow window(sf::VideoMode(1800, 980), "Mines");
@@ -41,7 +46,6 @@ int main()
     double money = 100;
 
     bool win = true;
-    int wins;
     bool winState = true;
 
     double mouseX;
@@ -104,8 +108,6 @@ int main()
     int numGems;
 
 
-
-
     //Menu
     button wager = button();
     wager.SetPosition(18, 132);
@@ -159,7 +161,6 @@ int main()
     mineOutput.setCharacterSize(20);
     mineOutput.setFillColor(sf::Color::White);
 
-
     sf::Text gemsNum;
     gemsNum.setFont(font);
     gemsNum.setStyle(sf::Text::Bold);
@@ -204,7 +205,6 @@ int main()
     {
 
         /*-----------------------------------Events & Reactions----------------------------------*/
-
 
         sf::Event event;
         while (window.pollEvent(event))
@@ -307,10 +307,9 @@ int main()
                     }
                 }
 
-
-
                 if (state == 1)
                 {
+
                     for (int i = 0; i < 25; i++)
                     {
                         if (!tiles[i].revealed)
@@ -324,7 +323,8 @@ int main()
                         }
                     }
 
-                    if (betCash.ClickChecker(mouseX,mouseY,state))
+                    //User Clicked Cashout Button
+                    if (betCash.ClickChecker(mouseX,mouseY,state) && gemsRevealed != 0)
                     {
                         winState = true;
                         state = 14;
@@ -462,15 +462,7 @@ int main()
             }
             else
             {
-                wins = 0;
-                for (int i = 0; i < 25; i++)
-                {
-                    if (tiles[i].revealed)
-                    {
-                        wins++;
-                    }
-                }
-                multiplierNum =  multiplier::multi(wins,numMines);
+                multiplierNum =  multiplier::multi(gemsRevealed,numMines);
                 payoutNum = (wagerAmount * multiplierNum);
                 money += payoutNum;
                 win = false;

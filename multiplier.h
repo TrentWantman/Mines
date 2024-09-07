@@ -17,6 +17,10 @@ struct multiplier
         {
             return 1;
         }
+        if (mines == 0)
+        {
+            return 1;
+        }
         else if (gems == 1)
         {
             if (mines == 1)

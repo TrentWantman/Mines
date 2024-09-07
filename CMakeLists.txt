@@ -12,5 +12,9 @@ project(Mines)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 add_executable(Mines main.cpp texture.cpp texture.h tile.h random.cpp random.h button.h betCashout.h minesOption.h multiplier.h
-        multiplier.h)
+        multiplier.h
+        main.cpp
+        main.cpp
+        main.cpp
+        main.cpp)
 target_link_libraries(Mines sfml-graphics sfml-audio)
