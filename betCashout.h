@@ -7,7 +7,7 @@
 #include "texture.h"
 using namespace std;
 
-struct betCashout
+struct bet_or_cashout
 {
     sf::Sprite bet;
     sf::Sprite cashout;
@@ -18,7 +18,7 @@ struct betCashout
 
 
     //constructor
-    betCashout()
+    bet_or_cashout()
     {
         bet.setTexture(texture::GetTexture("bet"));
         betLit.setTexture(texture::GetTexture("betLit"));
