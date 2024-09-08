@@ -219,17 +219,17 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "button.h",
+			"path" : "wager_options.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "betCashout.h",
+			"path" : "bet_cashout.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
-			"path" : "minesOption.h",
+			"path" : "mine_options.h",
 			"sourceGroupIndex" : 1
 		},
 		{

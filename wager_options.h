@@ -7,7 +7,7 @@
 #include "texture.h"
 using namespace std;
 
-struct button
+struct wager_options
 {
     sf::Sprite sprite;
     sf::Sprite hover;
@@ -22,7 +22,7 @@ struct button
 
 
     //constructor
-    button()
+    wager_options()
     {
         sprite.setTexture(texture::GetTexture("wager"));
         hover.setTexture(texture::GetTexture("wager_hover"));

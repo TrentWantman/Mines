@@ -7,7 +7,7 @@
 #include "texture.h"
 using namespace std;
 
-struct minesOption
+struct mine_options
 {
     sf::Sprite field;
     sf::Sprite fieldLit;
@@ -22,7 +22,7 @@ struct minesOption
 
 
     //constructor
-    minesOption()
+    mine_options()
     {
         field.setTexture(texture::GetTexture("minesOption"));
         fieldLit.setTexture(texture::GetTexture("minesOptionLit"));
@@ -49,7 +49,7 @@ struct minesOption
 
     void HoverChecker(const float& x, const float& y, int state)
     {
-        if (state == 0)
+        if (state != 1)
         {
             if (this->field.getGlobalBounds().contains(x,y))
             {
