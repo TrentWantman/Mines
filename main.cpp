@@ -516,7 +516,7 @@ int main() {
         }
 
         if ((state == 14 || prevState == 14) && winState) {
-            //window.draw(multiplierWindow);
+            window.draw(multiplierWindow);
             window.draw(payoutOutput);
             window.draw(multiplierOutput);
         }
