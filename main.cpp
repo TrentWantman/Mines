@@ -159,7 +159,7 @@ int main() {
     multiplierOutput.setStyle(sf::Text::Bold);
     multiplierOutput.setCharacterSize(25);
     multiplierOutput.setFillColor(sf::Color::White);
-    multiplierOutput.setPosition(multiplierWindowY+40, multiplierWindowY + 100);
+    multiplierOutput.setPosition(multiplierWindowX+40, multiplierWindowY + 100);
 
     sf::Text bankText;
     bankText.setFont(font);
@@ -516,7 +516,7 @@ int main() {
         }
 
         if ((state == 14 || prevState == 14) && winState) {
-            window.draw(multiplierWindow);
+            //window.draw(multiplierWindow);
             window.draw(payoutOutput);
             window.draw(multiplierOutput);
         }
