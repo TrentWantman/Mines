@@ -86,6 +86,10 @@ int main() {
     //State
     int state = 0;
     int prevState;
+    bool win = true;
+    bool winState = true;
+    bool setup14 = false;
+
 
     //Mouse
     double mouseX;
@@ -93,6 +97,9 @@ int main() {
 
     //Tiles
     int tilesRevealed;
+    int gemsRevealed;
+    int totalTilesRevealed;
+    int totalGemsRevealed;
     int randomTile;
     int mines;
     int gems;
@@ -187,6 +194,338 @@ int main() {
     GemsTitle.setFillColor(sf::Color::White);
 
     while (window.isOpen()) {
+
         sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed) {
+                window.close();
+            }
+            if (event.type == sf::Event::MouseButtonPressed) {
+                mouseX = sf::Mouse::getPosition(window).x;
+                mouseY = sf::Mouse::getPosition(window).y;
+
+                if (state == 14) {
+                    state = 0;
+                    prevState = 14;
+                }
+                if ((!wagerOptions.wagerRect.getGlobalBounds().contains(mouseX, mouseY) && state == 11)||(!mineOptions.field.getGlobalBounds().contains(mouseX, mouseY) && state == 12)){
+                    state = 0;
+                }
+
+                if (state == 0) {
+                    //Wager Changes
+                    if (wagerOptions.sprite.getGlobalBounds().contains(mouseX, mouseY)) {
+                        //Cut wager in half
+                        if (wagerOptions.halfRect.getGlobalBounds().contains(mouseX, mouseY)) {
+                            wagerAmount = wagerAmount/2;
+                            wagerInput = to_string(wagerAmount);
+                        }
+                        //Double Wager
+                        else if (wagerOptions.double2Rect.getGlobalBounds().contains(mouseX,mouseY)) {
+                            wagerAmount = wagerAmount*2;
+                            wagerInput = to_string(wagerAmount);
+                        }
+                        //User clicked on wager amount, opens to state where they can type the wager
+                        else {
+                            wagerInput = "";
+                            state = 11;
+                        }
+                    }
+                    //User clicked on mine amount, opens to state where they can type the mine amount
+                    else if (mineOptions.field.getGlobalBounds().contains(mouseX,mouseY)) {
+                        mineInput = "";
+                        state = 12;
+                    }
+                    //User clicked on "Bet" button and game will start
+                    else if (betCashout.ClickChecker(mouseX,mouseY,state)) {
+                        gemsRevealed = 0;
+                        tilesRevealed = 0;
+                        bank -= wagerAmount;
+
+                        //Setup tiles for new game
+                        for (int i = 0; i < 25; i++) {
+                            tiles[i].hasMine = false;
+                            tiles[i].hovered = false;
+                            tiles[i].revealed = false;
+                        }
+
+                        //Set Mines
+                        for (int i = 0; i < mines; i++) {
+                            randomTile = random::Int(0, 24);
+                            if (tiles[randomTile].hasMine) {
+                                i--;
+                            }
+                            else {
+                                tiles[randomTile].hasMine = true;
+                            }
+                        }
+
+                        //Setup State 1
+                        win = true;
+                        setup14 = false;
+                        prevState = 0;
+                        state = 1;
+                    }
+                }
+                //Game in progress. Checks for tile reveals and cashouts
+                if (state == 1) {
+                    //User Revealed Tile
+                    for (int i = 0; i < 25; i++) {
+                        if (!tiles[i].revealed) {
+                            tiles[i].TileRevealed(mouseX, mouseY);
+                            if(tiles[i].revealed && tiles[i].hasMine == false) {
+                                gemsRevealed++;
+                                tilesRevealed++;
+                            }
+                        }
+                    }
+
+                    //User Clicked Cashout Button
+                    if (betCashout.ClickChecker(mouseX,mouseY,state) && gemsRevealed != 0) {
+                        winState = true;
+                        state = 14;
+                    }
+                }
+            }
+
+            //User Is Typing Wager Options
+            if (state == 11) {
+                if (event.type == sf::Event::TextEntered) {
+                    if (wagerInput.size() > 0 && event.text.unicode == 8) {
+                        wagerInput.pop_back();
+                    }
+                    else if (isdigit(event.text.unicode)) {
+                        if (wagerAmount == 0) {
+                            wagerInput = "";
+                        }
+                        wagerInput += static_cast<char>(event.text.unicode);
+                    }
+                    wagerOutput.setString(wagerInput);
+                }
+            }
+
+            //User Is Typing Mine Options
+            if (state == 12) {
+                if (event.type == sf::Event::TextEntered) {
+                    if (mineInput.size() == 2) {
+                        mineInput = "";
+                    }
+                    if (mineInput.size() > 0 && event.text.unicode == 8) {
+                        mineInput.pop_back();
+                    }
+                    else if (isdigit(event.text.unicode)) {
+                        if (mines == 0) {
+                            mineInput = "";
+                        }
+                        mineInput += static_cast<char>(event.text.unicode);
+                    }
+                }
+            }
+        }
+
+        /*---------------------Check if Game Is Over-----------------*/
+        //In game, check if user hit a mine and end game
+        if (state == 1) {
+            for (int i = 0; i < 25; i++) {
+                if (tiles[i].hasMine && tiles[i].revealed) {
+                    tilesRevealed++;
+                    win = false;
+                    winState = false;
+                    state = 14;
+                }
+            }
+        }
+        //Game is over, show payout status
+        if (state == 14 && setup14 == false) {
+            if (!win) {
+                multiplier = 0;
+                payout = 0;
+                payoutOutput.setString("- $" + to_string(wagerAmount));
+            }
+            else {
+                multiplier =  multiplier::multi(gemsRevealed,mines);
+                payout = (wagerAmount * multiplier);
+                bank += payout;
+                win = false;
+
+                if (multiplier != 0) {
+                    payoutOutput.setString(to_string(payout));
+                    multiplierOutput.setString(to_string(multiplier));
+                }
+                //Might be deleted
+                else {
+                    payoutOutput.setString(to_string(wagerAmount));
+                    multiplierOutput.setString("1");
+                }
+            }
+            setup14 = true;
+        }
+
+        /*---------------------Change Interface, Prepare Next Iteration, Update Data-----------------*/
+        mouseX = sf::Mouse::getPosition(window).x;
+        mouseY = sf::Mouse::getPosition(window).y;
+
+        //Update Mine Options Output
+        if (mines > 24) {
+            mineInput = "24";
+            mines = 24;
+        }
+        else if (mines < 0) {
+            mineInput = "0";
+            mines = 0;
+        }
+        if (mineInput.empty()) {
+            mineInput = "0";
+            mines = 0;
+        }
+        else {
+            mines = stoi(mineInput);
+        }
+        mineOutput.setString(mineInput);
+
+        //Update Wager Options Output
+        if (wagerAmount < 0) {
+            wagerInput = "0";
+            wagerAmount = 0;
+        }
+        if (wagerInput.empty()) {
+            wagerInput = "0";
+            wagerAmount = 0;
+        }
+        else {
+            wagerAmount = stod(wagerInput);
+        }
+        wagerOutput.setString(wagerInput);
+
+        //Update Bank Output, Gem Output
+        bankText.setString(to_string(bank));
+        gems = 25 - mines - gemsRevealed;
+        gemOutput.setString(to_string(gems));
+
+        //Check if mouse is hovering over sprite and update interface
+        if (mouseX > 455) {
+            for (int i = 0; i < 25; ++i) {
+                tiles[i].HoverChecker(mouseX, mouseY);
+            }
+        }
+        else {
+            wagerOptions.HoverChecker(mouseX, mouseY);
+            betCashout.HoverChecker(mouseX, mouseY, state);
+            mineOptions.HoverChecker(mouseX, mouseY, state);
+        }
+
+        /*-----------------------------------Clear Old Window-----------------------------------*/
+        window.clear();
+        /*-----------------------------------Draw New Window-----------------------------------*/
+        window.draw(back);
+        window.draw(back2);
+
+        window.draw(wagerOutput);
+        window.draw(mineOutput);
+
+        //Draw Mine Options
+        if (state == 0 || state == 11 || state == 12 || state == 14) {
+            if (mineOptions.hovered == 0) {
+                window.draw(mineOptions.field);
+            }
+            else {
+                window.draw(mineOptions.fieldLit);
+            }
+        }
+        else if (state == 1) {
+            window.draw(GemsTitle);
+            if (mineOptions.hovered == 0) {
+                window.draw(mineOptions.splitField);
+            }
+            else if (mineOptions.hovered == 2) {
+                window.draw(mineOptions.splitFieldMinesLit);
+            }
+            else if (mineOptions.hovered == 3){
+                window.draw(mineOptions.splitFieldGemsLit);
+            }
+
+            window.draw(gemOutput);
+        }
+        //Bet/Cashout Button
+        if (state == 0 || state == 11 || state == 12 || state == 14) {
+            if (betCashout.hovered) {
+                window.draw(betCashout.betLit);
+            }
+            else {
+                window.draw(betCashout.bet);
+            }
+        }
+        else if (state == 1) {
+            window.draw(GemsTitle);
+
+            if (betCashout.hovered) {
+                window.draw(betCashout.cashoutLit);
+            }
+            else {
+                window.draw(betCashout.cashout);
+            }
+        }
+
+        //wager button
+        if (wagerOptions.hovered == 0) {
+            window.draw(wagerOptions.sprite);
+        }
+        else if (wagerOptions.hovered == 1) {
+            window.draw(wagerOptions.hover);
+        }
+        else if (wagerOptions.hovered == 2) {
+            window.draw(wagerOptions.half);
+        }
+        else if (wagerOptions.hovered == 3) {
+            window.draw(wagerOptions.double2);
+        }
+
+        if (state == 14 || prevState == 14) {
+            for (int i = 0; i < 25; i++) {
+                if (!tiles[i].revealed) {
+                    if (tiles[i].hasMine) {
+                        window.draw(tiles[i].mine);
+                    }
+                    else {
+                        window.draw(tiles[i].gem);
+                    }
+                }
+
+            }
+            window.draw(overlay);
+        }
+
+
+        //tiles
+        for (int i = 0; i < 25; i++) {
+            if (tiles[i].revealed) {
+                if (tiles[i].hasMine) {
+                    window.draw(tiles[i].mine);
+                }
+                else {
+                    window.draw(tiles[i].gem);
+                }
+            }
+            else if (state != 14 && prevState != 14)
+            {
+                window.draw(tiles[i].hidden);
+                if (tiles[i].hovered) {
+                    window.draw(tiles[i].hover);
+                }
+            }
+        }
+
+        if ((state == 14 || prevState == 14) && winState) {
+            window.draw(multiplierWindow);
+            window.draw(payoutOutput);
+            window.draw(multiplierOutput);
+        }
+
+        window.draw(bankText);
+        window.draw(wagerOutput);
+        window.draw(mineOutput);
+
+        window.display();
     }
+    return 0;
 }

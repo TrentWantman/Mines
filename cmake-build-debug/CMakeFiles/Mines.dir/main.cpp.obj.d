@@ -276,10 +276,10 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_list.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
- C:\Users\litte\CLionProjects\Mines\button.h \
- C:\Users\litte\CLionProjects\Mines\betCashout.h \
+ C:\Users\litte\CLionProjects\Mines\wager_options.h \
+ C:\Users\litte\CLionProjects\Mines\bet_cashout.h \
  C:\Users\litte\CLionProjects\Mines\multiplier.h \
- C:\Users\litte\CLionProjects\Mines\minesOption.h \
+ C:\Users\litte\CLionProjects\Mines\mine_options.h \
  C:\Users\litte\CLionProjects\Mines\random.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
