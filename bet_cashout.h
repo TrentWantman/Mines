@@ -27,38 +27,23 @@ struct bet_cashout
 
     }
 
-    //Set Position Each Loop!
     void SetPosition(float x, float y)
     {
         bet.setPosition(x, y);
         betLit.setPosition(x,y);
-        cashout.setPosition(x,y+186);
-        cashoutLit.setPosition(x, y+186);
+        cashout.setPosition(x,y);
+        cashoutLit.setPosition(x, y);
     }
 
-    void HoverChecker(const float& x, const float& y, int state)
+    void HoverChecker(const float& x, const float& y)
     {
-        if (state == 0)
+        if (this->bet.getGlobalBounds().contains(x,y))
         {
-            if (this->bet.getGlobalBounds().contains(x,y))
-            {
-                hovered = true;
-            }
-            else
-            {
-                hovered = false;
-            }
+            hovered = true;
         }
-        if (state == 1)
+        else
         {
-            if (this->cashout.getGlobalBounds().contains(x,y))
-            {
-                hovered = true;
-            }
-            else
-            {
-                hovered = false;
-            }
+            hovered = false;
         }
     }
 

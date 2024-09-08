@@ -49,7 +49,7 @@ struct mine_options
 
     void HoverChecker(const float& x, const float& y, int state)
     {
-        if (state == 0)
+        if (state != 1)
         {
             if (this->field.getGlobalBounds().contains(x,y))
             {

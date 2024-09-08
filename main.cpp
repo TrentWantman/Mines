@@ -1,7 +1,8 @@
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include <iostream>
 #include <vector>
 #include <fstream>
 #include "texture.h"
@@ -121,6 +122,7 @@ int main() {
     mineOptions.SetPosition(18, 236);
 
     /*-------------------Dynamic Text----------------*/
+
     sf::Font font;
     font.loadFromFile("./fonts/ProximaNova.ttc");
 
@@ -148,27 +150,37 @@ int main() {
     wagerOutput.setFillColor(sf::Color::White);
 
     sf::Text payoutOutput;
+    string payoutString;
     payoutOutput.setFont(font);
     payoutOutput.setStyle(sf::Text::Bold);
     payoutOutput.setCharacterSize(25);
     payoutOutput.setFillColor(sf::Color::White);
     payoutOutput.setPosition(multiplierWindowX+40, multiplierWindowY + 40);
+    sf::FloatRect payoutRect;
 
     sf::Text multiplierOutput;
+    string multiplierString;
     multiplierOutput.setFont(font);
     multiplierOutput.setStyle(sf::Text::Bold);
+    multiplierOutput.setString("Help me");
     multiplierOutput.setCharacterSize(25);
     multiplierOutput.setFillColor(sf::Color::White);
-    multiplierOutput.setPosition(multiplierWindowX+40, multiplierWindowY + 100);
+    sf::FloatRect multiRect;
 
     sf::Text bankText;
+    string bankString = "help me";
     bankText.setFont(font);
     bankText.setStyle(sf::Text::Bold);
-    bankText.setPosition(19, 30);
+    bankText.setString("Bank:        ");
     bankText.setCharacterSize(20);
     bankText.setFillColor(sf::Color::White);
+    sf::FloatRect bankTextRect = bankText.getGlobalBounds();
+    bankText.setOrigin(bankTextRect.width / 2.0f, bankTextRect.height / 2.0f);
+    bankText.setPosition(betCashout.cashout.getGlobalBounds().width/2, 30);
 
     /*-------------------Constant Text----------------*/
+
+
     sf::Text BetAmountTitle;
     BetAmountTitle.setFont(font);
     BetAmountTitle.setStyle(sf::Text::Bold);
@@ -340,23 +352,12 @@ int main() {
             if (!win) {
                 multiplier = 0;
                 payout = 0;
-                payoutOutput.setString("- $" + to_string(wagerAmount));
             }
             else {
                 multiplier =  multiplier::multi(gemsRevealed,mines);
                 payout = (wagerAmount * multiplier);
                 bank += payout;
                 win = false;
-
-                if (multiplier != 0) {
-                    payoutOutput.setString(to_string(payout));
-                    multiplierOutput.setString(to_string(multiplier));
-                }
-                //Might be deleted
-                else {
-                    payoutOutput.setString(to_string(wagerAmount));
-                    multiplierOutput.setString("1");
-                }
             }
             setup14 = true;
         }
@@ -381,7 +382,6 @@ int main() {
         else {
             mines = stoi(mineInput);
         }
-        mineOutput.setString(mineInput);
 
         //Update Wager Options Output
         if (wagerAmount < 0) {
@@ -395,12 +395,7 @@ int main() {
         else {
             wagerAmount = stod(wagerInput);
         }
-        wagerOutput.setString(wagerInput);
 
-        //Update Bank Output, Gem Output
-        bankText.setString(to_string(bank));
-        gems = 25 - mines - gemsRevealed;
-        gemOutput.setString(to_string(gems));
 
         //Check if mouse is hovering over sprite and update interface
         if (mouseX > 455) {
@@ -408,11 +403,55 @@ int main() {
                 tiles[i].HoverChecker(mouseX, mouseY);
             }
         }
-        else {
-            wagerOptions.HoverChecker(mouseX, mouseY);
-            betCashout.HoverChecker(mouseX, mouseY, state);
-            mineOptions.HoverChecker(mouseX, mouseY, state);
+
+        wagerOptions.HoverChecker(mouseX, mouseY);
+        betCashout.HoverChecker(mouseX, mouseY);
+        mineOptions.HoverChecker(mouseX, mouseY, state);
+        /*----------------------------------Update Texts------------------------------------*/
+
+        //Bank Output
+        ostringstream bankStream;
+        bankStream << fixed << setprecision(2) << bank;
+        bankString = bankStream.str();
+        bankText.setString("Bank: " + bankString);
+
+        //Wager Output
+        wagerOutput.setString(wagerInput);
+
+        //Mine Output
+        mineOutput.setString(mineInput);
+
+        //Gem Output
+        gems = 25 - mines - gemsRevealed;
+        gemOutput.setString(to_string(gems));
+
+        //Payout and Multiplier Output
+        if (state == 14) {
+            if(!winState) {
+                ostringstream payoutStream;
+                payoutStream << fixed << setprecision(2) << wagerAmount;
+                payoutString = payoutStream.str();
+                payoutOutput.setString("-$" + payoutString);
+                multiplierOutput.setString("0x");
+            }
+            else {
+                ostringstream payoutStream;
+                payoutStream << fixed << setprecision(2) << payout;
+                payoutString = payoutStream.str();
+                payoutOutput.setString("$" + payoutString);
+                ostringstream multiplierStream;
+                multiplierStream << fixed << setprecision(2) << multiplier;
+                multiplierString = multiplierStream.str();
+                multiplierOutput.setString(multiplierString + "x");
+            }
+            payoutRect = payoutOutput.getGlobalBounds();
+            payoutOutput.setOrigin(payoutRect.width/2.0f, payoutRect.height/2.0f);
+            payoutOutput.setPosition(multiplierWindow.getPosition().x + (multiplierWindow.getGlobalBounds().width/2), (multiplierWindowY + 40) + (payoutRect.height/2.0f));
+            multiRect = multiplierOutput.getGlobalBounds();
+            multiplierOutput.setOrigin(multiRect.width/2.0f, multiRect.height/2.0f);
+            multiplierOutput.setPosition(multiplierWindow.getPosition().x + (multiplierWindow.getGlobalBounds().width/2), (multiplierWindowY + 100) + (multiRect.height/2.0f));
         }
+
 
         /*-----------------------------------Clear Old Window-----------------------------------*/
         window.clear();
@@ -420,8 +459,8 @@ int main() {
         window.draw(back);
         window.draw(back2);
 
-        window.draw(wagerOutput);
-        window.draw(mineOutput);
+        window.draw(BetAmountTitle);
+        window.draw(MinesTitle);
 
         //Draw Mine Options
         if (state == 0 || state == 11 || state == 12 || state == 14) {
@@ -443,11 +482,10 @@ int main() {
             else if (mineOptions.hovered == 3){
                 window.draw(mineOptions.splitFieldGemsLit);
             }
-
             window.draw(gemOutput);
         }
         //Bet/Cashout Button
-        if (state == 0 || state == 11 || state == 12 || state == 14) {
+        if (state != 1) {
             if (betCashout.hovered) {
                 window.draw(betCashout.betLit);
             }
@@ -515,7 +553,7 @@ int main() {
             }
         }
 
-        if ((state == 14 || prevState == 14) && winState) {
+        if ((state == 14 || prevState == 14)) {
             window.draw(multiplierWindow);
             window.draw(payoutOutput);
             window.draw(multiplierOutput);
