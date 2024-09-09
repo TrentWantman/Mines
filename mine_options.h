@@ -4,7 +4,7 @@
 #include <vector>
 #include <list>
 #include <fstream>
-#include "texture.h"
+#include "Texture.h"
 using namespace std;
 
 struct mine_options
@@ -24,11 +24,11 @@ struct mine_options
     //constructor
     mine_options()
     {
-        field.setTexture(texture::GetTexture("minesOption"));
-        fieldLit.setTexture(texture::GetTexture("minesOptionLit"));
-        splitField.setTexture(texture::GetTexture("splitField"));
-        splitFieldMinesLit.setTexture(texture::GetTexture("splitFieldMinesLit"));
-        splitFieldGemsLit.setTexture(texture::GetTexture("splitFieldGemsLit"));
+        field.setTexture(Texture::GetTexture("minesOption"));
+        fieldLit.setTexture(Texture::GetTexture("minesOptionLit"));
+        splitField.setTexture(Texture::GetTexture("splitField"));
+        splitFieldMinesLit.setTexture(Texture::GetTexture("splitFieldMinesLit"));
+        splitFieldGemsLit.setTexture(Texture::GetTexture("splitFieldGemsLit"));
 
         minesRect.setSize(sf::Vector2f(201,60));
         gemsRect.setSize(sf::Vector2f(201,60));

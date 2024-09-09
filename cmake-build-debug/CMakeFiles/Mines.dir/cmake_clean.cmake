@@ -1,4 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Mines.dir/BetCashout.cpp.obj"
+  "CMakeFiles/Mines.dir/BetCashout.cpp.obj.d"
+  "CMakeFiles/Mines.dir/GameController.cpp.obj"
+  "CMakeFiles/Mines.dir/GameController.cpp.obj.d"
+  "CMakeFiles/Mines.dir/Tile.cpp.obj"
+  "CMakeFiles/Mines.dir/Tile.cpp.obj.d"
+  "CMakeFiles/Mines.dir/WagerOptions.cpp.obj"
+  "CMakeFiles/Mines.dir/WagerOptions.cpp.obj.d"
   "CMakeFiles/Mines.dir/main.cpp.obj"
   "CMakeFiles/Mines.dir/main.cpp.obj.d"
   "CMakeFiles/Mines.dir/random.cpp.obj"

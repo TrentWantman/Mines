@@ -11,10 +11,15 @@ project(Mines)
 # set(SFML_DIR "<sfml root prefix>/lib/cmake/SFML")
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
-add_executable(Mines main.cpp texture.cpp texture.h tile.h random.cpp random.h wager_options.h bet_cashout.h mine_options.h multiplier.h
+add_executable(Mines main.cpp texture.cpp texture.h tile.h random.cpp random.h WagerOptions.h BetCashout.h mine_options.h multiplier.h
         multiplier.h
         main.cpp
         main.cpp
         main.cpp
-        main.cpp)
+        main.cpp
+        GameController.cpp
+        GameController.h
+        BetCashout.cpp
+        Tile.cpp
+        WagerOptions.cpp)
 target_link_libraries(Mines sfml-graphics sfml-audio)

@@ -128,6 +128,102 @@ Mines/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/build
 .PHONY : Mines/fast
 
+BetCashout.obj: BetCashout.cpp.obj
+.PHONY : BetCashout.obj
+
+# target to build an object file
+BetCashout.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetCashout.cpp.obj
+.PHONY : BetCashout.cpp.obj
+
+BetCashout.i: BetCashout.cpp.i
+.PHONY : BetCashout.i
+
+# target to preprocess a source file
+BetCashout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetCashout.cpp.i
+.PHONY : BetCashout.cpp.i
+
+BetCashout.s: BetCashout.cpp.s
+.PHONY : BetCashout.s
+
+# target to generate assembly for a file
+BetCashout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetCashout.cpp.s
+.PHONY : BetCashout.cpp.s
+
+GameController.obj: GameController.cpp.obj
+.PHONY : GameController.obj
+
+# target to build an object file
+GameController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.obj
+.PHONY : GameController.cpp.obj
+
+GameController.i: GameController.cpp.i
+.PHONY : GameController.i
+
+# target to preprocess a source file
+GameController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.i
+.PHONY : GameController.cpp.i
+
+GameController.s: GameController.cpp.s
+.PHONY : GameController.s
+
+# target to generate assembly for a file
+GameController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.s
+.PHONY : GameController.cpp.s
+
+Tile.obj: Tile.cpp.obj
+.PHONY : Tile.obj
+
+# target to build an object file
+Tile.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.obj
+.PHONY : Tile.cpp.obj
+
+Tile.i: Tile.cpp.i
+.PHONY : Tile.i
+
+# target to preprocess a source file
+Tile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.i
+.PHONY : Tile.cpp.i
+
+Tile.s: Tile.cpp.s
+.PHONY : Tile.s
+
+# target to generate assembly for a file
+Tile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.s
+.PHONY : Tile.cpp.s
+
+WagerOptions.obj: WagerOptions.cpp.obj
+.PHONY : WagerOptions.obj
+
+# target to build an object file
+WagerOptions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.obj
+.PHONY : WagerOptions.cpp.obj
+
+WagerOptions.i: WagerOptions.cpp.i
+.PHONY : WagerOptions.i
+
+# target to preprocess a source file
+WagerOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.i
+.PHONY : WagerOptions.cpp.i
+
+WagerOptions.s: WagerOptions.cpp.s
+.PHONY : WagerOptions.s
+
+# target to generate assembly for a file
+WagerOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.s
+.PHONY : WagerOptions.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -209,6 +305,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mines
+	@echo ... BetCashout.obj
+	@echo ... BetCashout.i
+	@echo ... BetCashout.s
+	@echo ... GameController.obj
+	@echo ... GameController.i
+	@echo ... GameController.s
+	@echo ... Tile.obj
+	@echo ... Tile.i
+	@echo ... Tile.s
+	@echo ... WagerOptions.obj
+	@echo ... WagerOptions.i
+	@echo ... WagerOptions.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
