@@ -13,6 +13,7 @@ public:
     const sf::Sprite& getMineSprite() const;
     const sf::Sprite& getGemSprite() const;
     const sf::Sprite& getHiddenSprite() const;
+    const sf::Sprite& getHoverSprite() const;
 
     void reveal();
 
@@ -20,6 +21,7 @@ private:
     bool revealed;
     bool mine;
     sf::Sprite hiddenSprite;
+    sf::Sprite hoverSprite;
     sf::Sprite gemSprite;
     sf::Sprite mineSprite;
 };

@@ -13,3 +13,8 @@ void WagerOptions::update() {
 void WagerOptions::draw(sf::RenderWindow& window) {
     window.draw(wagerSprite);
 }
+
+void WagerOptions::setPosition(float x, float y) {
+    wagerSprite.setPosition(x, y);
+}
+

@@ -1,11 +1,19 @@
 CMakeFiles/Mines.dir/main.cpp.obj: \
  C:\Users\litte\CLionProjects\Mines\main.cpp \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iostream \
+ C:\Users\litte\CLionProjects\Mines\GameController.h \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Config.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Clock.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Export.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Time.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Err.hpp \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ios \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iosfwd \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stringfwd.h \
@@ -131,27 +139,6 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/istream \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/istream.tcc \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
- C:/Users/litte/Libraries/SFML/include/SFML/Graphics.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Window.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/System.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Config.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/System/Clock.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/System/Export.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/System/Time.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/System/Err.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/System/FileInputStream.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/System/InputStream.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/System/NonCopyable.hpp \
@@ -167,6 +154,14 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_heap.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uniform_int_dist.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tempbuf.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/locale \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ctime \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/time_members.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
  C:/Users/litte/Libraries/SFML/include/SFML/System/Utf.inl \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
@@ -244,46 +239,18 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Text.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexBuffer.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/InputSoundFile.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/Export.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/Listener.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/Music.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundStream.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundSource.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/AlResource.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/OutputSoundFile.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/Sound.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundBuffer.hpp \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundRecorder.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundFileFactory.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundFileFactory.inl \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundFileReader.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Audio/SoundFileWriter.hpp \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/fstream \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/fstream.tcc \
- C:\Users\litte\CLionProjects\Mines\texture.h \
+ C:\Users\litte\CLionProjects\Mines\Tile.h \
+ C:\Users\litte\CLionProjects\Mines\BetCashout.h \
+ C:\Users\litte\CLionProjects\Mines\MineOptions.h \
+ C:\Users\litte\CLionProjects\Mines\WagerOptions.h \
+ C:\Users\litte\CLionProjects\Mines\Texture.h \
+ C:\Users\litte\CLionProjects\Mines\Multiplier.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
- C:\Users\litte\CLionProjects\Mines\tile.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/list \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_list.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/allocated_ptr.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/list.tcc \
- C:\Users\litte\CLionProjects\Mines\wager_options.h \
- C:\Users\litte\CLionProjects\Mines\bet_cashout.h \
- C:\Users\litte\CLionProjects\Mines\multiplier.h \
- C:\Users\litte\CLionProjects\Mines\mine_options.h \
- C:\Users\litte\CLionProjects\Mines\random.h \
+ C:\Users\litte\CLionProjects\Mines\Random.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/math.h \

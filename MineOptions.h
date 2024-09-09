@@ -1,17 +1,17 @@
-#ifndef WAGEROPTIONS_H
-#define WAGEROPTIONS_H
+#ifndef MINEOPTIONS_H
+#define MINEOPTIONS_H
 
 #include <SFML/Graphics.hpp>
 
-class WagerOptions {
+class MineOptions {
 public:
-    WagerOptions();
+    MineOptions();
     void update();
     void draw(sf::RenderWindow& window);
     void setPosition(float x, float y);
 
 private:
-    sf::Sprite wagerSprite;
+    sf::Sprite mineOptionsSprite;
     int hovered;
 };
 

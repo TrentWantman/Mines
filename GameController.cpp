@@ -1,7 +1,100 @@
 #include "GameController.h"
 
+#include <set>
+
 GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     InitializeTiles();
+
+    //Gamestate and other booleans
+    gameState = GameState::MainMenu;
+    prevState = GameState::MainMenu;
+    won = false;
+    setup = false;
+
+    // Initialize background
+    back.setSize(sf::Vector2f(1800, 980));
+    back.setFillColor(sf::Color(15,33,46));
+    back2.setSize(sf::Vector2f(450, 980));
+    back2.setFillColor(sf::Color(85,112,100));
+
+    //Initialize UI Elements
+    overlay.setSize((sf::Vector2f(1350, 980)));
+    overlay.setFillColor(sf::Color(255,255,255,155));
+    overlay.setPosition(450,0);
+
+    multiplierWindow.setTexture(Texture::GetTexture("multiplier"));
+    double multiplierWindowOffsetX = multiplierWindow.getGlobalBounds().width/2;
+    double multiplierWindowOffsetY = multiplierWindow.getGlobalBounds().height/2;
+    double multiplierWindowX = 1126-multiplierWindowOffsetX;
+    double multiplierWindowY = 492.558-multiplierWindowOffsetY;
+    multiplierWindow.setPosition(multiplierWindowX, multiplierWindowY);
+
+    betCashout.setPosition(18, 312);
+    wagerOptions.setPosition(18, 132);
+    mineOptions.setPosition(18, 236);
+
+    //Initialize Texts
+    font.loadFromFile("./fonts/ProximaNova.ttc");
+
+    mineOutput.setFont(font);
+    mineOutput.setStyle(sf::Text::Bold);
+    mineOutput.setPosition(25, 248);
+    mineOutput.setCharacterSize(20);
+    mineOutput.setFillColor(sf::Color::White);
+
+    gemOutput.setFont(font);
+    gemOutput.setStyle(sf::Text::Bold);
+    gemOutput.setPosition(236, 248);
+    gemOutput.setCharacterSize(20);
+    gemOutput.setFillColor(sf::Color::White);
+
+    wagerOutput.setFont(font);
+    wagerOutput.setStyle(sf::Text::Bold);
+    wagerOutput.setPosition(25, 144);
+    wagerOutput.setCharacterSize(20);
+    wagerOutput.setFillColor(sf::Color::White);
+
+    payoutOutput.setFont(font);
+    payoutOutput.setStyle(sf::Text::Bold);
+    payoutOutput.setCharacterSize(25);
+    payoutOutput.setFillColor(sf::Color::White);
+    payoutOutput.setPosition(multiplierWindowX+40, multiplierWindowY + 40);
+
+    multiplierOutput.setFont(font);
+    multiplierOutput.setStyle(sf::Text::Bold);
+    multiplierOutput.setString("Help me");
+    multiplierOutput.setCharacterSize(25);
+    multiplierOutput.setFillColor(sf::Color::White);
+
+    bankText.setFont(font);
+    bankText.setStyle(sf::Text::Bold);
+    bankText.setString("Bank: $" + std::to_string(bank));
+    bankText.setCharacterSize(20);
+    bankText.setFillColor(sf::Color::White);
+    bankTextRect = bankText.getGlobalBounds();
+    bankText.setOrigin(bankTextRect.width / 2.0f, bankTextRect.height / 2.0f);
+    bankText.setPosition(betCashout.cashoutSprite.getGlobalBounds().width/2, 30);
+
+    BetAmountTitle.setFont(font);
+    BetAmountTitle.setStyle(sf::Text::Bold);
+    BetAmountTitle.setString("Bet Amount");
+    BetAmountTitle.setPosition(19, 105);
+    BetAmountTitle.setCharacterSize(20);
+    BetAmountTitle.setFillColor(sf::Color::White);
+
+    MinesTitle.setFont(font);
+    MinesTitle.setStyle(sf::Text::Bold);
+    MinesTitle.setString("Mines");
+    MinesTitle.setPosition(21, 209);
+    MinesTitle.setCharacterSize(20);
+    MinesTitle.setFillColor(sf::Color::White);
+
+    GemsTitle.setFont(font);
+    GemsTitle.setStyle(sf::Text::Bold);
+    GemsTitle.setString("Gems");
+    GemsTitle.setPosition(232, 209);
+    GemsTitle.setCharacterSize(20);
+    GemsTitle.setFillColor(sf::Color::White);
 }
 
 void GameController::Run() {
@@ -28,28 +121,39 @@ void GameController::Update() {
 void GameController::Render() {
     window.clear();
 
-    // Draw the background and other static elements here
-    DrawTiles();
+    window.draw(back);
+    window.draw(back2);
 
-    // Draw other elements like wagerOptions, betCashout, etc.
+    DrawTiles();
+    betCashout.draw(window);
+    wagerOptions.draw(window);
+    mineOptions.draw(window);
+    window.draw(bankText);
+    window.draw(BetAmountTitle);
+    window.draw(MinesTitle);;
+    window.draw(GemsTitle);
+
+
 
     window.display();
 }
 
 void GameController::InitializeTiles() {
-    double tileX = 670;
-    double tileY = 20;
-    int posCount = 0;
+    double tileX = 670;  // Starting X position for the first tile
+    double tileY = 20;   // Starting Y position for the first tile
+    double offsetX = 186; // Horizontal spacing between tiles
+    double offsetY = 191.279; // Vertical spacing between rows
 
-    for (int i = 0; i < 25; i++) {
-        tiles.push_back(Tile());
-    }
+    int rows = 5;  // Number of rows (5x5 grid)
+    int cols = 5;  // Number of columns
 
-    for (int i = 0; i < 5; i++) {
-        double offsetX = 186 * i;
-        tiles[i].SetPosition(tileX + offsetX, tileY);
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < cols; ++j) {
+            Tile tile;
+            tile.SetPosition(tileX + j * offsetX, tileY + i * offsetY);
+            tiles.push_back(tile);
+        }
     }
-    // Initialize other rows similarly...
 }
 
 void GameController::DrawTiles() {

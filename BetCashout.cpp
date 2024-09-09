@@ -2,7 +2,7 @@
 #include "Texture.h"
 
 BetCashout::BetCashout() {
-    cashoutSprite.setTexture(Texture::GetTexture("cashout"));
+    cashoutSprite.setTexture(Texture::GetTexture("bet"));
     hovered = false;
 }
 
@@ -12,4 +12,8 @@ void BetCashout::update() {
 
 void BetCashout::draw(sf::RenderWindow& window) {
     window.draw(cashoutSprite);
+}
+
+void BetCashout::setPosition(float x, float y) {
+    cashoutSprite.setPosition(x, y);
 }

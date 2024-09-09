@@ -176,6 +176,54 @@ GameController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.s
 .PHONY : GameController.cpp.s
 
+MineOptions.obj: MineOptions.cpp.obj
+.PHONY : MineOptions.obj
+
+# target to build an object file
+MineOptions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.obj
+.PHONY : MineOptions.cpp.obj
+
+MineOptions.i: MineOptions.cpp.i
+.PHONY : MineOptions.i
+
+# target to preprocess a source file
+MineOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.i
+.PHONY : MineOptions.cpp.i
+
+MineOptions.s: MineOptions.cpp.s
+.PHONY : MineOptions.s
+
+# target to generate assembly for a file
+MineOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.s
+.PHONY : MineOptions.cpp.s
+
+Texture.obj: Texture.cpp.obj
+.PHONY : Texture.obj
+
+# target to build an object file
+Texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Texture.cpp.obj
+.PHONY : Texture.cpp.obj
+
+Texture.i: Texture.cpp.i
+.PHONY : Texture.i
+
+# target to preprocess a source file
+Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Texture.cpp.i
+.PHONY : Texture.cpp.i
+
+Texture.s: Texture.cpp.s
+.PHONY : Texture.s
+
+# target to generate assembly for a file
+Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Texture.cpp.s
+.PHONY : Texture.cpp.s
+
 Tile.obj: Tile.cpp.obj
 .PHONY : Tile.obj
 
@@ -199,6 +247,30 @@ Tile.s: Tile.cpp.s
 Tile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.s
 .PHONY : Tile.cpp.s
+
+UI.obj: UI.cpp.obj
+.PHONY : UI.obj
+
+# target to build an object file
+UI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/UI.cpp.obj
+.PHONY : UI.cpp.obj
+
+UI.i: UI.cpp.i
+.PHONY : UI.i
+
+# target to preprocess a source file
+UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/UI.cpp.i
+.PHONY : UI.cpp.i
+
+UI.s: UI.cpp.s
+.PHONY : UI.s
+
+# target to generate assembly for a file
+UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/UI.cpp.s
+.PHONY : UI.cpp.s
 
 WagerOptions.obj: WagerOptions.cpp.obj
 .PHONY : WagerOptions.obj
@@ -272,30 +344,6 @@ random.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/random.cpp.s
 .PHONY : random.cpp.s
 
-texture.obj: texture.cpp.obj
-.PHONY : texture.obj
-
-# target to build an object file
-texture.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/texture.cpp.obj
-.PHONY : texture.cpp.obj
-
-texture.i: texture.cpp.i
-.PHONY : texture.i
-
-# target to preprocess a source file
-texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/texture.cpp.i
-.PHONY : texture.cpp.i
-
-texture.s: texture.cpp.s
-.PHONY : texture.s
-
-# target to generate assembly for a file
-texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/texture.cpp.s
-.PHONY : texture.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -311,9 +359,18 @@ help:
 	@echo ... GameController.obj
 	@echo ... GameController.i
 	@echo ... GameController.s
+	@echo ... MineOptions.obj
+	@echo ... MineOptions.i
+	@echo ... MineOptions.s
+	@echo ... Texture.obj
+	@echo ... Texture.i
+	@echo ... Texture.s
 	@echo ... Tile.obj
 	@echo ... Tile.i
 	@echo ... Tile.s
+	@echo ... UI.obj
+	@echo ... UI.i
+	@echo ... UI.s
 	@echo ... WagerOptions.obj
 	@echo ... WagerOptions.i
 	@echo ... WagerOptions.s
@@ -323,9 +380,6 @@ help:
 	@echo ... random.obj
 	@echo ... random.i
 	@echo ... random.s
-	@echo ... texture.obj
-	@echo ... texture.i
-	@echo ... texture.s
 .PHONY : help
 
 

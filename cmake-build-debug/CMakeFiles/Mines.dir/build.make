@@ -83,20 +83,20 @@ CMakeFiles/Mines.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/main.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\main.cpp -o CMakeFiles\Mines.dir\main.cpp.s
 
-CMakeFiles/Mines.dir/texture.cpp.obj: CMakeFiles/Mines.dir/flags.make
-CMakeFiles/Mines.dir/texture.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
-CMakeFiles/Mines.dir/texture.cpp.obj: C:/Users/litte/CLionProjects/Mines/texture.cpp
-CMakeFiles/Mines.dir/texture.cpp.obj: CMakeFiles/Mines.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Mines.dir/texture.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mines.dir/texture.cpp.obj -MF CMakeFiles\Mines.dir\texture.cpp.obj.d -o CMakeFiles\Mines.dir\texture.cpp.obj -c C:\Users\litte\CLionProjects\Mines\texture.cpp
+CMakeFiles/Mines.dir/Texture.cpp.obj: CMakeFiles/Mines.dir/flags.make
+CMakeFiles/Mines.dir/Texture.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
+CMakeFiles/Mines.dir/Texture.cpp.obj: C:/Users/litte/CLionProjects/Mines/Texture.cpp
+CMakeFiles/Mines.dir/Texture.cpp.obj: CMakeFiles/Mines.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Mines.dir/Texture.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mines.dir/Texture.cpp.obj -MF CMakeFiles\Mines.dir\Texture.cpp.obj.d -o CMakeFiles\Mines.dir\Texture.cpp.obj -c C:\Users\litte\CLionProjects\Mines\Texture.cpp
 
-CMakeFiles/Mines.dir/texture.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mines.dir/texture.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\litte\CLionProjects\Mines\texture.cpp > CMakeFiles\Mines.dir\texture.cpp.i
+CMakeFiles/Mines.dir/Texture.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mines.dir/Texture.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\litte\CLionProjects\Mines\Texture.cpp > CMakeFiles\Mines.dir\Texture.cpp.i
 
-CMakeFiles/Mines.dir/texture.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/texture.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\texture.cpp -o CMakeFiles\Mines.dir\texture.cpp.s
+CMakeFiles/Mines.dir/Texture.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/Texture.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\Texture.cpp -o CMakeFiles\Mines.dir\Texture.cpp.s
 
 CMakeFiles/Mines.dir/random.cpp.obj: CMakeFiles/Mines.dir/flags.make
 CMakeFiles/Mines.dir/random.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
@@ -173,26 +173,60 @@ CMakeFiles/Mines.dir/WagerOptions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/WagerOptions.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\WagerOptions.cpp -o CMakeFiles\Mines.dir\WagerOptions.cpp.s
 
+CMakeFiles/Mines.dir/MineOptions.cpp.obj: CMakeFiles/Mines.dir/flags.make
+CMakeFiles/Mines.dir/MineOptions.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
+CMakeFiles/Mines.dir/MineOptions.cpp.obj: C:/Users/litte/CLionProjects/Mines/MineOptions.cpp
+CMakeFiles/Mines.dir/MineOptions.cpp.obj: CMakeFiles/Mines.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Mines.dir/MineOptions.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mines.dir/MineOptions.cpp.obj -MF CMakeFiles\Mines.dir\MineOptions.cpp.obj.d -o CMakeFiles\Mines.dir\MineOptions.cpp.obj -c C:\Users\litte\CLionProjects\Mines\MineOptions.cpp
+
+CMakeFiles/Mines.dir/MineOptions.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mines.dir/MineOptions.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\litte\CLionProjects\Mines\MineOptions.cpp > CMakeFiles\Mines.dir\MineOptions.cpp.i
+
+CMakeFiles/Mines.dir/MineOptions.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/MineOptions.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\MineOptions.cpp -o CMakeFiles\Mines.dir\MineOptions.cpp.s
+
+CMakeFiles/Mines.dir/UI.cpp.obj: CMakeFiles/Mines.dir/flags.make
+CMakeFiles/Mines.dir/UI.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
+CMakeFiles/Mines.dir/UI.cpp.obj: C:/Users/litte/CLionProjects/Mines/UI.cpp
+CMakeFiles/Mines.dir/UI.cpp.obj: CMakeFiles/Mines.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Mines.dir/UI.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mines.dir/UI.cpp.obj -MF CMakeFiles\Mines.dir\UI.cpp.obj.d -o CMakeFiles\Mines.dir\UI.cpp.obj -c C:\Users\litte\CLionProjects\Mines\UI.cpp
+
+CMakeFiles/Mines.dir/UI.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mines.dir/UI.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\litte\CLionProjects\Mines\UI.cpp > CMakeFiles\Mines.dir\UI.cpp.i
+
+CMakeFiles/Mines.dir/UI.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/UI.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\UI.cpp -o CMakeFiles\Mines.dir\UI.cpp.s
+
 # Object files for target Mines
 Mines_OBJECTS = \
 "CMakeFiles/Mines.dir/main.cpp.obj" \
-"CMakeFiles/Mines.dir/texture.cpp.obj" \
+"CMakeFiles/Mines.dir/Texture.cpp.obj" \
 "CMakeFiles/Mines.dir/random.cpp.obj" \
 "CMakeFiles/Mines.dir/GameController.cpp.obj" \
 "CMakeFiles/Mines.dir/BetCashout.cpp.obj" \
 "CMakeFiles/Mines.dir/Tile.cpp.obj" \
-"CMakeFiles/Mines.dir/WagerOptions.cpp.obj"
+"CMakeFiles/Mines.dir/WagerOptions.cpp.obj" \
+"CMakeFiles/Mines.dir/MineOptions.cpp.obj" \
+"CMakeFiles/Mines.dir/UI.cpp.obj"
 
 # External object files for target Mines
 Mines_EXTERNAL_OBJECTS =
 
 Mines.exe: CMakeFiles/Mines.dir/main.cpp.obj
-Mines.exe: CMakeFiles/Mines.dir/texture.cpp.obj
+Mines.exe: CMakeFiles/Mines.dir/Texture.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/random.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/GameController.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/BetCashout.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/Tile.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/WagerOptions.cpp.obj
+Mines.exe: CMakeFiles/Mines.dir/MineOptions.cpp.obj
+Mines.exe: CMakeFiles/Mines.dir/UI.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/build.make
 Mines.exe: C:/Users/litte/Libraries/SFML/lib/libsfml-graphics-d.a
 Mines.exe: C:/Users/litte/Libraries/SFML/lib/libsfml-audio-d.a
@@ -201,7 +235,7 @@ Mines.exe: C:/Users/litte/Libraries/SFML/lib/libsfml-system-d.a
 Mines.exe: CMakeFiles/Mines.dir/linkLibs.rsp
 Mines.exe: CMakeFiles/Mines.dir/objects1.rsp
 Mines.exe: CMakeFiles/Mines.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Mines.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable Mines.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Mines.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -21,5 +21,9 @@ add_executable(Mines main.cpp texture.cpp texture.h tile.h random.cpp random.h W
         GameController.h
         BetCashout.cpp
         Tile.cpp
-        WagerOptions.cpp)
+        WagerOptions.cpp
+        MineOptions.cpp
+        MineOptions.h
+        UI.cpp
+        UI.h)
 target_link_libraries(Mines sfml-graphics sfml-audio)

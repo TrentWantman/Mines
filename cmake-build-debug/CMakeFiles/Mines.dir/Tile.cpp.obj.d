@@ -1,6 +1,6 @@
-CMakeFiles/Mines.dir/Texture.cpp.obj: \
- C:\Users\litte\CLionProjects\Mines\Texture.cpp \
- C:\Users\litte\CLionProjects\Mines\Texture.h \
+CMakeFiles/Mines.dir/Tile.cpp.obj: \
+ C:\Users\litte\CLionProjects\Mines\Tile.cpp \
+ C:\Users\litte\CLionProjects\Mines\Tile.h \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Window.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/System.hpp \
@@ -238,4 +238,5 @@ CMakeFiles/Mines.dir/Texture.cpp.obj: \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Glsl.inl \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Text.hpp \
- C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexBuffer.hpp
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ C:\Users\litte\CLionProjects\Mines\Texture.h

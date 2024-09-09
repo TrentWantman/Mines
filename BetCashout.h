@@ -8,8 +8,9 @@ public:
     BetCashout();
     void update();
     void draw(sf::RenderWindow& window);
+    void setPosition(float x, float y);
 
-private:
+//private:
     sf::Sprite cashoutSprite;
     bool hovered;
 };
