@@ -7,12 +7,16 @@ class WagerOptions {
 public:
     WagerOptions();
     void update();
+    void hoverCheck(const sf::Vector2i& mousePos);
     void draw(sf::RenderWindow& window);
     void setPosition(float x, float y);
 
 private:
     sf::Sprite wagerSprite;
-    int hovered;
+    sf::RectangleShape wagerRect;
+    sf::RectangleShape halfRect;
+    sf::RectangleShape double2Rect;
+    int hover;
 };
 
 #endif // WAGEROPTIONS_H

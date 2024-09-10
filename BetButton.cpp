@@ -27,6 +27,11 @@ void BetButton::hoverCheck(const sf::Vector2i& mousePos) {
     }
 }
 
+bool BetButton::isClicked() {
+    return hover;
+}
+
+
 void BetButton::draw(sf::RenderWindow& window) {
     window.draw(betSprite);
 }

@@ -127,8 +127,11 @@ void GameController::Render() {
     window.draw(back2);
 
     DrawTiles(mousePos);
-    cashoutButton.draw(window);
-    betButton.draw(window);
+    if (gameState == GameState::Playing) {
+        cashoutButton.draw(window);
+    }
+    else
+        betButton.draw(window);
     wagerOptions.draw(window);
     mineOptions.draw(window);
     window.draw(bankText);
@@ -177,22 +180,37 @@ void GameController::DrawTiles(sf::Vector2i mousePos) {
 void GameController::HandleInput(sf::Event& event) {
     // Handle user inputs (mouse clicks, key presses)
 
-    //Check for Hovering
+    //Check for Tile Hovering
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     for (auto& tile : tiles) {
         if (!tile.isRevealed()) {
             tile.hoverCheck(mousePos);
         }
     }
-
+    //Check for Wager hover
+    wagerOptions.hoverCheck(mousePos);
+    mineOptions.hoverCheck(mousePos);
     cashoutButton.hoverCheck(mousePos);
     betButton.hoverCheck(mousePos);
 
     //Check for mouse button pressed
     if (event.type == sf::Event::MouseButtonPressed) {
+        //Pressed on tiles
         for (auto& tile : tiles) {
             if (!tile.isRevealed()) {
                 tile.clickCheck(mousePos);
+            }
+        }
+        //Pressed on Bet Button
+        if (gameState == GameState::PreGame) {
+            if (betButton.isClicked()) {
+                gameState = GameState::Playing;
+            }
+        }
+        //Pressed on Cashout Button
+        else if (gameState == GameState::Playing) {
+            if (betButton.isClicked()) {
+                gameState = GameState::PreGame;
             }
         }
     }
