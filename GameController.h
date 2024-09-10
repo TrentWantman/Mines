@@ -3,8 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
+
+#include "BetButton.h"
 #include "Tile.h"
-#include "BetCashout.h"
+#include "CashoutButton.h"
 #include "MineOptions.h"
 #include "WagerOptions.h"
 #include "Texture.h"
@@ -38,14 +40,15 @@ private:
     std::vector<Tile> tiles;
     WagerOptions wagerOptions;
     MineOptions mineOptions;
-    BetCashout betCashout;
+    CashoutButton cashoutButton;
+    BetButton betButton;
 
     int tilesRevealed;
     int gemsRevealed;
     int totalTilesRevealed;
     int totalGemsRevealed;
     int randomTile;
-    int mines;
+    int mines = 4;
     int gems;
 
     double payout;
@@ -73,8 +76,8 @@ private:
     sf::Text GemsTitle;
 
     void InitializeTiles();  // Function to initialize tile positions
-    void DrawTiles();        // Function to draw tiles
-    void HandleInput();      // Function to manage input
+    void DrawTiles(sf::Vector2i mousePos);        // Function to draw tiles
+    void HandleInput(sf::Event& event);      // Function to manage input
 };
 
 #endif // GAMECONTROLLER_H

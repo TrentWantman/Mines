@@ -1,14 +1,14 @@
-#ifndef BETCASHOUT_H
-#define BETCASHOUT_H
+#ifndef CASHOUTBUTTON_H
+#define CASHOUTBUTTON_H
 
 #include <SFML/Graphics.hpp>
 #include "GameState.h"
 
-class BetCashout {
+class CashoutButton {
 public:
-    BetCashout();
+    CashoutButton();
     void update();
-    void hoverCheck(const sf::Vector2i& mousePos, GameState gameState);
+    void hoverCheck(const sf::Vector2i& mousePos);
     void draw(sf::RenderWindow& window);
     void setPosition(float x, float y);
 

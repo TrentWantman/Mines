@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/litte/CLionProjects/Mines/BetCashout.cpp" "CMakeFiles/Mines.dir/BetCashout.cpp.obj" "gcc" "CMakeFiles/Mines.dir/BetCashout.cpp.obj.d"
+  "C:/Users/litte/CLionProjects/Mines/BetButton.cpp" "CMakeFiles/Mines.dir/BetButton.cpp.obj" "gcc" "CMakeFiles/Mines.dir/BetButton.cpp.obj.d"
+  "C:/Users/litte/CLionProjects/Mines/CashoutButton.cpp" "CMakeFiles/Mines.dir/CashoutButton.cpp.obj" "gcc" "CMakeFiles/Mines.dir/CashoutButton.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/GameController.cpp" "CMakeFiles/Mines.dir/GameController.cpp.obj" "gcc" "CMakeFiles/Mines.dir/GameController.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/MineOptions.cpp" "CMakeFiles/Mines.dir/MineOptions.cpp.obj" "gcc" "CMakeFiles/Mines.dir/MineOptions.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/Tile.cpp" "CMakeFiles/Mines.dir/Tile.cpp.obj" "gcc" "CMakeFiles/Mines.dir/Tile.cpp.obj.d"

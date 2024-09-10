@@ -4,6 +4,7 @@
 // Define GameState enum here
 enum class GameState {
     MainMenu,
+    PreGame,
     Playing,
     GameOver
 };

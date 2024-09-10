@@ -1,16 +1,16 @@
-#include "BetCashout.h"
+#include "CashoutButton.h"
 #include "Texture.h"
 
-BetCashout::BetCashout() {
-    cashoutSprite.setTexture(Texture::GetTexture("bet"));
+CashoutButton::CashoutButton() {
+    cashoutSprite.setTexture(Texture::GetTexture("cashout"));
     hover = false;
 }
 
-void BetCashout::update() {
+void CashoutButton::update() {
     // Update the cashout logic (hover state, animations, etc.)
 }
 
-void BetCashout::hoverCheck(const sf::Vector2i& mousePos, GameState gameState) {
+void CashoutButton::hoverCheck(const sf::Vector2i& mousePos) {
     // Check if mouse is within the bounds of the sprite
     if (cashoutSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
         if (!hover) {
@@ -27,10 +27,10 @@ void BetCashout::hoverCheck(const sf::Vector2i& mousePos, GameState gameState) {
     }
 }
 
-void BetCashout::draw(sf::RenderWindow& window) {
+void CashoutButton::draw(sf::RenderWindow& window) {
     window.draw(cashoutSprite);
 }
 
-void BetCashout::setPosition(float x, float y) {
+void CashoutButton::setPosition(float x, float y) {
     cashoutSprite.setPosition(x, y);
 }

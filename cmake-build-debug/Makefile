@@ -128,29 +128,53 @@ Mines/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/build
 .PHONY : Mines/fast
 
-BetCashout.obj: BetCashout.cpp.obj
-.PHONY : BetCashout.obj
+BetButton.obj: BetButton.cpp.obj
+.PHONY : BetButton.obj
 
 # target to build an object file
-BetCashout.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetCashout.cpp.obj
-.PHONY : BetCashout.cpp.obj
+BetButton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetButton.cpp.obj
+.PHONY : BetButton.cpp.obj
 
-BetCashout.i: BetCashout.cpp.i
-.PHONY : BetCashout.i
+BetButton.i: BetButton.cpp.i
+.PHONY : BetButton.i
 
 # target to preprocess a source file
-BetCashout.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetCashout.cpp.i
-.PHONY : BetCashout.cpp.i
+BetButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetButton.cpp.i
+.PHONY : BetButton.cpp.i
 
-BetCashout.s: BetCashout.cpp.s
-.PHONY : BetCashout.s
+BetButton.s: BetButton.cpp.s
+.PHONY : BetButton.s
 
 # target to generate assembly for a file
-BetCashout.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetCashout.cpp.s
-.PHONY : BetCashout.cpp.s
+BetButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetButton.cpp.s
+.PHONY : BetButton.cpp.s
+
+CashoutButton.obj: CashoutButton.cpp.obj
+.PHONY : CashoutButton.obj
+
+# target to build an object file
+CashoutButton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.obj
+.PHONY : CashoutButton.cpp.obj
+
+CashoutButton.i: CashoutButton.cpp.i
+.PHONY : CashoutButton.i
+
+# target to preprocess a source file
+CashoutButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.i
+.PHONY : CashoutButton.cpp.i
+
+CashoutButton.s: CashoutButton.cpp.s
+.PHONY : CashoutButton.s
+
+# target to generate assembly for a file
+CashoutButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.s
+.PHONY : CashoutButton.cpp.s
 
 GameController.obj: GameController.cpp.obj
 .PHONY : GameController.obj
@@ -353,9 +377,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mines
-	@echo ... BetCashout.obj
-	@echo ... BetCashout.i
-	@echo ... BetCashout.s
+	@echo ... BetButton.obj
+	@echo ... BetButton.i
+	@echo ... BetButton.s
+	@echo ... CashoutButton.obj
+	@echo ... CashoutButton.i
+	@echo ... CashoutButton.s
 	@echo ... GameController.obj
 	@echo ... GameController.i
 	@echo ... GameController.s

@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Mines.dir/BetCashout.cpp.obj"
-  "CMakeFiles/Mines.dir/BetCashout.cpp.obj.d"
+  "CMakeFiles/Mines.dir/BetButton.cpp.obj"
+  "CMakeFiles/Mines.dir/BetButton.cpp.obj.d"
+  "CMakeFiles/Mines.dir/CashoutButton.cpp.obj"
+  "CMakeFiles/Mines.dir/CashoutButton.cpp.obj.d"
   "CMakeFiles/Mines.dir/GameController.cpp.obj"
   "CMakeFiles/Mines.dir/GameController.cpp.obj.d"
   "CMakeFiles/Mines.dir/MineOptions.cpp.obj"

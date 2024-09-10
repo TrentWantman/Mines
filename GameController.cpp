@@ -6,7 +6,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     InitializeTiles();
 
     //Gamestate and other booleans
-    gameState = GameState::MainMenu;
+    gameState = GameState::PreGame;
     prevState = GameState::MainMenu;
     won = false;
     setup = false;
@@ -29,7 +29,8 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     double multiplierWindowY = 492.558-multiplierWindowOffsetY;
     multiplierWindow.setPosition(multiplierWindowX, multiplierWindowY);
 
-    betCashout.setPosition(18, 312);
+    cashoutButton.setPosition(18, 312);
+    betButton.setPosition(18, 312);
     wagerOptions.setPosition(18, 132);
     mineOptions.setPosition(18, 236);
 
@@ -73,7 +74,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     bankText.setFillColor(sf::Color::White);
     bankTextRect = bankText.getGlobalBounds();
     bankText.setOrigin(bankTextRect.width / 2.0f, bankTextRect.height / 2.0f);
-    bankText.setPosition(betCashout.cashoutSprite.getGlobalBounds().width/2, 30);
+    bankText.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2, 30);
 
     BetAmountTitle.setFont(font);
     BetAmountTitle.setStyle(sf::Text::Bold);
@@ -110,7 +111,7 @@ void GameController::ProcessEvents() {
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed)
             window.close();
-        HandleInput();
+        HandleInput(event);
     }
 }
 
@@ -119,13 +120,15 @@ void GameController::Update() {
 }
 
 void GameController::Render() {
+    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     window.clear();
 
     window.draw(back);
     window.draw(back2);
 
-    DrawTiles();
-    betCashout.draw(window);
+    DrawTiles(mousePos);
+    cashoutButton.draw(window);
+    betButton.draw(window);
     wagerOptions.draw(window);
     mineOptions.draw(window);
     window.draw(bankText);
@@ -154,24 +157,44 @@ void GameController::InitializeTiles() {
             tiles.push_back(tile);
         }
     }
-}
-
-void GameController::DrawTiles() {
-    for (auto& tile : tiles) {
-        if (tile.isRevealed()) {
-            if (tile.hasMine()) {
-                window.draw(tile.getMineSprite());
-            } else {
-                window.draw(tile.getGemSprite());
-            }
-        } else {
-            window.draw(tile.getHiddenSprite());
+    for (int i = 0; i < mines; i++) {
+        randomTile = random::Int(0, 24);
+        if (tiles[randomTile].hasMine()) {
+            i--;
+        }
+        else {
+            tiles[randomTile].addMine();
         }
     }
 }
 
-void GameController::HandleInput() {
+void GameController::DrawTiles(sf::Vector2i mousePos) {
+    for (auto& tile : tiles) {
+        tile.draw(window);
+    }
+}
+
+void GameController::HandleInput(sf::Event& event) {
     // Handle user inputs (mouse clicks, key presses)
+
+    //Check for Hovering
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-    betCashout.hoverCheck(mousePos);
+    for (auto& tile : tiles) {
+        if (!tile.isRevealed()) {
+            tile.hoverCheck(mousePos);
+        }
+    }
+
+    cashoutButton.hoverCheck(mousePos);
+    betButton.hoverCheck(mousePos);
+
+    //Check for mouse button pressed
+    if (event.type == sf::Event::MouseButtonPressed) {
+        for (auto& tile : tiles) {
+            if (!tile.isRevealed()) {
+                tile.clickCheck(mousePos);
+            }
+        }
+    }
+
 }

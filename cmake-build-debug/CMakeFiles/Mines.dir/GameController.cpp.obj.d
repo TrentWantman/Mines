@@ -239,8 +239,10 @@ CMakeFiles/Mines.dir/GameController.cpp.obj: \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Text.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ C:\Users\litte\CLionProjects\Mines\BetButton.h \
+ C:\Users\litte\CLionProjects\Mines\GameState.h \
  C:\Users\litte\CLionProjects\Mines\Tile.h \
- C:\Users\litte\CLionProjects\Mines\BetCashout.h \
+ C:\Users\litte\CLionProjects\Mines\CashoutButton.h \
  C:\Users\litte\CLionProjects\Mines\MineOptions.h \
  C:\Users\litte\CLionProjects\Mines\WagerOptions.h \
  C:\Users\litte\CLionProjects\Mines\Texture.h \
