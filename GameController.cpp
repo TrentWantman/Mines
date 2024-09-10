@@ -115,7 +115,7 @@ void GameController::ProcessEvents() {
 }
 
 void GameController::Update() {
-    // Update logic here (e.g., animations, game state changes)
+    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
 }
 
 void GameController::Render() {
@@ -172,4 +172,6 @@ void GameController::DrawTiles() {
 
 void GameController::HandleInput() {
     // Handle user inputs (mouse clicks, key presses)
+    sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+    betCashout.hoverCheck(mousePos);
 }

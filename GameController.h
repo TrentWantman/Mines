@@ -10,12 +10,7 @@
 #include "Texture.h"
 #include "Multiplier.h"
 #include "Random.h"
-
-enum class GameState {
-    MainMenu,
-    Playing,
-    GameOver
-};
+#include "GameState.h"
 
 class GameController {
 public:
@@ -76,9 +71,6 @@ private:
     sf::Text BetAmountTitle;
     sf::Text MinesTitle;
     sf::Text GemsTitle;
-
-
-
 
     void InitializeTiles();  // Function to initialize tile positions
     void DrawTiles();        // Function to draw tiles
