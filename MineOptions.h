@@ -10,6 +10,7 @@ public:
     void hoverCheck(const sf::Vector2i& mousePos);
     void draw(sf::RenderWindow& window);
     void setPosition(float x, float y);
+    int isClicked();
 
 private:
     sf::Sprite mineOptionsSprite;

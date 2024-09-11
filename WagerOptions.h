@@ -8,6 +8,7 @@ public:
     WagerOptions();
     void update();
     void hoverCheck(const sf::Vector2i& mousePos);
+    int isClicked();
     void draw(sf::RenderWindow& window);
     void setPosition(float x, float y);
 

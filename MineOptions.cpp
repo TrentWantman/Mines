@@ -17,7 +17,7 @@ void MineOptions::hoverCheck(const sf::Vector2i& mousePos) {
     if (mineOptionsSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
         if (minesRect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
             mineOptionsSprite.setTexture(Texture::GetTexture("splitFieldMinesLit"));
-            hover = 1;
+            hover = 2;
         }
         else if (gemsRect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
             mineOptionsSprite.setTexture(Texture::GetTexture("splitFieldGemsLit"));
@@ -28,6 +28,10 @@ void MineOptions::hoverCheck(const sf::Vector2i& mousePos) {
         mineOptionsSprite.setTexture(Texture::GetTexture("splitField"));
         hover = 0;
     }
+}
+
+int MineOptions::isClicked() {
+    return hover;
 }
 
 void MineOptions::draw(sf::RenderWindow& window) {

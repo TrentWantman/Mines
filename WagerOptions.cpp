@@ -35,6 +35,10 @@ void WagerOptions::hoverCheck(const sf::Vector2i& mousePos) {
     }
 }
 
+int WagerOptions::isClicked() {
+    return hover;
+}
+
 void WagerOptions::draw(sf::RenderWindow& window) {
     window.draw(wagerSprite);
 }

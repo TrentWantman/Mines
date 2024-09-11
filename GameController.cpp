@@ -10,6 +10,9 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     prevState = GameState::MainMenu;
     won = false;
     setup = false;
+    typingWager = false;
+    typingGems = false;
+    typingMines = false;
 
     // Initialize background
     back.setSize(sf::Vector2f(1800, 980));
@@ -54,6 +57,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     wagerOutput.setPosition(25, 144);
     wagerOutput.setCharacterSize(20);
     wagerOutput.setFillColor(sf::Color::White);
+    wagerOutput.setString("0");
 
     payoutOutput.setFont(font);
     payoutOutput.setStyle(sf::Text::Bold);
@@ -69,7 +73,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
 
     bankText.setFont(font);
     bankText.setStyle(sf::Text::Bold);
-    bankText.setString("Bank: $" + std::to_string(bank));
+    UpdateBankOutput();
     bankText.setCharacterSize(20);
     bankText.setFillColor(sf::Color::White);
     bankTextRect = bankText.getGlobalBounds();
@@ -123,23 +127,41 @@ void GameController::Render() {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     window.clear();
 
-    window.draw(back);
-    window.draw(back2);
-
-    DrawTiles(mousePos);
-    if (gameState == GameState::Playing) {
-        cashoutButton.draw(window);
-    }
-    else
+    if (gameState == GameState::PreGame) {
+        window.draw(back);
+        window.draw(back2);
         betButton.draw(window);
-    wagerOptions.draw(window);
-    mineOptions.draw(window);
-    window.draw(bankText);
-    window.draw(BetAmountTitle);
-    window.draw(MinesTitle);;
-    window.draw(GemsTitle);
-
-
+        wagerOptions.draw(window);
+        mineOptions.draw(window);
+        window.draw(bankText);
+        window.draw(BetAmountTitle);
+        window.draw(MinesTitle);;
+        window.draw(GemsTitle);
+        window.draw(wagerOutput);
+        window.draw(mineOutput);
+        window.draw(gemOutput);
+        DrawTiles();
+    }
+    else if (gameState == GameState::Playing) {
+        window.draw(back);
+        window.draw(back2);
+        cashoutButton.draw(window);
+        wagerOptions.draw(window);
+        mineOptions.draw(window);
+        window.draw(bankText);
+        window.draw(BetAmountTitle);
+        window.draw(MinesTitle);;
+        window.draw(GemsTitle);
+        window.draw(wagerOutput);
+        window.draw(mineOutput);
+        window.draw(gemOutput);
+        DrawTiles();
+    }
+    else if (gameState == GameState::GameOver) {
+        window.draw(back);
+        window.draw(back2);
+        DrawTiles();
+    }
 
     window.display();
 }
@@ -171,7 +193,7 @@ void GameController::InitializeTiles() {
     }
 }
 
-void GameController::DrawTiles(sf::Vector2i mousePos) {
+void GameController::DrawTiles() {
     for (auto& tile : tiles) {
         tile.draw(window);
     }
@@ -193,26 +215,210 @@ void GameController::HandleInput(sf::Event& event) {
     cashoutButton.hoverCheck(mousePos);
     betButton.hoverCheck(mousePos);
 
-    //Check for mouse button pressed
-    if (event.type == sf::Event::MouseButtonPressed) {
-        //Pressed on tiles
-        for (auto& tile : tiles) {
-            if (!tile.isRevealed()) {
-                tile.clickCheck(mousePos);
-            }
-        }
-        //Pressed on Bet Button
-        if (gameState == GameState::PreGame) {
+    //PreGame State
+    if (gameState == GameState::PreGame) {
+        //Check for mouse button pressed
+        if (event.type == sf::Event::MouseButtonPressed) {
+
+            //Check Bet Button
             if (betButton.isClicked()) {
                 gameState = GameState::Playing;
+                bank -= wagerAmount;
+                UpdateBankOutput();
+            }
+
+            //Check Wager Button
+            int wagerHover = wagerOptions.isClicked();
+            if (wagerHover == 3) {
+                wagerAmount *= 2;
+                typingWager = false;
+                // Ensure the wager does not exceed the bank
+                if (wagerAmount > bank) {
+                    wagerAmount = bank;
+                }
+                UpdateWagerOutput();
+            }
+            else if (wagerHover == 2) {
+                wagerAmount /= 2;
+                typingWager = false;
+                UpdateWagerOutput();
+            }
+            else if (wagerHover == 1) {
+                typingWager = true;
+                if (wagerInput == "0" || wagerAmount == 0) {
+                    wagerInput = "";  // Start with an empty string
+                    wagerOutput.setString(wagerInput);  // Reflect empty input in the display
+                }
+            }
+            if (wagerHover == 0) {
+                typingWager = false;
+            }
+
+            //Check Mine Options Button
+            int mineHover = mineOptions.isClicked();
+            if (mineHover == 1) {  // If gems are clicked
+                typingGems = true;  // Enable typing for gems
+                typingMines = false;  // Disable typing for mines
+                gemInput = "";  // Clear input when clicking to type
+            } else if (mineHover == 2) {  // If mines are clicked
+                typingMines = true;  // Enable typing for mines
+                typingGems = false;  // Disable typing for gems
+                mineInput = "";  // Clear input when clicking to type
+            } else if (mineHover == 3) {
+                typingGems = false;
+                typingMines = false;
             }
         }
-        //Pressed on Cashout Button
-        else if (gameState == GameState::Playing) {
+
+        if (event.type == sf::Event::TextEntered) {
+            //Typing the Wager
+            if (typingWager) {
+                // Handle backspace
+                if (event.text.unicode == 8 && !wagerInput.empty()) {  // Backspace handling
+                    wagerInput.pop_back();
+                }
+                // Allow digits and one decimal point
+                else if (isdigit(event.text.unicode) || (event.text.unicode == '.' && wagerInput.find('.') == std::string::npos)) {
+                    // If there is already a decimal point, ensure we allow only two digits after it
+                    if (wagerInput.find('.') != std::string::npos) {
+                        size_t decimalPos = wagerInput.find('.');
+                        if (wagerInput.size() - decimalPos <= 2) {  // Allow only two digits after decimal point
+                            wagerInput += static_cast<char>(event.text.unicode);
+                        }
+                    }
+                    else {
+                        wagerInput += static_cast<char>(event.text.unicode);  // No decimal yet, allow digit or single decimal
+                    }
+                }
+
+                // Update the wagerAmount based on the current valid input
+                if (!wagerInput.empty()) {
+                    try {
+                        wagerAmount = std::stod(wagerInput);  // Convert string to double
+                    } catch (...) {
+                        wagerAmount = 0;  // Default to 0 if conversion fails
+                    }
+                    }
+                else {
+                    wagerAmount = 0;  // If input is empty, set wager to 0
+                }
+
+                // If wager exceeds the bank, set it to the bank value
+                if (wagerAmount > bank) {
+                    wagerAmount = bank;
+                    wagerInput = (to_string(bank));
+                    UpdateWagerOutput();
+                }
+
+                // Update wagerOutput text display
+                wagerOutput.setString(wagerInput);
+            }
+            else if (typingGems) {  // Typing gems
+            // Handle backspace
+            if (event.text.unicode == 8 && !gemInput.empty()) {
+                gemInput.pop_back();
+            }
+            // Allow only digit inputs
+            else if (isdigit(event.text.unicode)) {
+                gemInput += static_cast<char>(event.text.unicode);
+            }
+
+            // Convert the input to an integer and apply constraints
+            if (!gemInput.empty()) {
+                try {
+                    gems = std::stoi(gemInput);  // Convert string to integer
+                } catch (...) {
+                    gems = 1;  // Default to 1 if conversion fails
+                }
+
+                // Clamp gems between 1 and 24
+                if (gems < 1) {
+                    gems = 1;
+                } else if (gems > 24) {
+                    gems = 24;
+                }
+
+                // Automatically update mines
+                mines = 25 - gems;
+
+                // Update the output display
+                UpdateMineGemOutput();
+            }
+        } else if (typingMines) {  // Typing mines
+            // Handle backspace
+            if (event.text.unicode == 8 && !mineInput.empty()) {
+                mineInput.pop_back();
+            }
+            // Allow only digit inputs
+            else if (isdigit(event.text.unicode)) {
+                mineInput += static_cast<char>(event.text.unicode);
+            }
+
+            // Convert the input to an integer and apply constraints
+            if (!mineInput.empty()) {
+                try {
+                    mines = std::stoi(mineInput);  // Convert string to integer
+                } catch (...) {
+                    mines = 1;  // Default to 1 if conversion fails
+                }
+
+                // Clamp mines between 1 and 24
+                if (mines < 1) {
+                    mines = 1;
+                } else if (mines > 24) {
+                    mines = 24;
+                }
+
+                // Automatically update gems
+                gems = 25 - mines;
+
+                // Update the output display
+                UpdateMineGemOutput();
+            }
+        }
+        }
+    }
+
+    //Playing State
+    else if (gameState == GameState::Playing) {
+        if (event.type == sf::Event::MouseButtonPressed) {
+            //Check Tiles
+            for (auto& tile : tiles) {
+                if (!tile.isRevealed()) {
+                    tile.clickCheck(mousePos);
+                }
+            }
+            //Check Cashout Button
             if (betButton.isClicked()) {
                 gameState = GameState::PreGame;
             }
         }
     }
-
 }
+
+void GameController::UpdateWagerOutput() {
+    ostringstream wagerStream;
+    wagerStream << fixed << setprecision(2) << wagerAmount;
+    wagerInput = wagerStream.str();
+    wagerOutput.setString(wagerInput);
+}
+
+void GameController::UpdateBankOutput() {
+    ostringstream bankStream;
+    bankStream << fixed << setprecision(2) << bank;
+    bankText.setString("Bank: $" + bankStream.str());
+}
+
+void GameController::UpdateMineGemOutput() {
+    // Format and display the number of gems
+    ostringstream gemStream;
+    gemStream << gems;
+    gemOutput.setString(gemStream.str());
+
+    // Format and display the number of mines
+    ostringstream mineStream;
+    mineStream << mines;
+    mineOutput.setString(mineStream.str());
+}
+
+

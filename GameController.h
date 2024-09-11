@@ -3,6 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <vector>
+#include <iostream>
+#include <fstream>
+#include <ostream>
+#include <sstream>
+#include <iomanip>
 
 #include "BetButton.h"
 #include "Tile.h"
@@ -13,6 +18,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 #include "GameState.h"
+using namespace std;
 
 class GameController {
 public:
@@ -36,6 +42,9 @@ private:
     GameState prevState;
     bool won;
     bool setup;
+    bool typingWager;
+    bool typingMines;
+    bool typingGems;
 
     std::vector<Tile> tiles;
     WagerOptions wagerOptions;
@@ -49,16 +58,17 @@ private:
     int totalGemsRevealed;
     int randomTile;
     int mines = 4;
-    int gems;
+    int gems = 21;
 
     double payout;
     double multiplier;
     double bank = 100;
-    double wagerAmount;
+    double wagerAmount = 0;
 
     sf::Font font;
     string mineInput;
     sf::Text mineOutput;
+    string gemInput;
     sf::Text gemOutput;
     string wagerInput;
     sf::Text wagerOutput;
@@ -76,8 +86,12 @@ private:
     sf::Text GemsTitle;
 
     void InitializeTiles();  // Function to initialize tile positions
-    void DrawTiles(sf::Vector2i mousePos);        // Function to draw tiles
+    void DrawTiles();        // Function to draw tiles
     void HandleInput(sf::Event& event);      // Function to manage input
+
+    void UpdateWagerOutput();
+    void UpdateBankOutput();
+    void UpdateMineGemOutput();
 };
 
 #endif // GAMECONTROLLER_H
