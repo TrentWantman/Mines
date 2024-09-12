@@ -138,6 +138,9 @@ void GameController::Update() {
             gameState = GameState::PreGame; // Set gameState to PreGame
             timerStarted = false;           // Reset the timer flag for future use
         }
+
+        easterEgg.checkStep1(bank, gameState);
+        currentStep = easterEgg.getStep();
     }
 }
 

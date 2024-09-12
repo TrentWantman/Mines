@@ -18,6 +18,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 #include "GameState.h"
+#include "EasterEgg.h"
 #include <chrono>
 using namespace std;
 
@@ -41,6 +42,8 @@ private:
 
     GameState gameState;
     GameState prevState;
+    EasterEgg easterEgg;
+    int currentStep;
     std::chrono::time_point<std::chrono::steady_clock> gameOverStartTime;
     bool timerStarted = false;
     bool won;
