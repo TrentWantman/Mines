@@ -11,6 +11,7 @@ public:
     void hoverCheck(const sf::Vector2i& mousePos);
     void draw(sf::RenderWindow& window);
     void setPosition(float x, float y);
+    bool isClicked();
 
 //private:
     sf::Sprite cashoutSprite;

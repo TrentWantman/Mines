@@ -83,5 +83,17 @@ void Tile::removeMine() {
 // }
 
 void Tile::reveal() {
+    if (mine) {
+        tileSprite.setTexture(Texture::GetTexture("mine"));
+    }
+    else
+        tileSprite.setTexture(Texture::GetTexture("gem"));
     revealed = true;
+}
+
+void Tile::reset() {
+    revealed = false;
+    mine = false;
+    hover = false;
+    tileSprite.setTexture(Texture::GetTexture("tile_hidden"));
 }

@@ -27,6 +27,10 @@ void CashoutButton::hoverCheck(const sf::Vector2i& mousePos) {
     }
 }
 
+bool CashoutButton::isClicked() {
+    return hover;
+}
+
 void CashoutButton::draw(sf::RenderWindow& window) {
     window.draw(cashoutSprite);
 }

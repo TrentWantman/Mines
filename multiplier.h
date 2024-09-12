@@ -13,13 +13,8 @@ struct multiplier
 
     double static multi (int gems, int mines)
     {
-        if (mines == 0)
-        {
-            return 1;
-        }
-        if (mines == 0)
-        {
-            return 1;
+        if (gems == 0) {
+            return 1.00;
         }
         else if (gems == 1)
         {

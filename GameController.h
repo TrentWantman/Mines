@@ -18,6 +18,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 #include "GameState.h"
+#include <chrono>
 using namespace std;
 
 class GameController {
@@ -40,6 +41,8 @@ private:
 
     GameState gameState;
     GameState prevState;
+    std::chrono::time_point<std::chrono::steady_clock> gameOverStartTime;
+    bool timerStarted = false;
     bool won;
     bool setup;
     bool typingWager;
@@ -59,6 +62,7 @@ private:
     int randomTile;
     int mines = 4;
     int gems = 21;
+    int gemsAtStart = 21;
 
     double payout;
     double multiplier;
@@ -66,9 +70,9 @@ private:
     double wagerAmount = 0;
 
     sf::Font font;
-    string mineInput;
+    string mineInput = "4";
     sf::Text mineOutput;
-    string gemInput;
+    string gemInput = "21";
     sf::Text gemOutput;
     string wagerInput;
     sf::Text wagerOutput;
@@ -86,12 +90,21 @@ private:
     sf::Text GemsTitle;
 
     void InitializeTiles();  // Function to initialize tile positions
+    void SetTiles();
+    void RevealTiles();
+    void CheckTiles(sf::Vector2i mousePos);
+    void CountGems();
     void DrawTiles();        // Function to draw tiles
     void HandleInput(sf::Event& event);      // Function to manage input
+    void EndGame(bool win);
 
+    void InputMinesOrGems(sf::Event&, int&, int&, string&);
+    void InputWager(sf::Event&);
     void UpdateWagerOutput();
     void UpdateBankOutput();
     void UpdateMineGemOutput();
+    void UpdateMultiplierOutput();
+    void UpdatePayoutOutput();
 };
 
 #endif // GAMECONTROLLER_H

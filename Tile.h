@@ -7,6 +7,7 @@ class Tile {
 public:
     Tile();
     void SetPosition(float x, float y);
+    void reset();
     bool isRevealed() const;
     bool hasMine() const;
     void addMine();

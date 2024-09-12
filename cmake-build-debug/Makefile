@@ -176,6 +176,30 @@ CashoutButton.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.s
 .PHONY : CashoutButton.cpp.s
 
+EasterEgg.obj: EasterEgg.cpp.obj
+.PHONY : EasterEgg.obj
+
+# target to build an object file
+EasterEgg.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/EasterEgg.cpp.obj
+.PHONY : EasterEgg.cpp.obj
+
+EasterEgg.i: EasterEgg.cpp.i
+.PHONY : EasterEgg.i
+
+# target to preprocess a source file
+EasterEgg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/EasterEgg.cpp.i
+.PHONY : EasterEgg.cpp.i
+
+EasterEgg.s: EasterEgg.cpp.s
+.PHONY : EasterEgg.s
+
+# target to generate assembly for a file
+EasterEgg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/EasterEgg.cpp.s
+.PHONY : EasterEgg.cpp.s
+
 GameController.obj: GameController.cpp.obj
 .PHONY : GameController.obj
 
@@ -383,6 +407,9 @@ help:
 	@echo ... CashoutButton.obj
 	@echo ... CashoutButton.i
 	@echo ... CashoutButton.s
+	@echo ... EasterEgg.obj
+	@echo ... EasterEgg.i
+	@echo ... EasterEgg.s
 	@echo ... GameController.obj
 	@echo ... GameController.i
 	@echo ... GameController.s

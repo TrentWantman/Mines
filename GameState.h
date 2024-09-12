@@ -6,7 +6,7 @@ enum class GameState {
     MainMenu,
     PreGame,
     Playing,
-    GameOver
+    GameOver,
 };
 
 #endif // GAMESTATE_H
