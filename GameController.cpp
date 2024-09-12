@@ -122,6 +122,18 @@ void GameController::ProcessEvents() {
 
 void GameController::Update() {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+
+    if (gameState == GameState::PreGame) {
+
+        currStep = easterEgg.getStep();
+        if (currStep == 0) {
+            easterEgg.checkStep1(bank);
+        }
+        else if (currStep == 1 && prevStep == 0) {
+            prevStep = 1;
+            cout << "help me" << endl;
+        }
+    }
     if (gameState == GameState::GameOver) {
         // If the timer hasn't started yet, capture the current time
         if (!timerStarted) {
@@ -138,9 +150,6 @@ void GameController::Update() {
             gameState = GameState::PreGame; // Set gameState to PreGame
             timerStarted = false;           // Reset the timer flag for future use
         }
-
-        easterEgg.checkStep1(bank, gameState);
-        currentStep = easterEgg.getStep();
     }
 }
 
@@ -162,6 +171,9 @@ void GameController::Render() {
         window.draw(mineOutput);
         window.draw(gemOutput);
         DrawTiles();
+        if (currStep == 1 && easterEgg.friendLoanedMoney == false) {
+            window.draw(easterEgg.phone);
+        }
     }
     else if (gameState == GameState::Playing) {
         window.draw(back);
@@ -246,6 +258,10 @@ void GameController::HandleInput(sf::Event& event) {
         if (event.type == sf::Event::MouseButtonPressed) {
             gameState = GameState::PreGame;
             timerStarted = false;
+        }
+        if (easterEgg.phone.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+            bank = 100;
+            UpdateBankOutput();
         }
     }
 

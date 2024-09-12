@@ -43,7 +43,8 @@ private:
     GameState gameState;
     GameState prevState;
     EasterEgg easterEgg;
-    int currentStep;
+    int currStep = 0;
+    int prevStep = 0;
     std::chrono::time_point<std::chrono::steady_clock> gameOverStartTime;
     bool timerStarted = false;
     bool won;
