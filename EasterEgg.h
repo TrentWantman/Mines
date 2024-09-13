@@ -14,7 +14,7 @@ public:
 
     void checkStep1(int bank); //Lose All Your Money
     void checkStep2(int bank); //Get Back Money You Lost
-    void checkStep3(int bank, GameState gameState); //Get Rich
+    void checkStep3(int bank); //Get Rich
     void checkStep4(int bank, GameState gameState); //Once rich go all In and double money in one game
     void checkStep5(int bank, GameState gameState); //Loose all the money you doubled. Still rich and should back out and enjoy good ending cutscene.
     void checkStep6(int bank, GameState gameState); //Get back to money your friend lended you. Give it back to them and enjoy the rightous cutscene.

@@ -93,6 +93,7 @@ private:
     sf::Text MinesTitle;
     sf::Text GemsTitle;
 
+    void UpdateEasterEgg();
     void InitializeTiles();  // Function to initialize tile positions
     void SetTiles();
     void RevealTiles();
