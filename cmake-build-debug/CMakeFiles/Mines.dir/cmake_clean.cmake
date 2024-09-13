@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Mines.dir/UI.cpp.obj.d"
   "CMakeFiles/Mines.dir/WagerOptions.cpp.obj"
   "CMakeFiles/Mines.dir/WagerOptions.cpp.obj.d"
+  "CMakeFiles/Mines.dir/Wallpapers.cpp.obj"
+  "CMakeFiles/Mines.dir/Wallpapers.cpp.obj.d"
   "CMakeFiles/Mines.dir/main.cpp.obj"
   "CMakeFiles/Mines.dir/main.cpp.obj.d"
   "CMakeFiles/Mines.dir/random.cpp.obj"

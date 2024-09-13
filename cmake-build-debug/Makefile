@@ -344,6 +344,30 @@ WagerOptions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.s
 .PHONY : WagerOptions.cpp.s
 
+Wallpapers.obj: Wallpapers.cpp.obj
+.PHONY : Wallpapers.obj
+
+# target to build an object file
+Wallpapers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Wallpapers.cpp.obj
+.PHONY : Wallpapers.cpp.obj
+
+Wallpapers.i: Wallpapers.cpp.i
+.PHONY : Wallpapers.i
+
+# target to preprocess a source file
+Wallpapers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Wallpapers.cpp.i
+.PHONY : Wallpapers.cpp.i
+
+Wallpapers.s: Wallpapers.cpp.s
+.PHONY : Wallpapers.s
+
+# target to generate assembly for a file
+Wallpapers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Wallpapers.cpp.s
+.PHONY : Wallpapers.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -428,6 +452,9 @@ help:
 	@echo ... WagerOptions.obj
 	@echo ... WagerOptions.i
 	@echo ... WagerOptions.s
+	@echo ... Wallpapers.obj
+	@echo ... Wallpapers.i
+	@echo ... Wallpapers.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

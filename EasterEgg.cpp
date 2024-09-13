@@ -4,7 +4,8 @@
 EasterEgg::EasterEgg() : step(0), triggered(false) {
     phone.setTexture(Texture::GetTexture("phone"));
     phone.setPosition(0,0);
-    phone.scale(0.1, 0.1);
+    phone.scale(0.2, 0.2);
+    phone.setOrigin(phone.getGlobalBounds().width / 2, phone.getGlobalBounds().height / 2);
 }
 
 // Check if Step 1 is triggered (bank has 0, game is over)

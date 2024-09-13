@@ -30,5 +30,7 @@ add_executable(Mines main.cpp texture.cpp texture.h tile.h random.cpp random.h W
         BetButton.cpp
         BetButton.h
         EasterEgg.cpp
-        EasterEgg.h)
+        EasterEgg.h
+        Wallpapers.cpp
+        Wallpapers.h)
 target_link_libraries(Mines sfml-graphics sfml-audio)

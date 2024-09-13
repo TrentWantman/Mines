@@ -556,4 +556,6 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     GemsTitle.setPosition(232, 209);
     GemsTitle.setCharacterSize(20);
     GemsTitle.setFillColor(sf::Color::White);
+
+    easterEgg.phone.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2 - 130, 800);
 }
