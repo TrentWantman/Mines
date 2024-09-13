@@ -20,6 +20,8 @@
 #include "GameState.h"
 #include "EasterEgg.h"
 #include <chrono>
+
+#include "Wallpapers.h"
 using namespace std;
 
 class GameController {
@@ -58,6 +60,7 @@ private:
     MineOptions mineOptions;
     CashoutButton cashoutButton;
     BetButton betButton;
+    Wallpapers wallpapers;
 
     int tilesRevealed;
     int gemsRevealed;

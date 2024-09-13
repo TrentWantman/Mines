@@ -49,6 +49,9 @@ void GameController::Render() {
 
     if (gameState == GameState::PreGame) {
         window.draw(back);
+        if (easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
+            window.draw(wallpapers.phoneAFriendWallPaper);
+        }
         window.draw(back2);
         betButton.draw(window);
         wagerOptions.draw(window);
@@ -67,6 +70,9 @@ void GameController::Render() {
 
     else if (gameState == GameState::Playing) {
         window.draw(back);
+        if (easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
+            window.draw(wallpapers.phoneAFriendWallPaper);
+        }
         window.draw(back2);
         cashoutButton.draw(window);
         wagerOptions.draw(window);
@@ -82,6 +88,9 @@ void GameController::Render() {
     }
     else if (gameState == GameState::GameOver) {
         window.draw(back);
+        if (easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
+            window.draw(wallpapers.phoneAFriendWallPaper);
+        }
         window.draw(back2);
         betButton.draw(window);
         wagerOptions.draw(window);
