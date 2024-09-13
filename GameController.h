@@ -54,6 +54,7 @@ private:
     bool typingWager;
     bool typingMines;
     bool typingGems;
+    bool allInBetConfirmed;
 
     std::vector<Tile> tiles;
     WagerOptions wagerOptions;
@@ -75,6 +76,7 @@ private:
     double multiplier;
     double bank = 100;
     double wagerAmount = 0;
+    double prevWager;
 
     sf::Font font;
     string mineInput = "4";

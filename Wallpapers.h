@@ -6,6 +6,7 @@ class Wallpapers {
     public:
     Wallpapers ();
 
+    sf::Sprite baseWallPaper;
     sf::Sprite phoneAFriendWallPaper;
     sf::Sprite imNotLeavingWallPaper;
     sf::Sprite babyYourARichManWallPaper;

@@ -1,6 +1,6 @@
 CMakeFiles/Mines.dir/random.cpp.obj: \
- C:\Users\litte\CLionProjects\Mines\random.cpp \
- C:\Users\litte\CLionProjects\Mines\random.h \
+ C:\Users\Trent\Desktop\MinesGame\random.cpp \
+ C:\Users\Trent\Desktop\MinesGame\random.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

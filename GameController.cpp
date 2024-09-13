@@ -24,6 +24,9 @@ void GameController::Update() {
 
     if (gameState == GameState::GameOver) {
         // If the timer hasn't started yet, capture the current time
+
+        easterEgg.processGameResult(multiplier, bank);
+
         if (!timerStarted) {
             gameOverStartTime = std::chrono::steady_clock::now();
             timerStarted = true;
@@ -40,7 +43,6 @@ void GameController::Update() {
         }
     }
 
-    UpdateEasterEgg();
 }
 
 void GameController::Render() {
@@ -49,9 +51,6 @@ void GameController::Render() {
 
     if (gameState == GameState::PreGame) {
         window.draw(back);
-        if (easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
-            window.draw(wallpapers.phoneAFriendWallPaper);
-        }
         window.draw(back2);
         betButton.draw(window);
         wagerOptions.draw(window);
@@ -64,15 +63,10 @@ void GameController::Render() {
         window.draw(mineOutput);
         window.draw(gemOutput);
         DrawTiles();
-
-        if (currStep == 1 && !easterEgg.friendLoanedMoney){window.draw(easterEgg.phone);}
     }
 
     else if (gameState == GameState::Playing) {
         window.draw(back);
-        if (easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
-            window.draw(wallpapers.phoneAFriendWallPaper);
-        }
         window.draw(back2);
         cashoutButton.draw(window);
         wagerOptions.draw(window);
@@ -88,9 +82,6 @@ void GameController::Render() {
     }
     else if (gameState == GameState::GameOver) {
         window.draw(back);
-        if (easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
-            window.draw(wallpapers.phoneAFriendWallPaper);
-        }
         window.draw(back2);
         betButton.draw(window);
         wagerOptions.draw(window);
@@ -108,11 +99,17 @@ void GameController::Render() {
         window.draw(payoutOutput);
     }
 
+    if (easterEgg.isPhoneActive()) {
+        easterEgg.renderPhone(window);
+    }
+
     window.display();
 }
 
 void GameController::HandleInput(sf::Event& event) {
     // Handle user inputs (mouse clicks, key presses)
+
+    easterEgg.checkStatus(bank, gameState, event);
 
     //Check for Tile Hovering
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
@@ -138,14 +135,6 @@ void GameController::HandleInput(sf::Event& event) {
     if (gameState == GameState::PreGame) {
         //Check for mouse button pressed
         if (event.type == sf::Event::MouseButtonPressed) {
-
-            if (!easterEgg.friendLoanedMoney && easterEgg.getStep() == 1) {
-                if (easterEgg.phone.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-                    bank = 100;
-                    easterEgg.friendLoanedMoney = true;
-                    UpdateBankOutput();
-                }
-            }
 
             //Check Bet Button
             if (betButton.isClicked() && gems > 0 && gems < 25 && wagerAmount > 0) {
@@ -219,6 +208,8 @@ void GameController::HandleInput(sf::Event& event) {
             if (cashoutButton.isClicked()) { EndGame(true); } //Check Cashout Button
         }
     }
+
+    easterEgg.update(event, bank);
 }
 
 void GameController::UpdateWagerOutput() {
@@ -448,22 +439,6 @@ void GameController::EndGame(bool win) {
 
 void GameController::UpdateEasterEgg() {
 
-    if (gameState == GameState::PreGame) {
-
-        currStep = easterEgg.getStep();
-
-        switch (currStep) {
-            case 0:
-                if (bank == 0) {
-                    easterEgg.checkStep1(bank); break;
-                }
-            case 1:
-                easterEgg.checkStep2(bank);
-            case 2:
-                easterEgg.checkStep3(bank);
-        }
-    }
-
 }
 
 GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
@@ -477,6 +452,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     typingWager = false;
     typingGems = false;
     typingMines = false;
+    allInBetConfirmed = false;
 
     // Initialize background
     back.setSize(sf::Vector2f(1800, 980));
@@ -566,5 +542,5 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     GemsTitle.setCharacterSize(20);
     GemsTitle.setFillColor(sf::Color::White);
 
-    easterEgg.phone.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2 - 130, 800);
+    //easterEgg.phone.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2 - 130, 800);
 }
