@@ -14,6 +14,7 @@ public:
     void processGameResult(double multiplier, double& bank);
     void activatePhone();
     void renderPhone(sf::RenderWindow& window);
+    void checkStep4(double bank, double wagerAmount, GameState gamestate);
 
     // Easter egg steps management
     void handleAllInBet(double& bank);
@@ -22,10 +23,12 @@ public:
 
     // Getters for rendering decisions
     bool isPhoneActive() const;
-
-private:
-    sf::Sprite phone;
     bool phoneVisible;
+    sf::Sprite phone;
+
+    bool allInStep4;
+    double allInAmount;
+
     int step;
 };
 

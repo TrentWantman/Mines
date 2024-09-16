@@ -25,8 +25,6 @@ void GameController::Update() {
     if (gameState == GameState::GameOver) {
         // If the timer hasn't started yet, capture the current time
 
-        easterEgg.processGameResult(multiplier, bank);
-
         if (!timerStarted) {
             gameOverStartTime = std::chrono::steady_clock::now();
             timerStarted = true;
@@ -138,6 +136,9 @@ void GameController::HandleInput(sf::Event& event) {
 
             //Check Bet Button
             if (betButton.isClicked() && gems > 0 && gems < 25 && wagerAmount > 0) {
+                if(easterEgg.step == 4 && !easterEgg.allInStep4) {
+                    easterEgg.checkStep4(bank,wagerAmount, gameState);
+                }
                 gameState = GameState::Playing;
                 bank -= wagerAmount;
                 UpdateBankOutput();
@@ -205,7 +206,13 @@ void GameController::HandleInput(sf::Event& event) {
     else if (gameState == GameState::Playing) {
         if (event.type == sf::Event::MouseButtonPressed) {
             CheckTiles(mousePos); //Check Tiles
-            if (cashoutButton.isClicked()) { EndGame(true); } //Check Cashout Button
+            if (cashoutButton.isClicked()) {
+                EndGame(true);
+                if(easterEgg.step == 4 && easterEgg.allInStep4) {
+                    easterEgg.checkStep4(bank,wagerAmount, gameState);
+                    cout << "reached" << endl;
+                }
+            }
         }
     }
 
