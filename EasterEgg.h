@@ -12,18 +12,19 @@
 #include <ostream>
 #include <sstream>
 #include <iomanip>
+#include "Wallpapers.h"
 
 using namespace std;
 
 class EasterEgg {
 public:
     EasterEgg();
-    void checkStatus(double& bank, GameState gameState, sf::Event& event, sf::Text& bankText);
+    void checkStatus(double& bank, GameState gameState, sf::Event& event, sf::Text& bankText, Wallpapers& wallpapers);
     void update(sf::Event& event, double& bank);
     void processGameResult(double multiplier, double& bank);
     void activatePhone();
     void renderPhone(sf::RenderWindow& window);
-    void checkStep4(double bank, double wagerAmount, GameState gamestate);
+    void checkStep4(double bank, double wagerAmount, GameState gamestate, Wallpapers& wallpapers);
     void render(sf::RenderWindow& window, GameState gameState);
 
     // Easter egg steps management

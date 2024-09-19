@@ -46,6 +46,7 @@ private:
     GameState gameState;
     GameState prevState;
     EasterEgg easterEgg;
+    Multiplier multiplier;
     int currStep = 0;
     int prevStep = 0;
     std::chrono::time_point<std::chrono::steady_clock> gameOverStartTime;
@@ -74,7 +75,7 @@ private:
     int gemsAtStart = 21;
 
     double payout;
-    double multiplier;
+    double multi;
     double bank = 100;
     double wagerAmount = 0;
     double prevWager;

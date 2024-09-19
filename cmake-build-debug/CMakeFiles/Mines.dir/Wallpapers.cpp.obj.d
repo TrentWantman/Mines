@@ -239,4 +239,5 @@ CMakeFiles/Mines.dir/Wallpapers.cpp.obj: \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Text.hpp \
  C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ C:\Users\litte\CLionProjects\Mines\WallPaper.h \
  C:\Users\litte\CLionProjects\Mines\Texture.h

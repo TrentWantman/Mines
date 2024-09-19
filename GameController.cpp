@@ -48,7 +48,7 @@ void GameController::Render() {
     window.clear();
 
     if (gameState == GameState::PreGame) {
-        window.draw(back);
+        window.draw(wallpapers.currentWallPaper->sprite);
         window.draw(back2);
         betButton.draw(window);
         wagerOptions.draw(window);
@@ -61,10 +61,12 @@ void GameController::Render() {
         window.draw(mineOutput);
         window.draw(gemOutput);
         DrawTiles();
+        easterEgg.render(window, gameState);
+        wallpapers.drawMenu(window);
     }
 
     else if (gameState == GameState::Playing) {
-        window.draw(back);
+        window.draw(wallpapers.currentWallPaper->sprite);
         window.draw(back2);
         cashoutButton.draw(window);
         wagerOptions.draw(window);
@@ -79,7 +81,7 @@ void GameController::Render() {
         DrawTiles();
     }
     else if (gameState == GameState::GameOver) {
-        window.draw(back);
+        window.draw(wallpapers.currentWallPaper->sprite);
         window.draw(back2);
         betButton.draw(window);
         wagerOptions.draw(window);
@@ -97,7 +99,6 @@ void GameController::Render() {
         window.draw(payoutOutput);
     }
 
-    easterEgg.render(window, gameState);
 
     window.display();
 }
@@ -105,7 +106,7 @@ void GameController::Render() {
 void GameController::HandleInput(sf::Event& event) {
     // Handle user inputs (mouse clicks, key presses)
 
-    easterEgg.checkStatus(bank, gameState, event, bankText);
+    easterEgg.checkStatus(bank, gameState, event, bankText, wallpapers);
 
     //Check for Tile Hovering
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
@@ -135,7 +136,7 @@ void GameController::HandleInput(sf::Event& event) {
             //Check Bet Button
             if (betButton.isClicked() && gems > 0 && gems < 25 && wagerAmount > 0) {
                 if(easterEgg.step == 4 && !easterEgg.allInStep4) {
-                    easterEgg.checkStep4(bank,wagerAmount, gameState);
+                    easterEgg.checkStep4(bank,wagerAmount, gameState, wallpapers);
                 }
                 gameState = GameState::Playing;
                 bank -= wagerAmount;
@@ -184,6 +185,9 @@ void GameController::HandleInput(sf::Event& event) {
                 typingGems = false;
                 typingMines = false;
             }
+
+            //Check Wallpaper Menu
+            wallpapers.clickCheck(mousePos);
         }
 
         if (event.type == sf::Event::TextEntered) {
@@ -207,7 +211,7 @@ void GameController::HandleInput(sf::Event& event) {
             if (cashoutButton.isClicked()) {
                 EndGame(true);
                 if(easterEgg.step == 4 && easterEgg.allInStep4) {
-                    easterEgg.checkStep4(bank,wagerAmount, gameState);
+                    easterEgg.checkStep4(bank,wagerAmount, gameState, wallpapers);
                     cout << "reached" << endl;
                 }
             }
@@ -241,8 +245,8 @@ void GameController::UpdatePayoutOutput() {
 
 void GameController::UpdateMultiplierOutput() {
     ostringstream multiplierStream;
-    if (multiplier == 0) { multiplierStream << fixed << setprecision(0) << multiplier; }
-    else { multiplierStream << fixed << setprecision(2) << multiplier; }
+    if (multi == 0) { multiplierStream << fixed << setprecision(0) << multi; }
+    else { multiplierStream << fixed << setprecision(2) << multi; }
     multiplierOutput.setString(multiplierStream.str() + "x");
     multiRect = multiplierOutput.getGlobalBounds();
     multiplierOutput.setOrigin(multiRect.width / 2.0f, multiRect.height / 2.0f);
@@ -417,7 +421,7 @@ void GameController::RevealTiles() {
 
 void GameController::EndGame(bool win) {
     if(!win) {
-        multiplier = 0;
+        multi = 0;
         payout = 0;
         RevealTiles();
         if (wagerAmount > bank) { wagerAmount = bank;}
@@ -430,8 +434,8 @@ void GameController::EndGame(bool win) {
     }
     else {
         RevealTiles();
-        multiplier =  multiplier::multi(gemsRevealed,mines);
-        payout = (wagerAmount * multiplier);
+        multi =  multiplier.multi(gemsRevealed,mines);
+        payout = (wagerAmount * multi);
         bank += payout;
         UpdateBankOutput();
         UpdateMultiplierOutput();

@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Users/litte/CLionProjects/Mines/Tile.cpp" "CMakeFiles/Mines.dir/Tile.cpp.obj" "gcc" "CMakeFiles/Mines.dir/Tile.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/UI.cpp" "CMakeFiles/Mines.dir/UI.cpp.obj" "gcc" "CMakeFiles/Mines.dir/UI.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/WagerOptions.cpp" "CMakeFiles/Mines.dir/WagerOptions.cpp.obj" "gcc" "CMakeFiles/Mines.dir/WagerOptions.cpp.obj.d"
+  "C:/Users/litte/CLionProjects/Mines/WallPaper.cpp" "CMakeFiles/Mines.dir/WallPaper.cpp.obj" "gcc" "CMakeFiles/Mines.dir/WallPaper.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/Wallpapers.cpp" "CMakeFiles/Mines.dir/Wallpapers.cpp.obj" "gcc" "CMakeFiles/Mines.dir/Wallpapers.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/main.cpp" "CMakeFiles/Mines.dir/main.cpp.obj" "gcc" "CMakeFiles/Mines.dir/main.cpp.obj.d"
   "C:/Users/litte/CLionProjects/Mines/random.cpp" "CMakeFiles/Mines.dir/random.cpp.obj" "gcc" "CMakeFiles/Mines.dir/random.cpp.obj.d"
