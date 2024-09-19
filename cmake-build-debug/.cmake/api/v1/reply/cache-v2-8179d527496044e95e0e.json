@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/litte/CLionProjects/Mines/cmake-build-debug"
+			"value" : "c:/Users/Trent/Desktop/MinesGame/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -575,7 +575,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/litte/CLionProjects/Mines/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/Trent/Desktop/MinesGame/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -647,7 +647,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/litte/CLionProjects/Mines"
+			"value" : "C:/Users/Trent/Desktop/MinesGame"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1283,7 +1283,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/litte/CLionProjects/Mines/cmake-build-debug"
+			"value" : "C:/Users/Trent/Desktop/MinesGame/cmake-build-debug"
 		},
 		{
 			"name" : "Mines_IS_TOP_LEVEL",
@@ -1307,7 +1307,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/litte/CLionProjects/Mines"
+			"value" : "C:/Users/Trent/Desktop/MinesGame"
 		},
 		{
 			"name" : "SFML_DIR",
@@ -1319,7 +1319,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "C:/Users/litte/Libraries/SFML/lib/cmake/SFML"
+			"value" : "C:/Users/Trent/Desktop/SFML/lib/cmake/SFML"
 		},
 		{
 			"name" : "SFML_DOC_DIR",

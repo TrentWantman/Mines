@@ -22,8 +22,8 @@
 		"files" : 
 		[
 			"CMakeLists.txt",
-			"C:/Users/litte/Libraries/SFML/lib/cmake/SFML/SFMLSharedTargets.cmake",
-			"C:/Users/litte/Libraries/SFML/lib/cmake/SFML/SFMLConfig.cmake"
+			"C:/Users/Trent/Desktop/SFML/lib/cmake/SFML/SFMLSharedTargets.cmake",
+			"C:/Users/Trent/Desktop/SFML/lib/cmake/SFML/SFMLConfig.cmake"
 		],
 		"nodes" : 
 		[
@@ -90,7 +90,7 @@
 				{
 					"backtrace" : 2,
 					"isSystem" : true,
-					"path" : "C:/Users/litte/Libraries/SFML/include"
+					"path" : "C:/Users/Trent/Desktop/SFML/include"
 				}
 			],
 			"language" : "CXX",
@@ -135,22 +135,22 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Users\\litte\\Libraries\\SFML\\lib\\libsfml-graphics-d.a",
+				"fragment" : "C:\\Users\\Trent\\Desktop\\SFML\\lib\\libsfml-graphics-d.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "C:\\Users\\litte\\Libraries\\SFML\\lib\\libsfml-audio-d.a",
+				"fragment" : "C:\\Users\\Trent\\Desktop\\SFML\\lib\\libsfml-audio-d.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 7,
-				"fragment" : "C:\\Users\\litte\\Libraries\\SFML\\lib\\libsfml-window-d.a",
+				"fragment" : "C:\\Users\\Trent\\Desktop\\SFML\\lib\\libsfml-window-d.a",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 8,
-				"fragment" : "C:\\Users\\litte\\Libraries\\SFML\\lib\\libsfml-system-d.a",
+				"fragment" : "C:\\Users\\Trent\\Desktop\\SFML\\lib\\libsfml-system-d.a",
 				"role" : "libraries"
 			},
 			{
