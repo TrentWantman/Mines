@@ -18,6 +18,7 @@
 #include "Multiplier.h"
 #include "Random.h"
 #include "GameState.h"
+#include "Wallpapers.h"
 #include "EasterEgg.h"
 #include <chrono>
 

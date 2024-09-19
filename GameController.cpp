@@ -97,9 +97,7 @@ void GameController::Render() {
         window.draw(payoutOutput);
     }
 
-    if (easterEgg.isPhoneActive()) {
-        easterEgg.renderPhone(window);
-    }
+    easterEgg.render(window, gameState);
 
     window.display();
 }
@@ -107,7 +105,7 @@ void GameController::Render() {
 void GameController::HandleInput(sf::Event& event) {
     // Handle user inputs (mouse clicks, key presses)
 
-    easterEgg.checkStatus(bank, gameState, event);
+    easterEgg.checkStatus(bank, gameState, event, bankText);
 
     //Check for Tile Hovering
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);

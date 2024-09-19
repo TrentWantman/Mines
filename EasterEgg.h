@@ -5,16 +5,26 @@
 #include "Texture.h"
 #include "GameState.h"
 #include <iostream>
+#include <ostream>
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <ostream>
+#include <sstream>
+#include <iomanip>
+
+using namespace std;
 
 class EasterEgg {
 public:
     EasterEgg();
-    void checkStatus(double& bank, GameState gamestate, sf::Event& event);
+    void checkStatus(double& bank, GameState gameState, sf::Event& event, sf::Text& bankText);
     void update(sf::Event& event, double& bank);
     void processGameResult(double multiplier, double& bank);
     void activatePhone();
     void renderPhone(sf::RenderWindow& window);
     void checkStep4(double bank, double wagerAmount, GameState gamestate);
+    void render(sf::RenderWindow& window, GameState gameState);
 
     // Easter egg steps management
     void handleAllInBet(double& bank);
@@ -30,6 +40,13 @@ public:
     double allInAmount;
 
     int step;
+
+    sf::RectangleShape rect1;
+    sf::RectangleShape rect2;
+    sf::RectangleShape rect3;
+    sf::Text text1;
+    sf::Text text2;
+    sf::Font font;
 };
 
 #endif
