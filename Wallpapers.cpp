@@ -23,7 +23,7 @@ Wallpapers::Wallpapers() {
     for (int i = 0; i < 8; i++) {
         Wallpaper wallpaper;
         std::string number = std::to_string(i+1);
-        wallpaper.sprite.setTexture(Texture::GetTexture(number));
+        wallpaper.sprite.setTexture(Texture::GetTexture(number + "full"));
         wallpaper.miniSprite.setTexture(Texture::GetTexture(number));
         wallpaper.sprite.setPosition(450, 0);
         wallpaper.miniSprite.setPosition(330, 425 + i * 67);
@@ -36,9 +36,9 @@ Wallpapers::Wallpapers() {
 
 void Wallpapers::drawMenu(sf::RenderWindow &window) {
     for (auto& wallpaper : wallPaperMenu) {
-        if(wallpaper.unlocked) {
-            window.draw(wallpaper.miniSprite);
-        }
+        // if(wallpaper.unlocked) {
+             window.draw(wallpaper.miniSprite);
+        // }
     }
 }
 
@@ -46,6 +46,8 @@ void Wallpapers::unlockWallPaper(int number) {
     number--;
     wallPaperMenu[number].unlocked = true;
     currentWallPaper = &wallPaperMenu[number];
+    std::string numberString = std::to_string(number+1);
+    wallPaperMenu[number].miniSprite.setTexture(Texture::GetTexture(numberString + "full"));
 }
 
 void::Wallpapers::clickCheck(const sf::Vector2i& mousePos) {
