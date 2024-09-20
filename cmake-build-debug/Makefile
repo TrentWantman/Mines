@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Trent\Desktop\MinesGame
+CMAKE_SOURCE_DIR = C:\Users\litte\CLionProjects\Mines
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Trent\Desktop\MinesGame\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\litte\CLionProjects\Mines\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Trent\Desktop\MinesGame\cmake-build-debug\CMakeFiles C:\Users\Trent\Desktop\MinesGame\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles C:\Users\litte\CLionProjects\Mines\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Trent\Desktop\MinesGame\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,6 +127,30 @@ Mines: cmake_check_build_system
 Mines/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/build
 .PHONY : Mines/fast
+
+Bank.obj: Bank.cpp.obj
+.PHONY : Bank.obj
+
+# target to build an object file
+Bank.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Bank.cpp.obj
+.PHONY : Bank.cpp.obj
+
+Bank.i: Bank.cpp.i
+.PHONY : Bank.i
+
+# target to preprocess a source file
+Bank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Bank.cpp.i
+.PHONY : Bank.cpp.i
+
+Bank.s: Bank.cpp.s
+.PHONY : Bank.s
+
+# target to generate assembly for a file
+Bank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Bank.cpp.s
+.PHONY : Bank.cpp.s
 
 BetButton.obj: BetButton.cpp.obj
 .PHONY : BetButton.obj
@@ -449,6 +473,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mines
+	@echo ... Bank.obj
+	@echo ... Bank.i
+	@echo ... Bank.s
 	@echo ... BetButton.obj
 	@echo ... BetButton.i
 	@echo ... BetButton.s

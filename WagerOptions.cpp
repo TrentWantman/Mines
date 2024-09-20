@@ -1,6 +1,7 @@
 #include "WagerOptions.h"
 #include "Texture.h"
 
+
 WagerOptions::WagerOptions() {
     wagerSprite.setTexture(Texture::GetTexture("wager"));
     halfRect.setSize(sf::Vector2f(55,58));

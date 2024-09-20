@@ -53,7 +53,7 @@ void GameController::Render() {
         betButton.draw(window);
         wagerOptions.draw(window);
         mineOptions.draw(window);
-        window.draw(bankText);
+        //window.draw(bank.bankText);
         window.draw(BetAmountTitle);
         window.draw(MinesTitle);;
         window.draw(GemsTitle);
@@ -71,7 +71,7 @@ void GameController::Render() {
         cashoutButton.draw(window);
         wagerOptions.draw(window);
         mineOptions.draw(window);
-        window.draw(bankText);
+        //window.draw(bank.bankText);
         window.draw(BetAmountTitle);
         window.draw(MinesTitle);;
         window.draw(GemsTitle);
@@ -86,7 +86,7 @@ void GameController::Render() {
         betButton.draw(window);
         wagerOptions.draw(window);
         mineOptions.draw(window);
-        window.draw(bankText);
+        //window.draw(bank.bankText);
         window.draw(BetAmountTitle);
         window.draw(MinesTitle);;
         window.draw(GemsTitle);
@@ -106,7 +106,7 @@ void GameController::Render() {
 void GameController::HandleInput(sf::Event& event) {
     // Handle user inputs (mouse clicks, key presses)
 
-    easterEgg.checkStatus(bank, gameState, event, bankText, wallpapers);
+    easterEgg.checkStatus(bank.balance, gameState, event, bank.bankText, wallpapers);
 
     //Check for Tile Hovering
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
@@ -136,11 +136,10 @@ void GameController::HandleInput(sf::Event& event) {
             //Check Bet Button
             if (betButton.isClicked() && gems > 0 && gems < 25 && wagerAmount > 0) {
                 if(easterEgg.step == 4 && !easterEgg.allInStep4) {
-                    easterEgg.checkStep4(bank,wagerAmount, gameState, wallpapers);
+                    easterEgg.checkStep4(bank.balance,wagerAmount, gameState, wallpapers);
                 }
                 gameState = GameState::Playing;
-                bank -= wagerAmount;
-                UpdateBankOutput();
+                bank.withdrawl(wagerAmount);
                 SetTiles();
             }
 
@@ -150,8 +149,8 @@ void GameController::HandleInput(sf::Event& event) {
                 wagerAmount *= 2;
                 typingWager = false;
                 // Ensure the wager does not exceed the bank
-                if (wagerAmount > bank) {
-                    wagerAmount = bank;
+                if (wagerAmount > bank.balance) {
+                    wagerAmount = bank.balance;
                 }
                 UpdateWagerOutput();
             }
@@ -211,14 +210,14 @@ void GameController::HandleInput(sf::Event& event) {
             if (cashoutButton.isClicked()) {
                 EndGame(true);
                 if(easterEgg.step == 4 && easterEgg.allInStep4) {
-                    easterEgg.checkStep4(bank,wagerAmount, gameState, wallpapers);
+                    easterEgg.checkStep4(bank.balance,wagerAmount, gameState, wallpapers);
                     cout << "reached" << endl;
                 }
             }
         }
     }
 
-    easterEgg.update(event, bank);
+    easterEgg.update(event, bank.balance);
 }
 
 void GameController::UpdateWagerOutput() {
@@ -226,12 +225,6 @@ void GameController::UpdateWagerOutput() {
     wagerStream << fixed << setprecision(2) << wagerAmount;
     wagerInput = wagerStream.str();
     wagerOutput.setString(wagerInput);
-}
-
-void GameController::UpdateBankOutput() {
-    ostringstream bankStream;
-    bankStream << fixed << setprecision(2) << bank;
-    bankText.setString("Bank: $" + bankStream.str());
 }
 
 void GameController::UpdatePayoutOutput() {
@@ -284,9 +277,9 @@ void GameController::InputWager(sf::Event& event) {
     }
 
     // If wager exceeds the bank, set it to the bank value
-    if (wagerAmount > bank) {
-        wagerAmount = bank;
-        wagerInput = (to_string(bank));
+    if (wagerAmount > bank.balance) {
+        wagerAmount = bank.balance;
+        wagerInput = (to_string(bank.balance));
         UpdateWagerOutput();
     }
 
@@ -297,8 +290,7 @@ void GameController::InputWager(sf::Event& event) {
 void GameController::InputMinesOrGems(sf::Event& event, int& integer, int& integer2, string& input) {
     // Handle backspace
     if (event.text.unicode == 'c') {
-        bank = 900;
-        UpdateBankOutput();
+        bank.deposit(900);
     }
     if (event.text.unicode == 8 && !input.empty()) {
         input.pop_back();
@@ -424,8 +416,8 @@ void GameController::EndGame(bool win) {
         multi = 0;
         payout = 0;
         RevealTiles();
-        if (wagerAmount > bank) { wagerAmount = bank;}
-        UpdateBankOutput();
+        if (wagerAmount > bank.balance) { wagerAmount = bank.balance;}
+        bank.UpdateBankOutput();
         UpdateWagerOutput();
         UpdateMultiplierOutput();
         UpdatePayoutOutput();
@@ -436,8 +428,7 @@ void GameController::EndGame(bool win) {
         RevealTiles();
         multi =  multiplier.multi(gemsRevealed,mines);
         payout = (wagerAmount * multi);
-        bank += payout;
-        UpdateBankOutput();
+        bank.deposit(payout);
         UpdateMultiplierOutput();
         UpdatePayoutOutput();
         UpdateMineGemOutput();
@@ -520,15 +511,6 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     //multiplierOutput.setString("0.00X");
     multiplierOutput.setCharacterSize(25);
     multiplierOutput.setFillColor(sf::Color::White);
-
-    bankText.setFont(font);
-    bankText.setStyle(sf::Text::Bold);
-    UpdateBankOutput();
-    bankText.setCharacterSize(20);
-    bankText.setFillColor(sf::Color::White);
-    bankTextRect = bankText.getGlobalBounds();
-    bankText.setOrigin(bankTextRect.width / 2.0f, bankTextRect.height / 2.0f);
-    bankText.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2, 30);
 
     BetAmountTitle.setFont(font);
     BetAmountTitle.setStyle(sf::Text::Bold);

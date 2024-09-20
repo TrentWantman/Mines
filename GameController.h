@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iomanip>
 
+#include "Bank.h"
 #include "BetButton.h"
 #include "Tile.h"
 #include "CashoutButton.h"
@@ -64,6 +65,7 @@ private:
     CashoutButton cashoutButton;
     BetButton betButton;
     Wallpapers wallpapers;
+    Bank bank;
 
     int tilesRevealed;
     int gemsRevealed;
@@ -76,7 +78,6 @@ private:
 
     double payout;
     double multi;
-    double bank = 100;
     double wagerAmount = 0;
     double prevWager;
 
@@ -93,9 +94,6 @@ private:
     string multiplierString;
     sf::Text multiplierOutput;
     sf::FloatRect multiRect;
-    string bankString = "help me";
-    sf::Text bankText;
-    sf::FloatRect bankTextRect;
     sf::Text BetAmountTitle;
     sf::Text MinesTitle;
     sf::Text GemsTitle;
@@ -113,7 +111,6 @@ private:
     void InputMinesOrGems(sf::Event&, int&, int&, string&);
     void InputWager(sf::Event&);
     void UpdateWagerOutput();
-    void UpdateBankOutput();
     void UpdateMineGemOutput();
     void UpdateMultiplierOutput();
     void UpdatePayoutOutput();
