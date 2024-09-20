@@ -6,6 +6,7 @@
 #include <ostream>
 #include <sstream>
 #include <iomanip>
+#include "Texture.h"
 using namespace std;
 
 class Bank {
@@ -19,9 +20,9 @@ public:
 
     double balance;
     sf::Sprite bankBox;
-    string bankString;
+    sf::Font font;
+    string bankString = "help me";
     sf::Text bankText;
-    sf::FloatRect bankTextRect;
 
 };
 

@@ -54,6 +54,7 @@ void GameController::Render() {
         wagerOptions.draw(window);
         mineOptions.draw(window);
         //window.draw(bank.bankText);
+        bank.drawBank(window);
         window.draw(BetAmountTitle);
         window.draw(MinesTitle);;
         window.draw(GemsTitle);
@@ -72,6 +73,7 @@ void GameController::Render() {
         wagerOptions.draw(window);
         mineOptions.draw(window);
         //window.draw(bank.bankText);
+        bank.drawBank(window);
         window.draw(BetAmountTitle);
         window.draw(MinesTitle);;
         window.draw(GemsTitle);
@@ -87,6 +89,7 @@ void GameController::Render() {
         wagerOptions.draw(window);
         mineOptions.draw(window);
         //window.draw(bank.bankText);
+        bank.drawBank(window);
         window.draw(BetAmountTitle);
         window.draw(MinesTitle);;
         window.draw(GemsTitle);
