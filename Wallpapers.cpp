@@ -30,8 +30,7 @@ Wallpapers::Wallpapers() {
         wallpaper.miniSprite.setScale(0.065f, 0.065f);
         wallPaperMenu.push_back(wallpaper);
     }
-    wallPaperMenu[0].unlocked = true;
-    currentWallPaper = &wallPaperMenu[0];
+    unlockWallPaper(1);
 }
 
 void Wallpapers::drawMenu(sf::RenderWindow &window) {

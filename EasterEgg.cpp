@@ -60,22 +60,27 @@ void EasterEgg::checkStatus(double& bank, GameState gameState, sf::Event& event,
     }
     else if (step >= 5) {
         if (bank > allInAmount * 1.67){
-            step = 6;
             std::cout << "Cashout now for rich ending scene" << std::endl;
         }
-        else if (bank <= allInAmount * 1.67 && bank >= allInAmount){
+        else if (bank < allInAmount && bank > 200 ){
             step = 6;
-            wallpapers.unlockWallPaper(6);
+            if (!wallpapers.wallPaperMenu[step - 1].unlocked){
+                wallpapers.unlockWallPaper(step);
+            }
             std::cout << "Cashout now for good ending scene" << std::endl;
         }
-        else if (bank < allInAmount && bank >= 100.00) {
-            step = 6;
-            wallpapers.unlockWallPaper(7);
+        else if (bank <= 200 && bank >= 100.00) {
+            step = 7;
+            if (!wallpapers.wallPaperMenu[step - 1].unlocked){
+                wallpapers.unlockWallPaper(step);
+            }
             std::cout << "Cashout now for righteous ending scene" << std::endl;
         }
         else if (bank == 0) {
-            step = 6;
-            wallpapers.unlockWallPaper(8);
+            step = 8;
+            if (!wallpapers.wallPaperMenu[step - 1].unlocked){
+                wallpapers.unlockWallPaper(step);
+            }
             std::cout << "Cashout now for bad ending scene" << std::endl;
         }
     }
