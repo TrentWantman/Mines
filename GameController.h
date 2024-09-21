@@ -8,6 +8,7 @@
 #include <ostream>
 #include <sstream>
 #include <iomanip>
+#include "GameSaver.h"
 #include "History.h"
 #include "PayoutDisplay.h"
 #include "Menu.h"
@@ -26,6 +27,7 @@
 #include <chrono>
 
 #include "Wallpapers.h"
+
 using namespace std;
 
 class GameController {
@@ -74,6 +76,7 @@ private:
     BetButton betButton;
     Wallpapers wallpapers;
     Bank bank;
+    GameSaver* gameSaver;
 
     int tilesRevealed;
     int gemsRevealed = 0;

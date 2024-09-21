@@ -249,22 +249,23 @@ CMakeFiles/Mines.dir/GameController.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
- C:\Users\litte\CLionProjects\Mines\History.h \
- C:\Users\litte\CLionProjects\Mines\multiplier.h \
+ C:\Users\litte\CLionProjects\Mines\GameSaver.h \
+ C:\Users\litte\CLionProjects\Mines\EasterEgg.h \
+ C:\Users\litte\CLionProjects\Mines\Texture.h \
+ C:\Users\litte\CLionProjects\Mines\GameState.h \
+ C:\Users\litte\CLionProjects\Mines\Wallpapers.h \
+ C:\Users\litte\CLionProjects\Mines\WallPaper.h \
+ C:\Users\litte\CLionProjects\Mines\Menu.h \
+ C:\Users\litte\CLionProjects\Mines\PayoutDisplay.h \
+ C:\Users\litte\CLionProjects\Mines\Multiplier.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
- C:\Users\litte\CLionProjects\Mines\PayoutDisplay.h \
- C:\Users\litte\CLionProjects\Mines\GameState.h \
- C:\Users\litte\CLionProjects\Mines\Multiplier.h \
- C:\Users\litte\CLionProjects\Mines\Menu.h \
- C:\Users\litte\CLionProjects\Mines\Wallpapers.h \
- C:\Users\litte\CLionProjects\Mines\WallPaper.h \
+ C:\Users\litte\CLionProjects\Mines\History.h \
+ C:\Users\litte\CLionProjects\Mines\multiplier.h \
  C:\Users\litte\CLionProjects\Mines\Bank.h \
- C:\Users\litte\CLionProjects\Mines\Texture.h \
- C:\Users\litte\CLionProjects\Mines\EasterEgg.h \
  C:\Users\litte\CLionProjects\Mines\BetButton.h \
  C:\Users\litte\CLionProjects\Mines\Tile.h \
  C:\Users\litte\CLionProjects\Mines\CashoutButton.h \
