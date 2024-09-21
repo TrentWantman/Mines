@@ -19,6 +19,7 @@ void GameController::ProcessEvents() {
     }
 
     if (menu->menuState == Menu::CLOSE) {
+        gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers);
         window.close();
     }
 }
@@ -543,6 +544,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     GemsTitle.setCharacterSize(20);
     GemsTitle.setFillColor(sf::Color::White);
 
+    gameSaver = new GameSaver();
     payoutDisplay = new PayoutDisplay(&gameState, &multiplier);
     history = new History(&multiplier);
     menu = new Menu(&gameState, &wallpapers, payoutDisplay, history, &bank, &easterEgg);
