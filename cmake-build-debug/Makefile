@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\litte\CLionProjects\Mines
+CMAKE_SOURCE_DIR = C:\Users\Trent\Desktop\MinesGame
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\litte\CLionProjects\Mines\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Trent\Desktop\MinesGame\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles C:\Users\litte\CLionProjects\Mines\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Trent\Desktop\MinesGame\cmake-build-debug\CMakeFiles C:\Users\Trent\Desktop\MinesGame\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Trent\Desktop\MinesGame\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -247,6 +247,30 @@ GameController.s: GameController.cpp.s
 GameController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.s
 .PHONY : GameController.cpp.s
+
+History.obj: History.cpp.obj
+.PHONY : History.obj
+
+# target to build an object file
+History.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.obj
+.PHONY : History.cpp.obj
+
+History.i: History.cpp.i
+.PHONY : History.i
+
+# target to preprocess a source file
+History.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.i
+.PHONY : History.cpp.i
+
+History.s: History.cpp.s
+.PHONY : History.s
+
+# target to generate assembly for a file
+History.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.s
+.PHONY : History.cpp.s
 
 Menu.obj: Menu.cpp.obj
 .PHONY : Menu.obj
@@ -536,6 +560,9 @@ help:
 	@echo ... GameController.obj
 	@echo ... GameController.i
 	@echo ... GameController.s
+	@echo ... History.obj
+	@echo ... History.i
+	@echo ... History.s
 	@echo ... Menu.obj
 	@echo ... Menu.i
 	@echo ... Menu.s

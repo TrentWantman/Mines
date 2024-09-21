@@ -216,7 +216,6 @@ void GameController::HandleInput(sf::Event& event) {
                 EndGame(true);
                 if(easterEgg.step == 4 && easterEgg.allInStep4) {
                     easterEgg.checkStep4(bank.balance,wagerAmount, gameState, wallpapers);
-                    cout << "reached" << endl;
                 }
             }
         }
@@ -392,7 +391,7 @@ void GameController::CheckTiles(sf::Vector2i mousePos) {
             tile.clickCheck(mousePos);
         }
         if (tile.isRevealed() && tile.hasMine()) {
-            EndGame(false);
+            if(gameState != GameState::GameOver) {EndGame(false);}
         }
         else if (!tile.hasMine() && tile.isRevealed()) {
             gemsRevealed++;
@@ -407,7 +406,6 @@ void GameController::CountGems() {
             gemsRevealed++;
         }
     }
-    cout << gemsRevealed << endl;
 }
 
 void GameController::RevealTiles() {
@@ -418,9 +416,10 @@ void GameController::RevealTiles() {
 
 void GameController::EndGame(bool win) {
     if(!win) {
+        RevealTiles();
         multi = 0;
         payout = 0;
-        RevealTiles();
+        history->AddRound(mines, gemsRevealed, wagerAmount, multi, payout);
         if (wagerAmount > bank.balance) { wagerAmount = bank.balance;}
         bank.UpdateBankOutput();
         UpdateWagerOutput();
@@ -434,6 +433,7 @@ void GameController::EndGame(bool win) {
         RevealTiles();
         multi =  multiplier.multi(gemsRevealed,mines);
         payout = (wagerAmount * multi);
+        history->AddRound(mines, gemsRevealed, wagerAmount, multi, payout);
         bank.deposit(payout);
         UpdateMultiplierOutput();
         UpdatePayoutOutput();
@@ -540,7 +540,8 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     GemsTitle.setFillColor(sf::Color::White);
 
     payoutDisplay = new PayoutDisplay(&gameState, &multiplier);
-    menu = new Menu(&gameState, &wallpapers, payoutDisplay);
+    history = new History(&multiplier);
+    menu = new Menu(&gameState, &wallpapers, payoutDisplay, history);
+
     InitializeTiles();
-    //easterEgg.phone.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2 - 130, 800);
 }
