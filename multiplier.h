@@ -1,6 +1,10 @@
+#ifndef MULTIPLIER_H
+#define MULTIPLIER_H
+
 #include <SFML/Graphics.hpp>
 #include <unordered_map>
 #include <string>
+#include <iostream>
 using std::unordered_map;
 using std::string;
 
@@ -39,4 +43,10 @@ struct Multiplier {
         }
         return multipliers[gems - 1][mines - 1];
     }
+
+    double calculateMultiplier(int gems, int mines) {
+        return multipliers[gems - 1][mines - 1];
+    }
 };
+
+#endif // MULTIPLIER_H

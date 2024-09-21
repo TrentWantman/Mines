@@ -248,6 +248,30 @@ GameController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.s
 .PHONY : GameController.cpp.s
 
+Menu.obj: Menu.cpp.obj
+.PHONY : Menu.obj
+
+# target to build an object file
+Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Menu.cpp.obj
+.PHONY : Menu.cpp.obj
+
+Menu.i: Menu.cpp.i
+.PHONY : Menu.i
+
+# target to preprocess a source file
+Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Menu.cpp.i
+.PHONY : Menu.cpp.i
+
+Menu.s: Menu.cpp.s
+.PHONY : Menu.s
+
+# target to generate assembly for a file
+Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Menu.cpp.s
+.PHONY : Menu.cpp.s
+
 MineOptions.obj: MineOptions.cpp.obj
 .PHONY : MineOptions.obj
 
@@ -271,6 +295,30 @@ MineOptions.s: MineOptions.cpp.s
 MineOptions.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.s
 .PHONY : MineOptions.cpp.s
+
+PayoutDisplay.obj: PayoutDisplay.cpp.obj
+.PHONY : PayoutDisplay.obj
+
+# target to build an object file
+PayoutDisplay.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj
+.PHONY : PayoutDisplay.cpp.obj
+
+PayoutDisplay.i: PayoutDisplay.cpp.i
+.PHONY : PayoutDisplay.i
+
+# target to preprocess a source file
+PayoutDisplay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/PayoutDisplay.cpp.i
+.PHONY : PayoutDisplay.cpp.i
+
+PayoutDisplay.s: PayoutDisplay.cpp.s
+.PHONY : PayoutDisplay.s
+
+# target to generate assembly for a file
+PayoutDisplay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/PayoutDisplay.cpp.s
+.PHONY : PayoutDisplay.cpp.s
 
 Texture.obj: Texture.cpp.obj
 .PHONY : Texture.obj
@@ -488,9 +536,15 @@ help:
 	@echo ... GameController.obj
 	@echo ... GameController.i
 	@echo ... GameController.s
+	@echo ... Menu.obj
+	@echo ... Menu.i
+	@echo ... Menu.s
 	@echo ... MineOptions.obj
 	@echo ... MineOptions.i
 	@echo ... MineOptions.s
+	@echo ... PayoutDisplay.obj
+	@echo ... PayoutDisplay.i
+	@echo ... PayoutDisplay.s
 	@echo ... Texture.obj
 	@echo ... Texture.i
 	@echo ... Texture.s

@@ -36,5 +36,9 @@ add_executable(Mines main.cpp texture.cpp texture.h tile.h random.cpp random.h W
         WallPaper.cpp
         WallPaper.h
         Bank.cpp
-        Bank.h)
+        Bank.h
+        Menu.cpp
+        Menu.h
+        PayoutDisplay.cpp
+        PayoutDisplay.h)
 target_link_libraries(Mines sfml-graphics sfml-audio)

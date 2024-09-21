@@ -278,6 +278,36 @@ CMakeFiles/Mines.dir/Bank.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/Bank.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\Bank.cpp -o CMakeFiles\Mines.dir\Bank.cpp.s
 
+CMakeFiles/Mines.dir/Menu.cpp.obj: CMakeFiles/Mines.dir/flags.make
+CMakeFiles/Mines.dir/Menu.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
+CMakeFiles/Mines.dir/Menu.cpp.obj: C:/Users/litte/CLionProjects/Mines/Menu.cpp
+CMakeFiles/Mines.dir/Menu.cpp.obj: CMakeFiles/Mines.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/Mines.dir/Menu.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mines.dir/Menu.cpp.obj -MF CMakeFiles\Mines.dir\Menu.cpp.obj.d -o CMakeFiles\Mines.dir\Menu.cpp.obj -c C:\Users\litte\CLionProjects\Mines\Menu.cpp
+
+CMakeFiles/Mines.dir/Menu.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mines.dir/Menu.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\litte\CLionProjects\Mines\Menu.cpp > CMakeFiles\Mines.dir\Menu.cpp.i
+
+CMakeFiles/Mines.dir/Menu.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/Menu.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\Menu.cpp -o CMakeFiles\Mines.dir\Menu.cpp.s
+
+CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj: CMakeFiles/Mines.dir/flags.make
+CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj: CMakeFiles/Mines.dir/includes_CXX.rsp
+CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj: C:/Users/litte/CLionProjects/Mines/PayoutDisplay.cpp
+CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj: CMakeFiles/Mines.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj -MF CMakeFiles\Mines.dir\PayoutDisplay.cpp.obj.d -o CMakeFiles\Mines.dir\PayoutDisplay.cpp.obj -c C:\Users\litte\CLionProjects\Mines\PayoutDisplay.cpp
+
+CMakeFiles/Mines.dir/PayoutDisplay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Mines.dir/PayoutDisplay.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\litte\CLionProjects\Mines\PayoutDisplay.cpp > CMakeFiles\Mines.dir\PayoutDisplay.cpp.i
+
+CMakeFiles/Mines.dir/PayoutDisplay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Mines.dir/PayoutDisplay.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\litte\CLionProjects\Mines\PayoutDisplay.cpp -o CMakeFiles\Mines.dir\PayoutDisplay.cpp.s
+
 # Object files for target Mines
 Mines_OBJECTS = \
 "CMakeFiles/Mines.dir/main.cpp.obj" \
@@ -293,7 +323,9 @@ Mines_OBJECTS = \
 "CMakeFiles/Mines.dir/EasterEgg.cpp.obj" \
 "CMakeFiles/Mines.dir/Wallpapers.cpp.obj" \
 "CMakeFiles/Mines.dir/WallPaper.cpp.obj" \
-"CMakeFiles/Mines.dir/Bank.cpp.obj"
+"CMakeFiles/Mines.dir/Bank.cpp.obj" \
+"CMakeFiles/Mines.dir/Menu.cpp.obj" \
+"CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj"
 
 # External object files for target Mines
 Mines_EXTERNAL_OBJECTS =
@@ -312,6 +344,8 @@ Mines.exe: CMakeFiles/Mines.dir/EasterEgg.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/Wallpapers.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/WallPaper.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/Bank.cpp.obj
+Mines.exe: CMakeFiles/Mines.dir/Menu.cpp.obj
+Mines.exe: CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj
 Mines.exe: CMakeFiles/Mines.dir/build.make
 Mines.exe: C:/Users/litte/Libraries/SFML/lib/libsfml-graphics-d.a
 Mines.exe: C:/Users/litte/Libraries/SFML/lib/libsfml-audio-d.a
@@ -320,7 +354,7 @@ Mines.exe: C:/Users/litte/Libraries/SFML/lib/libsfml-system-d.a
 Mines.exe: CMakeFiles/Mines.dir/linkLibs.rsp
 Mines.exe: CMakeFiles/Mines.dir/objects1.rsp
 Mines.exe: CMakeFiles/Mines.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable Mines.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\litte\CLionProjects\Mines\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable Mines.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Mines.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

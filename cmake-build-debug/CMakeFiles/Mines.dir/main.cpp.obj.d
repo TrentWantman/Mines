@@ -249,20 +249,24 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
- C:\Users\litte\CLionProjects\Mines\Bank.h \
- C:\Users\litte\CLionProjects\Mines\Texture.h \
- C:\Users\litte\CLionProjects\Mines\BetButton.h \
+ C:\Users\litte\CLionProjects\Mines\PayoutDisplay.h \
  C:\Users\litte\CLionProjects\Mines\GameState.h \
- C:\Users\litte\CLionProjects\Mines\Tile.h \
- C:\Users\litte\CLionProjects\Mines\CashoutButton.h \
- C:\Users\litte\CLionProjects\Mines\MineOptions.h \
- C:\Users\litte\CLionProjects\Mines\WagerOptions.h \
  C:\Users\litte\CLionProjects\Mines\Multiplier.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
+ C:\Users\litte\CLionProjects\Mines\Menu.h \
+ C:\Users\litte\CLionProjects\Mines\Wallpapers.h \
+ C:\Users\litte\CLionProjects\Mines\WallPaper.h \
+ C:\Users\litte\CLionProjects\Mines\Texture.h \
+ C:\Users\litte\CLionProjects\Mines\Bank.h \
+ C:\Users\litte\CLionProjects\Mines\BetButton.h \
+ C:\Users\litte\CLionProjects\Mines\Tile.h \
+ C:\Users\litte\CLionProjects\Mines\CashoutButton.h \
+ C:\Users\litte\CLionProjects\Mines\MineOptions.h \
+ C:\Users\litte\CLionProjects\Mines\WagerOptions.h \
  C:\Users\litte\CLionProjects\Mines\Random.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/random \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
@@ -279,8 +283,6 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
- C:\Users\litte\CLionProjects\Mines\Wallpapers.h \
- C:\Users\litte\CLionProjects\Mines\WallPaper.h \
  C:\Users\litte\CLionProjects\Mines\EasterEgg.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/chrono.h \

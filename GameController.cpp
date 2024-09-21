@@ -21,7 +21,6 @@ void GameController::ProcessEvents() {
 
 void GameController::Update() {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
-
     if (gameState == GameState::GameOver) {
         // If the timer hasn't started yet, capture the current time
 
@@ -39,8 +38,9 @@ void GameController::Update() {
             gameState = GameState::PreGame; // Set gameState to PreGame
             timerStarted = false;           // Reset the timer flag for future use
         }
+        payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
     }
-
+    payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
 }
 
 void GameController::Render() {
@@ -63,7 +63,7 @@ void GameController::Render() {
         window.draw(gemOutput);
         DrawTiles();
         easterEgg.render(window, gameState);
-        wallpapers.drawMenu(window);
+        //wallpapers.drawMenu(window);
     }
 
     else if (gameState == GameState::Playing) {
@@ -102,7 +102,7 @@ void GameController::Render() {
         window.draw(payoutOutput);
     }
 
-
+    menu->render(window);
     window.display();
 }
 
@@ -128,6 +128,7 @@ void GameController::HandleInput(sf::Event& event) {
         if (event.type == sf::Event::MouseButtonPressed) {
             gameState = GameState::PreGame;
             timerStarted = false;
+            menu->handleClick(mousePos);
         }
     }
 
@@ -135,6 +136,9 @@ void GameController::HandleInput(sf::Event& event) {
     if (gameState == GameState::PreGame) {
         //Check for mouse button pressed
         if (event.type == sf::Event::MouseButtonPressed) {
+
+            //Check Menu Button
+            menu->handleClick(mousePos);
 
             //Check Bet Button
             if (betButton.isClicked() && gems > 0 && gems < 25 && wagerAmount > 0) {
@@ -187,9 +191,6 @@ void GameController::HandleInput(sf::Event& event) {
                 typingGems = false;
                 typingMines = false;
             }
-
-            //Check Wallpaper Menu
-            wallpapers.clickCheck(mousePos);
         }
 
         if (event.type == sf::Event::TextEntered) {
@@ -210,6 +211,7 @@ void GameController::HandleInput(sf::Event& event) {
     else if (gameState == GameState::Playing) {
         if (event.type == sf::Event::MouseButtonPressed) {
             CheckTiles(mousePos); //Check Tiles
+            menu->handleClick(mousePos);
             if (cashoutButton.isClicked()) {
                 EndGame(true);
                 if(easterEgg.step == 4 && easterEgg.allInStep4) {
@@ -426,6 +428,7 @@ void GameController::EndGame(bool win) {
         UpdatePayoutOutput();
         UpdateMineGemOutput();
         gameState = GameState::GameOver;
+        gemsRevealed = 0;
     }
     else {
         RevealTiles();
@@ -436,6 +439,7 @@ void GameController::EndGame(bool win) {
         UpdatePayoutOutput();
         UpdateMineGemOutput();
         gameState = GameState::GameOver;
+        gemsRevealed = 0;
     }
 }
 
@@ -445,7 +449,6 @@ void GameController::UpdateEasterEgg() {
 }
 
 GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
-    InitializeTiles();
 
     //Gamestate and other booleans
     gameState = GameState::PreGame;
@@ -536,5 +539,8 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     GemsTitle.setCharacterSize(20);
     GemsTitle.setFillColor(sf::Color::White);
 
+    payoutDisplay = new PayoutDisplay(&gameState, &multiplier);
+    menu = new Menu(&gameState, &wallpapers, payoutDisplay);
+    InitializeTiles();
     //easterEgg.phone.setPosition(cashoutButton.cashoutSprite.getGlobalBounds().width/2 - 130, 800);
 }

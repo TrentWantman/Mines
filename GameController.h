@@ -8,7 +8,8 @@
 #include <ostream>
 #include <sstream>
 #include <iomanip>
-
+#include "PayoutDisplay.h"
+#include "Menu.h"
 #include "Bank.h"
 #include "BetButton.h"
 #include "Tile.h"
@@ -48,6 +49,11 @@ private:
     GameState prevState;
     EasterEgg easterEgg;
     Multiplier multiplier;
+    Menu* menu;
+    PayoutDisplay* payoutDisplay;
+
+
+
     int currStep = 0;
     int prevStep = 0;
     std::chrono::time_point<std::chrono::steady_clock> gameOverStartTime;
@@ -68,7 +74,7 @@ private:
     Bank bank;
 
     int tilesRevealed;
-    int gemsRevealed;
+    int gemsRevealed = 0;
     int totalTilesRevealed;
     int totalGemsRevealed;
     int randomTile;
