@@ -67,7 +67,6 @@ void PayoutDisplay::calculatePayouts(int numberOfMines, double currentWager, int
 
     // Check the current game state
     if (*gameState == GameState::PreGame || *gameState == GameState::GameOver) {
-        std::cout << "Pregame State: Displaying possible payouts." << std::endl;
 
         // Loop through each number of gems that can be revealed
         for (int gems = 1; gems <= (25-numberOfMines); ++gems) {
@@ -77,7 +76,6 @@ void PayoutDisplay::calculatePayouts(int numberOfMines, double currentWager, int
         }
     }
     else if (*gameState == GameState::Playing) {
-        std::cout << "Playing State: Displaying current and possible payouts." << std::endl;
         if (gemsRevealed == 0) {
             gemsRevealed = 1;
         }

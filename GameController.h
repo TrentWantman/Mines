@@ -8,6 +8,7 @@
 #include <ostream>
 #include <sstream>
 #include <iomanip>
+#include "History.h"
 #include "PayoutDisplay.h"
 #include "Menu.h"
 #include "Bank.h"
@@ -51,6 +52,7 @@ private:
     Multiplier multiplier;
     Menu* menu;
     PayoutDisplay* payoutDisplay;
+    History* history;
 
 
 

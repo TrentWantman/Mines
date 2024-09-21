@@ -249,14 +249,16 @@ CMakeFiles/Mines.dir/GameController.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
- C:\Users\Trent\Desktop\MinesGame\PayoutDisplay.h \
- C:\Users\Trent\Desktop\MinesGame\GameState.h \
- C:\Users\Trent\Desktop\MinesGame\Multiplier.h \
+ C:\Users\Trent\Desktop\MinesGame\History.h \
+ C:\Users\Trent\Desktop\MinesGame\multiplier.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
+ C:\Users\Trent\Desktop\MinesGame\PayoutDisplay.h \
+ C:\Users\Trent\Desktop\MinesGame\GameState.h \
+ C:\Users\Trent\Desktop\MinesGame\Multiplier.h \
  C:\Users\Trent\Desktop\MinesGame\Menu.h \
  C:\Users\Trent\Desktop\MinesGame\Wallpapers.h \
  C:\Users\Trent\Desktop\MinesGame\WallPaper.h \

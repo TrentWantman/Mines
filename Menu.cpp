@@ -1,8 +1,9 @@
 #include "Menu.h"
 #include <iostream>
 
-Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay)
-:  showConfirmation(false), gameState(state), wallpapers(wallpapers), payoutDisplay(payoutDisplay){
+Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history)
+:  showConfirmation(false), gameState(state), wallpapers(wallpapers), payoutDisplay(payoutDisplay), history(history)
+{
     // Initialize the background sprite and options button sprite
     backgroundSprite.setTexture(Texture::GetTexture("menuBack"));
     backgroundSprite.setPosition(18, 414);
@@ -40,6 +41,7 @@ void Menu::render(sf::RenderWindow& window) {
         wallpapers->drawMenu(window);
     }
     else if (menuState == MenuState::HISTORY) {
+        history->displayHistory(window);
     }
     else if (menuState == MenuState::PAYOUT) {
         payoutDisplay->displayPayoutsOnScreen(window);

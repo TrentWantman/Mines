@@ -5,6 +5,7 @@
 #include "GameState.h"
 #include "Wallpapers.h"
 #include "PayoutDisplay.h"
+#include "History.h"
 
 #include "Texture.h"
 
@@ -27,6 +28,7 @@ private:
     GameState* gameState; // A pointer to the current game state
     Wallpapers* wallpapers;
     PayoutDisplay* payoutDisplay;
+    History* history;
 
     void changeMenuState(sf::Vector2i mousePos);
 
@@ -49,7 +51,7 @@ public:
     };
 
     MenuState menuState;
-    Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay);
+    Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history);
     void render(sf::RenderWindow& window);
     void update(sf::Vector2i mousePos);
     void handleClick(sf::Vector2i mousePos);
