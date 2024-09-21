@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Mines.dir/EasterEgg.cpp.obj.d"
   "CMakeFiles/Mines.dir/GameController.cpp.obj"
   "CMakeFiles/Mines.dir/GameController.cpp.obj.d"
+  "CMakeFiles/Mines.dir/GameSaver.cpp.obj"
+  "CMakeFiles/Mines.dir/GameSaver.cpp.obj.d"
   "CMakeFiles/Mines.dir/History.cpp.obj"
   "CMakeFiles/Mines.dir/History.cpp.obj.d"
   "CMakeFiles/Mines.dir/Menu.cpp.obj"

@@ -6,7 +6,8 @@
 #include "Wallpapers.h"
 #include "PayoutDisplay.h"
 #include "History.h"
-
+#include "Bank.h"
+#include "EasterEgg.h"
 #include "Texture.h"
 
 class Menu {
@@ -18,7 +19,6 @@ private:
     sf::Sprite payoutSprite;
     sf::Sprite historySprite;
     sf::Sprite achievementsSprite;
-    sf::Sprite profileSprite;
     sf::Sprite phoneSprite;
 
     sf::Sprite confirmSprite; // Used for restart/close confirmation
@@ -29,29 +29,30 @@ private:
     Wallpapers* wallpapers;
     PayoutDisplay* payoutDisplay;
     History* history;
+    Bank* bank;
+    EasterEgg* easterEgg;
+
 
     void changeMenuState(sf::Vector2i mousePos);
 
-    void handleProfileClick(sf::Vector2i mousePos);
     void handleAchivementsClick(sf::Vector2i mousePos);
     void handleHistoryClick(sf::Vector2i mousePos);
     void handlePayoutClick(sf::Vector2i mousePos);
-    void handleRestartClick(sf::Vector2i mousePos);
+    void handlePhoneClick(sf::Vector2i mousePos);
     void handleCloseClick(sf::Vector2i mousePos);
 
 public:
 
     enum MenuState {
-        PROFILE,
         ACHIEVEMENTS,
         HISTORY,
         PAYOUT,
-        RESTART,
+        PHONE,
         CLOSE,
     };
 
     MenuState menuState;
-    Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history);
+    Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history, Bank* bank, EasterEgg* easterEgg);
     void render(sf::RenderWindow& window);
     void update(sf::Vector2i mousePos);
     void handleClick(sf::Vector2i mousePos);

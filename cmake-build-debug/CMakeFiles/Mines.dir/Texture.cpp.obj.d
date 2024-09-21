@@ -1,14 +1,14 @@
 CMakeFiles/Mines.dir/Texture.cpp.obj: \
- C:\Users\Trent\Desktop\MinesGame\Texture.cpp \
- C:\Users\Trent\Desktop\MinesGame\Texture.h \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Config.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Clock.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Export.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Time.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Err.hpp \
+ C:\Users\litte\CLionProjects\Mines\Texture.cpp \
+ C:\Users\litte\CLionProjects\Mines\Texture.h \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Config.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Clock.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Export.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Time.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Err.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ostream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/requires_hosted.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -139,15 +139,15 @@ CMakeFiles/Mines.dir/Texture.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/basic_ios.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/ostream.tcc \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/FileInputStream.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/InputStream.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/NonCopyable.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Lock.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/MemoryInputStream.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Mutex.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Sleep.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/String.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Utf.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/FileInputStream.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/InputStream.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/NonCopyable.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Lock.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/MemoryInputStream.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Mutex.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Sleep.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/String.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Utf.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_algo.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/algorithmfwd.h \
@@ -162,64 +162,64 @@ CMakeFiles/Mines.dir/Texture.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/codecvt.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_facets_nonio.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/locale_conv.h \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Utf.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Utf.inl \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/String.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Thread.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Thread.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/ThreadLocal.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/ThreadLocalPtr.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/ThreadLocalPtr.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Vector2.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Vector2.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Vector3.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/System/Vector3.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Clipboard.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Export.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Context.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/GlResource.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/ContextSettings.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Cursor.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Event.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Joystick.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Keyboard.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Mouse.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Sensor.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Touch.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/VideoMode.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/String.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Thread.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Thread.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/ThreadLocal.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/ThreadLocalPtr.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/ThreadLocalPtr.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Vector2.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Vector2.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Vector3.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/System/Vector3.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Clipboard.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Export.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Context.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/GlResource.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/ContextSettings.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Cursor.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Event.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Joystick.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Keyboard.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Mouse.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Sensor.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Touch.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/VideoMode.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/vector \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_uninitialized.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_vector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_bvector.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/vector.tcc \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Window.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/WindowBase.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/Vulkan.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/WindowHandle.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Window.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/WindowBase.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/Vulkan.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/WindowHandle.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstddef \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/stdint.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/x86_64-w64-mingw32/include/stdint.h \
- C:/Users/Trent/Desktop/SFML/include/SFML/Window/WindowStyle.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/BlendMode.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Export.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/CircleShape.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Shape.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Drawable.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/RenderStates.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Transform.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Rect.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Rect.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Transformable.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/VertexArray.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Vertex.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Color.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/PrimitiveType.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/ConvexShape.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Font.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Glyph.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Texture.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Image.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Window/WindowStyle.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/BlendMode.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Export.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/CircleShape.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Shape.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Drawable.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/RenderStates.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Transform.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Rect.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Rect.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Transformable.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexArray.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Vertex.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Color.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/PrimitiveType.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/ConvexShape.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Font.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Glyph.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Texture.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Image.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/ext/aligned_buffer.h \
@@ -228,14 +228,14 @@ CMakeFiles/Mines.dir/Texture.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/uses_allocator.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/RectangleShape.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/RenderTarget.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/View.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/RenderTexture.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/RenderWindow.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Shader.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Glsl.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Glsl.inl \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Sprite.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/Text.hpp \
- C:/Users/Trent/Desktop/SFML/include/SFML/Graphics/VertexBuffer.hpp
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/RectangleShape.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/RenderTarget.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/View.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/RenderTexture.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/RenderWindow.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Shader.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Glsl.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Glsl.inl \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Sprite.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/Text.hpp \
+ C:/Users/litte/Libraries/SFML/include/SFML/Graphics/VertexBuffer.hpp

@@ -1,9 +1,6 @@
 #include "EasterEgg.h"
 
-EasterEgg::EasterEgg() : step(0), phoneVisible(false), allInStep4(false) {
-    phone.setTexture(Texture::GetTexture("phone"));
-    phone.setPosition(100, 100); // Position it appropriately
-    phone.scale(0.2,0.2);
+EasterEgg::EasterEgg() : step(0), allInStep4(false) {
     font.loadFromFile("./fonts/ProximaNova.ttc");
     // Initialize rectangle shapes
     rect1.setSize(sf::Vector2f(414, 554));  // Size: 200x100
@@ -33,20 +30,11 @@ EasterEgg::EasterEgg() : step(0), phoneVisible(false), allInStep4(false) {
 
 void EasterEgg::checkStatus(double& bank, GameState gameState, sf::Event& event, sf::Text& bankText, Wallpapers& wallpapers) {
     if (bank <= 0 && step == 0 && gameState == GameState::GameOver) {
-        activatePhone();
         step = 1;
     }
-    else if (step == 1 && event.type == sf::Event::MouseButtonPressed){
-        if (phone.getGlobalBounds().contains(event.mouseButton.x, event.mouseButton.y)) {
-            bank += 100; // Add $100 to bank
-            phoneVisible = false; // Hide phone after click
-            step = 2; // Move to the next step or manage as needed
-            wallpapers.unlockWallPaper(2);
-            //wallpapers.wallPaperMenu[1].setTexture(Texture::GetTexture("phoneAFriendWallPaper"));
-            ostringstream bankStream;
-            bankStream << fixed << setprecision(2) << bank;
-            bankText.setString("Bank: $" + bankStream.str());
-        }
+    else if (step == 1 && bank == 100){
+        step = 2;
+        wallpapers.unlockWallPaper(2);
     }
     else if (step == 2 && bank >= 200) {
         step = 3;
@@ -112,22 +100,12 @@ void EasterEgg::processGameResult(double multiplier, double& bank) {
     handleGameOutcome(bank, multiplier > 1); // Check if the game was won
 }
 
-void EasterEgg::activatePhone() {
-    phoneVisible = true;
-}
 
 void EasterEgg::render(sf::RenderWindow& window, GameState gameState) {
-    if (phoneVisible) {
-        window.draw(phone);
-    }
     window.draw(rect3);
     window.draw(rect2);
     window.draw(rect1);
     window.draw(text1);
-}
-
-bool EasterEgg::isPhoneActive() const {
-    return phoneVisible;
 }
 
 void EasterEgg::handleAllInBet(double& bank) {

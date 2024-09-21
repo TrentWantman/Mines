@@ -22,8 +22,6 @@ public:
     void checkStatus(double& bank, GameState gameState, sf::Event& event, sf::Text& bankText, Wallpapers& wallpapers);
     void update(sf::Event& event, double& bank);
     void processGameResult(double multiplier, double& bank);
-    void activatePhone();
-    void renderPhone(sf::RenderWindow& window);
     void checkStep4(double bank, double wagerAmount, GameState gamestate, Wallpapers& wallpapers);
     void render(sf::RenderWindow& window, GameState gameState);
 
@@ -33,9 +31,6 @@ public:
     void manageEndGameScenarios(double& bank);
 
     // Getters for rendering decisions
-    bool isPhoneActive() const;
-    bool phoneVisible;
-    sf::Sprite phone;
 
     bool allInStep4;
     double allInAmount;
