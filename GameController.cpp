@@ -17,6 +17,10 @@ void GameController::ProcessEvents() {
             window.close();
         HandleInput(event);
     }
+
+    if (menu->menuState == Menu::CLOSE) {
+        window.close();
+    }
 }
 
 void GameController::Update() {
@@ -541,7 +545,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
 
     payoutDisplay = new PayoutDisplay(&gameState, &multiplier);
     history = new History(&multiplier);
-    menu = new Menu(&gameState, &wallpapers, payoutDisplay, history);
+    menu = new Menu(&gameState, &wallpapers, payoutDisplay, history, &bank, &easterEgg);
 
     InitializeTiles();
 }

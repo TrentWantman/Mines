@@ -2,6 +2,6 @@
 
 int main() {
     GameController game;
-    game.Run();
+     game.Run();
     return 0;
 }

@@ -1,8 +1,10 @@
 #include "Menu.h"
 #include <iostream>
 
-Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history)
-:  showConfirmation(false), gameState(state), wallpapers(wallpapers), payoutDisplay(payoutDisplay), history(history)
+#include "EasterEgg.h"
+
+Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history, Bank* bank, EasterEgg* easterEgg)
+:  showConfirmation(false), gameState(state), wallpapers(wallpapers), payoutDisplay(payoutDisplay), history(history), bank(bank), easterEgg(easterEgg)
 {
     // Initialize the background sprite and options button sprite
     backgroundSprite.setTexture(Texture::GetTexture("menuBack"));
@@ -10,7 +12,6 @@ Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDispla
 
     appsRect.setSize(sf::Vector2f(412, 50));
     appsRect.setPosition(20,900);
-    profileSprite.setTexture(Texture::GetTexture("profile"));
     achievementsSprite.setTexture(Texture::GetTexture("achievments"));
     historySprite.setTexture(Texture::GetTexture("history"));
     payoutSprite.setTexture(Texture::GetTexture("payout"));
@@ -18,26 +19,22 @@ Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDispla
     closeSprite.setTexture(Texture::GetTexture("close"));
     phoneSprite.setTexture(Texture::GetTexture("phone"));
 
-    profileSprite.setPosition(50, 900);
     achievementsSprite.setPosition(110, 900);
     historySprite.setPosition(170, 900);
     payoutSprite.setPosition(230, 900);
-    restartSprite.setPosition(290, 900);
+    phoneSprite.setPosition(290, 900);
     closeSprite.setPosition(350, 900);
 }
 
 void Menu::render(sf::RenderWindow& window) {
     window.draw(backgroundSprite);
-    window.draw(profileSprite);
     window.draw(achievementsSprite);
     window.draw(historySprite);
     window.draw(payoutSprite);
-    window.draw(restartSprite);
+    window.draw(phoneSprite);
     window.draw(closeSprite);
 
-    if (menuState == MenuState::PROFILE) {
-    }
-    else if (menuState == MenuState::ACHIEVEMENTS) {
+    if (menuState == MenuState::ACHIEVEMENTS) {
         wallpapers->drawMenu(window);
     }
     else if (menuState == MenuState::HISTORY) {
@@ -46,7 +43,7 @@ void Menu::render(sf::RenderWindow& window) {
     else if (menuState == MenuState::PAYOUT) {
         payoutDisplay->displayPayoutsOnScreen(window);
     }
-    else if (menuState == MenuState::RESTART) {
+    else if (menuState == MenuState::PHONE) {
     }
     else if (menuState == MenuState::CLOSE) {
     }
@@ -69,10 +66,7 @@ void Menu::handleClick(sf::Vector2i mousePos) {
         if (appsRect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
             changeMenuState(mousePos);
         }
-        else if (menuState == MenuState::PROFILE) {
-            handleProfileClick(mousePos);
-        }
-        else if (menuState == MenuState::ACHIEVEMENTS) {
+        if (menuState == MenuState::ACHIEVEMENTS) {
             handleAchivementsClick(mousePos);
         }
         else if (menuState == MenuState::HISTORY) {
@@ -81,8 +75,8 @@ void Menu::handleClick(sf::Vector2i mousePos) {
         else if (menuState == MenuState::PAYOUT) {
             handlePayoutClick(mousePos);
         }
-        else if (menuState == MenuState::RESTART) {
-            handleRestartClick(mousePos);
+        else if (menuState == MenuState::PHONE) {
+            handlePhoneClick(mousePos);
         }
         else if (menuState == MenuState::CLOSE) {
             handleCloseClick(mousePos);
@@ -96,9 +90,9 @@ void::Menu::changeMenuState(sf::Vector2i mousePos) {
         std::cout << "closeSprite" << std::endl;
         menuState = MenuState::CLOSE;
     }
-    else if (restartSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "restartSprite" << std::endl;
-        menuState = MenuState::RESTART;
+    else if (phoneSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
+        std::cout << "phoneprite" << std::endl;
+        menuState = MenuState::PHONE;
     }
     else if (payoutSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
         std::cout << "payoutSprite" << std::endl;
@@ -112,13 +106,6 @@ void::Menu::changeMenuState(sf::Vector2i mousePos) {
         std::cout << "achievementsSprite" << std::endl;
         menuState = MenuState::ACHIEVEMENTS;
     }
-    else if (profileSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "profileSprite" << std::endl;
-        menuState = MenuState::PROFILE;
-    }
-}
-
-void Menu::handleProfileClick(sf::Vector2i mousePos) {
 }
 
 void Menu::handleAchivementsClick(sf::Vector2i mousePos) {
@@ -132,7 +119,10 @@ void Menu::handleHistoryClick(sf::Vector2i mousePos) {
 void Menu::handlePayoutClick(sf::Vector2i mousePos) {
 }
 
-void Menu::handleRestartClick(sf::Vector2i mousePos) {
+void Menu::handlePhoneClick(sf::Vector2i mousePos) {
+    if (bank->balance == 0) {
+        bank->deposit(100);
+    }
 }
 
 void Menu::handleCloseClick(sf::Vector2i mousePos) {
@@ -143,9 +133,7 @@ void Menu::setGameState(GameState* state) {
     gameState = state;
 }
 
-// if (menuState == MenuState::PROFILE) {
-// }
-// else if (menuState == MenuState::ACHIEVEMENTS) {
+// if (menuState == MenuState::ACHIEVEMENTS) {
 // }
 // else if (menuState == MenuState::HISTORY) {
 // }

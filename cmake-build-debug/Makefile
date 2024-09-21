@@ -248,6 +248,30 @@ GameController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.s
 .PHONY : GameController.cpp.s
 
+GameSaver.obj: GameSaver.cpp.obj
+.PHONY : GameSaver.obj
+
+# target to build an object file
+GameSaver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameSaver.cpp.obj
+.PHONY : GameSaver.cpp.obj
+
+GameSaver.i: GameSaver.cpp.i
+.PHONY : GameSaver.i
+
+# target to preprocess a source file
+GameSaver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameSaver.cpp.i
+.PHONY : GameSaver.cpp.i
+
+GameSaver.s: GameSaver.cpp.s
+.PHONY : GameSaver.s
+
+# target to generate assembly for a file
+GameSaver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameSaver.cpp.s
+.PHONY : GameSaver.cpp.s
+
 History.obj: History.cpp.obj
 .PHONY : History.obj
 
@@ -560,6 +584,9 @@ help:
 	@echo ... GameController.obj
 	@echo ... GameController.i
 	@echo ... GameController.s
+	@echo ... GameSaver.obj
+	@echo ... GameSaver.i
+	@echo ... GameSaver.s
 	@echo ... History.obj
 	@echo ... History.i
 	@echo ... History.s
