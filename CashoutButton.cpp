@@ -3,6 +3,7 @@
 
 CashoutButton::CashoutButton() {
     cashoutSprite.setTexture(Texture::GetTexture("cashout"));
+    cashoutSprite.scale(0.95,0.95);
     hover = false;
 }
 

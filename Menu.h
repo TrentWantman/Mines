@@ -13,7 +13,7 @@
 class Menu {
 private:
     sf::Sprite backgroundSprite;
-    sf::RectangleShape appsRect;
+    sf::Sprite appsRect;
     sf::Sprite closeSprite;
     sf::Sprite restartSprite;
     sf::Sprite payoutSprite;

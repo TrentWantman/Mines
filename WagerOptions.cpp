@@ -3,10 +3,13 @@
 
 
 WagerOptions::WagerOptions() {
-    wagerSprite.setTexture(Texture::GetTexture("wager"));
-    halfRect.setSize(sf::Vector2f(55,58));
-    double2Rect.setSize(sf::Vector2f(55,58));
-    wagerRect.setSize(sf::Vector2f(290,58));
+    wagerBar.setTexture(Texture::GetTexture("wagerBar"));
+    halfButton.setTexture(Texture::GetTexture("halfButton"));
+    doubleButton.setTexture(Texture::GetTexture("doubleButton"));
+    wagerBarLit.setTexture(Texture::GetTexture("wagerBarLit"));
+    halfButtonLit.setTexture(Texture::GetTexture("halfButtonLit"));
+    doubleButtonLit.setTexture(Texture::GetTexture("doubleButtonLit"));
+
     hover = 0;
 }
 
@@ -15,23 +18,16 @@ void WagerOptions::update() {
 }
 
 void WagerOptions::hoverCheck(const sf::Vector2i& mousePos) {
-    // Check if mouse is within the bounds of the sprite
-    if (wagerSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        if (double2Rect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-            wagerSprite.setTexture(Texture::GetTexture("wager_double"));
-            hover = 3;
-        }
-        else if (halfRect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-            wagerSprite.setTexture(Texture::GetTexture("wager_half"));
-            hover = 2;
-        }
-        else {
-            wagerSprite.setTexture(Texture::GetTexture("wager_hover"));
-            hover = 1;
-        }
+    if (doubleButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
+        hover = 3;
     }
-    else if (hover != 0) {
-        wagerSprite.setTexture(Texture::GetTexture("wager"));
+    else if (halfButton.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
+        hover = 2;
+    }
+    else if(wagerBar.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+        hover = 1;
+    }
+    else {
         hover = 0;
     }
 }
@@ -41,13 +37,34 @@ int WagerOptions::isClicked() {
 }
 
 void WagerOptions::draw(sf::RenderWindow& window) {
-    window.draw(wagerSprite);
+    if (hover == 3){
+        window.draw(wagerBar);
+        window.draw(halfButton);
+        window.draw(doubleButtonLit);
+    }
+    else if (hover == 2){
+        window.draw(wagerBar);
+        window.draw(halfButtonLit);
+        window.draw(doubleButton);
+    }
+    else if (hover == 1){
+        window.draw(wagerBarLit);
+        window.draw(halfButton);
+        window.draw(doubleButton);
+    }
+    else if (hover == 0){
+        window.draw(wagerBar);
+        window.draw(halfButton);
+        window.draw(doubleButton);
+    }
 }
 
-void WagerOptions::setPosition(float x, float y) {
-    wagerSprite.setPosition(x, y);
-    halfRect.setPosition(x+290,y);
-    double2Rect.setPosition(x+353,y);
-    wagerRect.setPosition(x,y);
+void WagerOptions::setPosition() {
+    wagerBar.setPosition(28.35, 130.61);
+    halfButton.setPosition(318.66 ,131.43);
+    doubleButton.setPosition(371.16,131.43 );
+    wagerBarLit.setPosition(28.35, 130.61);
+    halfButtonLit.setPosition(318.66 ,131.43);
+    doubleButtonLit.setPosition(371.16,131.43 );
 }
 

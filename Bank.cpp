@@ -5,12 +5,12 @@ Bank::Bank() {
     balance = 100;
     bankText.setFont(font);
     bankText.setStyle(sf::Text::Bold);
-    bankText.setCharacterSize(20);
+    bankText.setCharacterSize(18.5);
     bankText.setFillColor(sf::Color::White);
     UpdateBankOutput();
-    bankText.setPosition(20, 30);
+    bankText.setPosition(39.68, 74.37);
     bankBox.setTexture(Texture::GetTexture("bankBox"));
-    bankBox.setPosition(18,28);
+    bankBox.setPosition(28.35,56.98);
 }
 
 void Bank::UpdateBankOutput() {
@@ -30,6 +30,6 @@ void Bank::deposit(double amount) {
 }
 
 void Bank::drawBank(sf::RenderWindow& window) {
-    window.draw(bankBox);
+    //window.draw(bankBox);
     window.draw(bankText);
 }

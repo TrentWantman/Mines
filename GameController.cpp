@@ -13,19 +13,22 @@ void GameController::Run() {
 void GameController::ProcessEvents() {
     sf::Event event;
     while (window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed)
+        if (event.type == sf::Event::Closed) {
+            gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount);
             window.close();
+        }
         HandleInput(event);
     }
 
     if (menu->menuState == Menu::CLOSE) {
-        gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers);
+        gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount);
         window.close();
     }
 }
 
 void GameController::Update() {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+    payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
     if (gameState == GameState::GameOver) {
         // If the timer hasn't started yet, capture the current time
 
@@ -43,18 +46,18 @@ void GameController::Update() {
             gameState = GameState::PreGame; // Set gameState to PreGame
             timerStarted = false;           // Reset the timer flag for future use
         }
-        payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
+        //payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
     }
-    payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
 }
 
 void GameController::Render() {
     sf::Vector2i mousePos = sf::Mouse::getPosition(window);
     window.clear();
 
+    window.draw(menuBack);
     if (gameState == GameState::PreGame) {
         window.draw(wallpapers.currentWallPaper->sprite);
-        window.draw(back2);
+        window.draw(gameOptionsBack);
         betButton.draw(window);
         wagerOptions.draw(window);
         mineOptions.draw(window);
@@ -73,7 +76,7 @@ void GameController::Render() {
 
     else if (gameState == GameState::Playing) {
         window.draw(wallpapers.currentWallPaper->sprite);
-        window.draw(back2);
+        window.draw(gameOptionsBack);
         cashoutButton.draw(window);
         wagerOptions.draw(window);
         mineOptions.draw(window);
@@ -89,7 +92,7 @@ void GameController::Render() {
     }
     else if (gameState == GameState::GameOver) {
         window.draw(wallpapers.currentWallPaper->sprite);
-        window.draw(back2);
+        window.draw(gameOptionsBack);
         betButton.draw(window);
         wagerOptions.draw(window);
         mineOptions.draw(window);
@@ -396,7 +399,10 @@ void GameController::CheckTiles(sf::Vector2i mousePos) {
             tile.clickCheck(mousePos);
         }
         if (tile.isRevealed() && tile.hasMine()) {
-            if(gameState != GameState::GameOver) {EndGame(false);}
+            if(gameState != GameState::GameOver) {
+                EndGame(false);
+                return;
+            }
         }
         else if (!tile.hasMine() && tile.isRevealed()) {
             gemsRevealed++;
@@ -422,11 +428,11 @@ void GameController::RevealTiles() {
 void GameController::EndGame(bool win) {
     if(!win) {
         RevealTiles();
-        multi = 0;
+        multi =  0;
         payout = 0;
         history->AddRound(mines, gemsRevealed, wagerAmount, multi, payout);
-        if (wagerAmount > bank.balance) { wagerAmount = bank.balance;}
-        bank.UpdateBankOutput();
+        if (wagerAmount >= bank.balance) { wagerAmount = bank.balance;}
+        bank.deposit(payout);
         UpdateWagerOutput();
         UpdateMultiplierOutput();
         UpdatePayoutOutput();
@@ -440,6 +446,7 @@ void GameController::EndGame(bool win) {
         payout = (wagerAmount * multi);
         history->AddRound(mines, gemsRevealed, wagerAmount, multi, payout);
         bank.deposit(payout);
+        UpdateWagerOutput();
         UpdateMultiplierOutput();
         UpdatePayoutOutput();
         UpdateMineGemOutput();
@@ -471,6 +478,9 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     back2.setSize(sf::Vector2f(450, 980));
     back2.setFillColor(sf::Color(85,112,100));
 
+    menuBack.setTexture(Texture::GetTexture("menuBack"));
+    menuBack.setPosition(0,0);
+
     //Initialize UI Elements
     overlay.setSize((sf::Vector2f(1350, 980)));
     overlay.setFillColor(sf::Color(255,255,255,155));
@@ -483,30 +493,30 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     double multiplierWindowY = 492.558-multiplierWindowOffsetY;
     multiplierWindow.setPosition(multiplierWindowX, multiplierWindowY);
 
-    cashoutButton.setPosition(18, 312);
-    betButton.setPosition(18, 312);
-    wagerOptions.setPosition(18, 132);
-    mineOptions.setPosition(18, 236);
+    cashoutButton.setPosition(30, 312);
+    betButton.setPosition(28.35, 277.87);
+    wagerOptions.setPosition();
+    mineOptions.setPosition(28.35, 204.24);
 
     //Initialize Texts
     font.loadFromFile("./fonts/ProximaNova.ttc");
 
     mineOutput.setFont(font);
     mineOutput.setStyle(sf::Text::Bold);
-    mineOutput.setPosition(25, 248);
-    mineOutput.setCharacterSize(20);
+    mineOutput.setPosition(99.33, 221.63);
+    mineOutput.setCharacterSize(18.5);
     mineOutput.setFillColor(sf::Color::White);
 
     gemOutput.setFont(font);
     gemOutput.setStyle(sf::Text::Bold);
-    gemOutput.setPosition(236, 248);
-    gemOutput.setCharacterSize(20);
+    gemOutput.setPosition(300.60, 221.63);
+    gemOutput.setCharacterSize(18.43);
     gemOutput.setFillColor(sf::Color::White);
 
     wagerOutput.setFont(font);
     wagerOutput.setStyle(sf::Text::Bold);
-    wagerOutput.setPosition(25, 144);
-    wagerOutput.setCharacterSize(20);
+    wagerOutput.setPosition(120, 148.04);
+    wagerOutput.setCharacterSize(18.43);
     wagerOutput.setFillColor(sf::Color::White);
     wagerOutput.setString("0");
 
@@ -525,29 +535,29 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
 
     BetAmountTitle.setFont(font);
     BetAmountTitle.setStyle(sf::Text::Bold);
-    BetAmountTitle.setString("Bet Amount");
-    BetAmountTitle.setPosition(19, 105);
-    BetAmountTitle.setCharacterSize(20);
+    BetAmountTitle.setString("Wager: $");
+    BetAmountTitle.setPosition(39.68, 148.04);
+    BetAmountTitle.setCharacterSize(18.5);
     BetAmountTitle.setFillColor(sf::Color::White);
 
     MinesTitle.setFont(font);
     MinesTitle.setStyle(sf::Text::Bold);
-    MinesTitle.setString("Mines");
-    MinesTitle.setPosition(21, 209);
-    MinesTitle.setCharacterSize(20);
+    MinesTitle.setString("Mines:");
+    MinesTitle.setPosition(39.68, 221.63);
+    MinesTitle.setCharacterSize(18.5);
     MinesTitle.setFillColor(sf::Color::White);
 
     GemsTitle.setFont(font);
     GemsTitle.setStyle(sf::Text::Bold);
-    GemsTitle.setString("Gems");
-    GemsTitle.setPosition(232, 209);
-    GemsTitle.setCharacterSize(20);
+    GemsTitle.setString("Gems:");
+    GemsTitle.setPosition(243.30, 221.63);
+    GemsTitle.setCharacterSize(18.5);
     GemsTitle.setFillColor(sf::Color::White);
 
     gameSaver = new GameSaver();
     payoutDisplay = new PayoutDisplay(&gameState, &multiplier);
     history = new History(&multiplier);
     menu = new Menu(&gameState, &wallpapers, payoutDisplay, history, &bank, &easterEgg);
-
+    gameSaver->loadGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount);
     InitializeTiles();
 }

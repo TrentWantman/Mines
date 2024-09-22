@@ -8,25 +8,93 @@ GameSaver::GameSaver() {
 
 };
 
-void GameSaver::saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers) {
-    std::ofstream saveFile("saveFile.txt");
+void GameSaver::saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount) {
+    std::ofstream mainSave("saveFile.txt");
 
-    if (!saveFile) {
+    if (!mainSave) {
         std::cerr << "Failed to open file for saving." << std::endl;
         return;
     }
 
     // Save relevant game state, e.g., player score, bank, round number, etc.
-    saveFile << bank->balance << std::endl;
-    saveFile << easterEgg->step << std::endl;
-    saveFile << easterEgg->allInStep4 << std::endl;
-    saveFile << easterEgg->allInAmount << std::endl;
-    //saveFile << history->() << std::endl;
-    // Add more game state variables as needed
+    if (*gameState == GameState::Playing){
+        mainSave << (bank->balance + wagerAmount) << std::endl;
+    }
+    else{
+        mainSave << bank->balance << std::endl;
+    }
 
-    saveFile.close();
+    mainSave << easterEgg->step << std::endl;
+
+    for (auto& wallpaper : wallpapers->wallPaperMenu) {
+        // if(wallpaper.unlocked) {
+        mainSave << wallpaper.unlocked << std::endl;
+        // }
+    }
+
+    mainSave << history->rounds.size() << std::endl; // Save the size of the rounds vector
+    for (auto& round : history->rounds) {
+        mainSave << round.mines << " "
+                 << round.gemsRevealed << " "
+                 << round.wager << " "
+                 << round.multiplier << " "
+                 << round.payout << std::endl;
+    }
+
+
+    mainSave.close();
 }
 
-void GameSaver::loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers) {
+void GameSaver::loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount) {
+    std::ifstream mainLoad("saveFile.txt");
 
+    if (!mainLoad) {
+        std::cerr << "Failed to open file for loading." << std::endl;
+        return;
+    }
+
+    if (mainLoad.peek() == std::ifstream::traits_type::eof()) {
+        std::cerr << "Save file is empty. No data to load." << std::endl;
+        mainLoad.close();
+        return;
+    }
+
+    // Load bank balance
+    double balance;
+    mainLoad >> balance;
+    bank->withdrawl(bank->balance);
+    bank->deposit(balance);
+
+    // Load EasterEgg step
+    int step;
+    mainLoad >> step;
+    easterEgg->step = step;
+
+    // Load wallpapers unlocked status
+    int index = 1;
+    for (auto& wallpaper : wallpapers->wallPaperMenu) {
+        bool unlocked;
+        mainLoad >> unlocked;
+        if (unlocked) {
+            wallpapers->unlockWallPaper(index);  // Use index to unlock wallpaper
+        }
+        index++;  // Increment the index for the next wallpaper
+    }
+
+    // Load history of rounds
+    size_t roundsSize;
+    mainLoad >> roundsSize;
+    history->rounds.clear(); // Clear existing rounds before loading
+
+    for (size_t i = 0; i < roundsSize; ++i) {
+        Round round;
+        mainLoad >> round.mines
+                 >> round.gemsRevealed
+                 >> round.wager
+                 >> round.multiplier
+                 >> round.payout;
+        history->rounds.push_back(round);
+    }
+
+    mainLoad.close();
 }

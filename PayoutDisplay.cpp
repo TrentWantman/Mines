@@ -66,24 +66,13 @@ void PayoutDisplay::calculatePayouts(int numberOfMines, double currentWager, int
     payouts.clear();
 
     // Check the current game state
-    if (*gameState == GameState::PreGame || *gameState == GameState::GameOver) {
-
-        // Loop through each number of gems that can be revealed
-        for (int gems = 1; gems <= (25-numberOfMines); ++gems) {
-            double payoutMultiplier = multiplier->calculateMultiplier(gems, numberOfMines);
-            double payoutValue = payoutMultiplier * currentWager;
-            payouts.push_back({gems, payoutMultiplier, payoutValue});
-        }
+    if (gemsRevealed == 0) {
+        gemsRevealed = 1;
     }
-    else if (*gameState == GameState::Playing) {
-        if (gemsRevealed == 0) {
-            gemsRevealed = 1;
-        }
-        // Start from the number of gems already revealed and go up
-        for (int gems = gemsRevealed; gems <= (25-numberOfMines); ++gems) {
-            double payoutMultiplier = multiplier->calculateMultiplier(gems, numberOfMines);
-            double payoutValue = payoutMultiplier * currentWager;
-            payouts.push_back({gems, payoutMultiplier, payoutValue});
-        }
+    // Start from the number of gems already revealed and go up
+    for (int gems = gemsRevealed; gems <= (25-numberOfMines); ++gems) {
+        double payoutMultiplier = multiplier->calculateMultiplier(gems, numberOfMines);
+        double payoutValue = payoutMultiplier * currentWager;
+        payouts.push_back({gems, payoutMultiplier, payoutValue});
     }
 }

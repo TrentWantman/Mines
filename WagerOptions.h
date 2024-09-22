@@ -10,13 +10,17 @@ public:
     void hoverCheck(const sf::Vector2i& mousePos);
     int isClicked();
     void draw(sf::RenderWindow& window);
-    void setPosition(float x, float y);
+    void setPosition();
 
 private:
-    sf::Sprite wagerSprite;
-    sf::RectangleShape wagerRect;
-    sf::RectangleShape halfRect;
-    sf::RectangleShape double2Rect;
+    sf::Sprite wagerBar;
+    sf::Sprite halfButton;
+    sf::Sprite doubleButton;
+    sf::Sprite wagerBarLit;
+    sf::Sprite halfButtonLit;
+    sf::Sprite doubleButtonLit;
+
+
     int hover;
 };
 

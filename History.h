@@ -17,7 +17,7 @@ struct Round{
 };
 
 class History {
-private:
+public:
 
     Multiplier* multiplier; // Pointer to the multiplier class
     std::vector<Round> rounds;
@@ -32,7 +32,7 @@ private:
 
 
 
-public:
+
     History(Multiplier* mult);
     void displayHistory(sf::RenderWindow& window);
     void AddRound(int numberOfMines, int gemsRevealed, double wager, double payout, double multiplier);

@@ -39,7 +39,7 @@ struct Multiplier {
     double multi(int gems, int mines) {
         if (gems <= 0 || gems > multipliers.size() || mines <= 0 || mines > multipliers[0].size()) {
             std::cerr << "Invalid number of gems or mines!" << std::endl;
-            return -1.0;
+            return 1.0;
         }
         return multipliers[gems - 1][mines - 1];
     }

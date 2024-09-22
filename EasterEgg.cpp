@@ -87,6 +87,9 @@ void EasterEgg::checkStep4(double bank, double wagerAmount, GameState gameState,
                wallpapers.unlockWallPaper(5);
                std::cout << step << std::endl;
            }
+           else{
+               allInStep4 = false;
+           }
        }
 }
 
@@ -102,10 +105,7 @@ void EasterEgg::processGameResult(double multiplier, double& bank) {
 
 
 void EasterEgg::render(sf::RenderWindow& window, GameState gameState) {
-    window.draw(rect3);
-    window.draw(rect2);
-    window.draw(rect1);
-    window.draw(text1);
+
 }
 
 void EasterEgg::handleAllInBet(double& bank) {

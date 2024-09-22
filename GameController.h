@@ -47,6 +47,8 @@ private:
     sf::RectangleShape back, back2;
     sf::RectangleShape overlay;
     sf::Sprite multiplierWindow;
+    sf::Sprite gameOptionsBack;
+    sf::Sprite menuBack;
 
     GameState gameState;
     GameState prevState;

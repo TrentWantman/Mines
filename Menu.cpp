@@ -8,26 +8,26 @@ Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDispla
 {
     // Initialize the background sprite and options button sprite
     backgroundSprite.setTexture(Texture::GetTexture("menuBack"));
+    appsRect.setTexture(Texture::GetTexture("appsRect"));
     backgroundSprite.setPosition(18, 414);
-
-    appsRect.setSize(sf::Vector2f(412, 50));
-    appsRect.setPosition(20,900);
-    achievementsSprite.setTexture(Texture::GetTexture("achievments"));
+    appsRect.setPosition(57.78 ,852.7 );
+    achievementsSprite.setTexture(Texture::GetTexture("achievements"));
     historySprite.setTexture(Texture::GetTexture("history"));
     payoutSprite.setTexture(Texture::GetTexture("payout"));
     restartSprite.setTexture(Texture::GetTexture("restart"));
     closeSprite.setTexture(Texture::GetTexture("close"));
     phoneSprite.setTexture(Texture::GetTexture("phone"));
 
-    achievementsSprite.setPosition(110, 900);
-    historySprite.setPosition(170, 900);
-    payoutSprite.setPosition(230, 900);
-    phoneSprite.setPosition(290, 900);
-    closeSprite.setPosition(350, 900);
+    achievementsSprite.setPosition(134, 863.9705 );
+    historySprite.setPosition(262, 863.9705 );
+    payoutSprite.setPosition(198, 863.9705 );
+    phoneSprite.setPosition(70, 863.9705 );
+    closeSprite.setPosition(326, 863.9705 );
 }
 
 void Menu::render(sf::RenderWindow& window) {
-    window.draw(backgroundSprite);
+    //window.draw(backgroundSprite);
+    window.draw(appsRect);
     window.draw(achievementsSprite);
     window.draw(historySprite);
     window.draw(payoutSprite);
