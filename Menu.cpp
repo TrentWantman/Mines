@@ -114,6 +114,12 @@ void Menu::handleAchivementsClick(sf::Vector2i mousePos) {
 }
 
 void Menu::handleHistoryClick(sf::Vector2i mousePos) {
+    if (history->downArrow.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+        history->scrollDown();
+    }
+    else if (history->upArrow.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+        history->scrollUp();
+    }
 }
 
 void Menu::handlePayoutClick(sf::Vector2i mousePos) {

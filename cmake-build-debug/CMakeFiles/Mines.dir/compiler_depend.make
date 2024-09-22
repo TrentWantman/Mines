@@ -1808,6 +1808,7 @@ CMakeFiles/Mines.dir/History.cpp.obj: C:/Users/Trent/Desktop/MinesGame/History.c
   C:/Users/Trent/Desktop/SFML/include/SFML/Window/WindowHandle.hpp \
   C:/Users/Trent/Desktop/SFML/include/SFML/Window/WindowStyle.hpp \
   C:/Users/Trent/Desktop/MinesGame/History.h \
+  C:/Users/Trent/Desktop/MinesGame/Texture.h \
   C:/Users/Trent/Desktop/MinesGame/multiplier.h
 
 CMakeFiles/Mines.dir/Menu.cpp.obj: C:/Users/Trent/Desktop/MinesGame/Menu.cpp \
@@ -2570,7 +2571,8 @@ CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj: C:/Users/Trent/Desktop/MinesGame/Pay
   C:/Users/Trent/Desktop/SFML/include/SFML/Window/WindowStyle.hpp \
   C:/Users/Trent/Desktop/MinesGame/GameState.h \
   C:/Users/Trent/Desktop/MinesGame/multiplier.h \
-  C:/Users/Trent/Desktop/MinesGame/PayoutDisplay.h
+  C:/Users/Trent/Desktop/MinesGame/PayoutDisplay.h \
+  C:/Users/Trent/Desktop/MinesGame/Texture.h
 
 CMakeFiles/Mines.dir/Texture.cpp.obj: C:/Users/Trent/Desktop/MinesGame/Texture.cpp \
   C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/algorithm \

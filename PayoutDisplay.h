@@ -3,6 +3,7 @@
 
 #include "GameState.h"
 #include "Multiplier.h"
+#include "Texture.h"
 
 struct PayoutInfo {
     int gemsFound;          // Integer for gems found
@@ -20,6 +21,7 @@ private:
     sf::Text headerGems;
     sf::Text headerMultiplier;
     sf::Text headerPayout;
+    sf::Sprite payoutScreen;
 
 public:
     PayoutDisplay(GameState* state, Multiplier* mult);

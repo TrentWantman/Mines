@@ -6,6 +6,9 @@
 PayoutDisplay::PayoutDisplay(GameState* state, Multiplier* mult) : gameState(state), multiplier(mult) {
     font.loadFromFile("./fonts/ProximaNova.ttc");
 
+    payoutScreen.setTexture(Texture::GetTexture("payoutScreen"));
+    payoutScreen.setPosition(37.67, 416.960);
+
     headerGems.setFont(font);
     headerGems.setString("Gems");
     headerGems.setCharacterSize(20);
@@ -23,39 +26,53 @@ PayoutDisplay::PayoutDisplay(GameState* state, Multiplier* mult) : gameState(sta
 }
 
 void PayoutDisplay::displayPayoutsOnScreen(sf::RenderWindow& window) {
-    // Render headers
-    window.draw(headerGems);
-    window.draw(headerMultiplier);
-    window.draw(headerPayout);
+    window.draw(payoutScreen);
 
-    // Display each payout in a row under the headers
-    int yOffset = 440; // Starting Y position for the data rows
+    // Use the same boundaries and padding as the History display
+    float startY = 470.0f;  // Same top padding as the History
+    float endY = 880.0f;    // Same bottom padding
+    float gemsX = 50.0f;    // Move Gems a bit to the left
+    float multiplierX = 120.0f;  // Shift Multiplier to the left
+    float payoutX = 260.0f;  // Shift Payout to the left to avoid overflow
+
+    // Calculate space available and offset per entry
+    float availableHeight = endY - startY;
+    float entryHeight = availableHeight / 28.0f;  // Space per entry
+    float yOffset = startY;
+
+    int fontSize = 12;  // Keep the font size small to fit (same as History)
+
+    // Display each payout in separate columns for Gems, Multiplier, and Payout
     for (const auto& payout : payouts) {
-        // Create text objects for gems, multiplier, and payout
-        sf::Text gemsText(std::to_string(payout.gemsFound), font, 15);
+        // Create text objects for each element
 
-        // Format multiplier and payout to 2 decimal places using stringstream
+        // Gems Text
+        sf::Text gemsText("Gems: " + std::to_string(payout.gemsFound), font, fontSize);
+        gemsText.setPosition(gemsX, yOffset);
+
+        // Multiplier Text with "x"
         std::stringstream multiplierStream;
-        multiplierStream << std::fixed << std::setprecision(2) << payout.multiplier;
-        sf::Text multiplierText(multiplierStream.str(), font, 15);
+        multiplierStream << "Multiplier: " << std::fixed << std::setprecision(2) << payout.multiplier << "x";
+        sf::Text multiplierText(multiplierStream.str(), font, fontSize);
+        multiplierText.setPosition(multiplierX, yOffset);
 
+        // Payout Text formatted to 2 decimals
         std::stringstream payoutStream;
-        payoutStream << std::fixed << std::setprecision(2) << payout.payout;
-        sf::Text payoutText(payoutStream.str(), font, 15);
+        payoutStream << "Payout: $" << std::fixed << std::setprecision(2) << payout.payout;
+        sf::Text payoutText(payoutStream.str(), font, fontSize);
+        payoutText.setPosition(payoutX, yOffset);
 
-        // Set positions for each column
-        gemsText.setPosition(50, yOffset);
-        multiplierText.setPosition(150, yOffset);
-        payoutText.setPosition(300, yOffset);
-
-        // Draw the text objects
+        // Draw the text objects on the screen
         window.draw(gemsText);
         window.draw(multiplierText);
         window.draw(payoutText);
 
-        yOffset += 15; // Move the next row down
+        // Increment the Y offset for the next entry
+        yOffset += entryHeight;
     }
 }
+
+
 
 
 void PayoutDisplay::calculatePayouts(int numberOfMines, double currentWager, int gemsRevealed) {

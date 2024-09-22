@@ -1,8 +1,17 @@
 #include "History.h"
 
-History::History(Multiplier* mult) : multiplier(mult) {
+History::History(Multiplier* mult) : multiplier(mult), currentStartIndex(0) {
     font.loadFromFile("./fonts/ProximaNova.ttc");
     int headerSize = 20;
+
+    upArrow.setTexture(Texture::GetTexture("upArrow"));
+    upArrow.setPosition(67.36, 451.51);
+
+    downArrow.setTexture(Texture::GetTexture("downArrow"));
+    downArrow.setPosition(67.36, 813.41);
+
+    historyScreen.setTexture(Texture::GetTexture("historyScreen"));
+    historyScreen.setPosition(37.67, 416.960);
 
     headerMines.setFont(font);
     headerMines.setString("Mines");
@@ -30,7 +39,7 @@ History::History(Multiplier* mult) : multiplier(mult) {
     headerPayout.setPosition(headerMultiplier.getPosition().x + headerMultiplier.getGlobalBounds().width + 15, 420);
 }
 
-void History::AddRound(int numberOfMines, int gemsRevealed, double wager, double multi, double payout){
+void History::AddRound(int numberOfMines, int gemsRevealed, double wager, double multi, double payout) {
     std::stringstream wagerStream;
     wagerStream << std::fixed << std::setprecision(2) << wager;
 
@@ -42,46 +51,64 @@ void History::AddRound(int numberOfMines, int gemsRevealed, double wager, double
     rounds.push_back({numberOfMines, gemsRevealed, wagerStream.str(), multiStream.str(), payoutStream.str()});
 }
 
-void History::displayHistory(sf::RenderWindow &window) {
-    window.draw(headerMines);
-    window.draw(headerGems);
-    window.draw(headerWager);
-    window.draw(headerMultiplier);
-    window.draw(headerPayout);
-
-    // Display each payout in reverse order, starting from the most recent round
-    int yOffset = 440; // Starting Y position for the data rows
-    for (auto it = rounds.rbegin(); it != rounds.rend(); ++it) {
-        sf::Text mineText(std::to_string(it->mines), font, 20);
-        sf::Text gemsText(std::to_string(it->gemsRevealed), font, 20);
-
-        std::stringstream wagerStream;
-        wagerStream << std::fixed << std::setprecision(2) << it->wager;
-        sf::Text wagerText(wagerStream.str(), font, 20);
-
-        std::stringstream multiStream;
-        multiStream << std::fixed << std::setprecision(2) << it->multiplier;
-        sf::Text multiplierText(multiStream.str(), font, 20);
-
-        std::stringstream payoutStream;
-        payoutStream << std::fixed << std::setprecision(2) << it->payout;
-        sf::Text payoutText(payoutStream.str(), font, 20);
-
-        // Set positions for each column
-        mineText.setPosition(50, yOffset);
-        gemsText.setPosition(100, yOffset);
-        wagerText.setPosition(150, yOffset);
-        multiplierText.setPosition(200, yOffset);
-        payoutText.setPosition(250, yOffset);
-
-        // Draw the text objects
-        window.draw(mineText);
-        window.draw(gemsText);
-        window.draw(wagerText);
-        window.draw(multiplierText);
-        window.draw(payoutText);
-
-        yOffset += 15; // Move the next row down
+void History::scrollDown() {
+    // Scroll up, but don't exceed the total rounds count
+    if (currentStartIndex + 12 < rounds.size()) {
+        currentStartIndex += 12;
     }
 }
+
+void History::scrollUp() {
+    // Scroll down, but ensure index stays >= 0
+    if (currentStartIndex - 12 >= 0) {
+        currentStartIndex -= 12;
+    } else {
+        currentStartIndex = 0;
+    }
+}
+
+void History::displayHistory(sf::RenderWindow &window) {
+    window.draw(historyScreen);
+
+    window.draw(upArrow);
+    window.draw(downArrow);
+
+    // Boundaries with adjusted padding
+    float startY = 475.0f;  // Slightly increase the top padding
+    float endY = 800.0f;    // Slightly reduce the bottom padding
+    float startX = 50.0f;   // Shift the text slightly to the right for balance
+    float endX = 400.0f;    // Adjust the right boundary for better balance
+
+    // Calculate space available and offset per entry
+    float availableHeight = endY - startY;
+    float entryHeight = availableHeight / 12.0f;  // Space per entry
+    float yOffset = startY;
+
+    int itemsToDisplay = std::min(12, static_cast<int>(rounds.size()) - currentStartIndex);  // Only show 12 items or less
+    int fontSize = 13;  // Keep the font size small to fit
+
+    for (int i = 0; i < itemsToDisplay; ++i) {
+        auto& round = rounds[rounds.size() - 1 - (currentStartIndex + i)]; // Access the most recent rounds first
+
+        // Create a stringstream to combine round data with the desired formatting
+        std::stringstream roundStream;
+        roundStream << "Wager: $" << std::fixed << std::setprecision(2) << std::stod(round.wager)
+                    << " , Multiplier: " << std::fixed << std::setprecision(2) << std::stod(round.multiplier) << "x"
+                    << " , Payout: $" << std::fixed << std::setprecision(2) << std::stod(round.payout);
+
+        // Create a single sf::Text object with the combined string
+        sf::Text roundText(roundStream.str(), font, fontSize);
+        roundText.setPosition(startX, yOffset); // Position within the X and Y bounds
+
+
+        // Draw the combined text object
+        window.draw(roundText);
+
+        // Increment the Y offset for the next entry, based on the calculated height per entry
+        yOffset += entryHeight;
+    }
+}
+
+
+
 
