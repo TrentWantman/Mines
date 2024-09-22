@@ -48,6 +48,12 @@ void GameController::Update() {
         }
         //payoutDisplay->calculatePayouts(mines, wagerAmount, gemsRevealed);
     }
+    if (gameState != GameState::Playing){
+        if (wagerAmount > bank.balance){
+            wagerAmount = bank.balance;
+            UpdateWagerOutput();
+        }
+    }
 }
 
 void GameController::Render() {
