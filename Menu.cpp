@@ -3,8 +3,8 @@
 
 #include "EasterEgg.h"
 
-Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history, Bank* bank, EasterEgg* easterEgg)
-:  showConfirmation(false), gameState(state), wallpapers(wallpapers), payoutDisplay(payoutDisplay), history(history), bank(bank), easterEgg(easterEgg)
+Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history, Bank* bank, EasterEgg* easterEgg, Jeff* jeff)
+:  showConfirmation(false), gameState(state), wallpapers(wallpapers), payoutDisplay(payoutDisplay), history(history), bank(bank), easterEgg(easterEgg), jeff(jeff)
 {
     // Initialize the background sprite and options button sprite
     backgroundSprite.setTexture(Texture::GetTexture("menuBack"));
@@ -18,11 +18,19 @@ Menu::Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDispla
     closeSprite.setTexture(Texture::GetTexture("close"));
     phoneSprite.setTexture(Texture::GetTexture("phone"));
 
+    confirmClose.setTexture(Texture::GetTexture("confirmClose"));
+    confirmClose.setPosition(633.98, 335.46);
+    yes.setTexture(Texture::GetTexture("yes"));
+    yes.setPosition(687.76, 482.97);
+    no.setTexture(Texture::GetTexture("no"));
+    no.setPosition(917.67, 482.97);
+
     achievementsSprite.setPosition(134, 863.9705 );
     historySprite.setPosition(262, 863.9705 );
     payoutSprite.setPosition(198, 863.9705 );
     phoneSprite.setPosition(70, 863.9705 );
     closeSprite.setPosition(326, 863.9705 );
+    menuState = MenuState::PAYOUT;
 }
 
 void Menu::render(sf::RenderWindow& window) {
@@ -44,8 +52,12 @@ void Menu::render(sf::RenderWindow& window) {
         payoutDisplay->displayPayoutsOnScreen(window);
     }
     else if (menuState == MenuState::PHONE) {
+        jeff->draw(window);
     }
-    else if (menuState == MenuState::CLOSE) {
+    if (confirmingClose) {
+        window.draw(confirmClose);
+        window.draw(yes);
+        window.draw(no);
     }
     //If dropdown is visible, render it
     //
@@ -78,17 +90,16 @@ void Menu::handleClick(sf::Vector2i mousePos) {
         else if (menuState == MenuState::PHONE) {
             handlePhoneClick(mousePos);
         }
-        else if (menuState == MenuState::CLOSE) {
-            handleCloseClick(mousePos);
-        }
-
+    }
+    if (confirmingClose) {
+        handleCloseClick(mousePos);
     }
 }
 
 void::Menu::changeMenuState(sf::Vector2i mousePos) {
     if (closeSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
         std::cout << "closeSprite" << std::endl;
-        menuState = MenuState::CLOSE;
+        confirmingClose = true;
     }
     else if (phoneSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
         std::cout << "phoneprite" << std::endl;
@@ -126,12 +137,23 @@ void Menu::handlePayoutClick(sf::Vector2i mousePos) {
 }
 
 void Menu::handlePhoneClick(sf::Vector2i mousePos) {
-    if (bank->balance == 0) {
-        bank->deposit(100);
+    if(bank->balance == 0 && *gameState != GameState::Playing){
+        if (jeff->askForMoney.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+            jeff->borrowMoney();
+        }
+    }
+    else if (jeff->payJeff.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+        jeff->pay();
     }
 }
 
 void Menu::handleCloseClick(sf::Vector2i mousePos) {
+    if(yes.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+        menuState = MenuState::CLOSE;
+    }
+    else if (no.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))){
+        confirmingClose = false;
+    }
 }
 
 

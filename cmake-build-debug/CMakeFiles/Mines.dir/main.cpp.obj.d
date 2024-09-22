@@ -249,9 +249,11 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iomanip \
+ C:\Users\Trent\Desktop\MinesGame\Jeff.h \
+ C:\Users\Trent\Desktop\MinesGame\Bank.h \
+ C:\Users\Trent\Desktop\MinesGame\Texture.h \
  C:\Users\Trent\Desktop\MinesGame\GameSaver.h \
  C:\Users\Trent\Desktop\MinesGame\EasterEgg.h \
- C:\Users\Trent\Desktop\MinesGame\Texture.h \
  C:\Users\Trent\Desktop\MinesGame\GameState.h \
  C:\Users\Trent\Desktop\MinesGame\Wallpapers.h \
  C:\Users\Trent\Desktop\MinesGame\WallPaper.h \
@@ -265,7 +267,6 @@ CMakeFiles/Mines.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
  C:\Users\Trent\Desktop\MinesGame\History.h \
  C:\Users\Trent\Desktop\MinesGame\multiplier.h \
- C:\Users\Trent\Desktop\MinesGame\Bank.h \
  C:\Users\Trent\Desktop\MinesGame\BetButton.h \
  C:\Users\Trent\Desktop\MinesGame\Tile.h \
  C:\Users\Trent\Desktop\MinesGame\CashoutButton.h \

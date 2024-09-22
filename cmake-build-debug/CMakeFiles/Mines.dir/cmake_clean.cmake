@@ -13,6 +13,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Mines.dir/GameSaver.cpp.obj.d"
   "CMakeFiles/Mines.dir/History.cpp.obj"
   "CMakeFiles/Mines.dir/History.cpp.obj.d"
+  "CMakeFiles/Mines.dir/Jeff.cpp.obj"
+  "CMakeFiles/Mines.dir/Jeff.cpp.obj.d"
   "CMakeFiles/Mines.dir/Menu.cpp.obj"
   "CMakeFiles/Mines.dir/Menu.cpp.obj.d"
   "CMakeFiles/Mines.dir/MineOptions.cpp.obj"

@@ -14,14 +14,14 @@ void GameController::ProcessEvents() {
     sf::Event event;
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::Closed) {
-            gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount);
+            gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount, jeff);
             window.close();
         }
         HandleInput(event);
     }
 
     if (menu->menuState == Menu::CLOSE) {
-        gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount);
+        gameSaver->saveGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount, jeff);
         window.close();
     }
 }
@@ -493,7 +493,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     double multiplierWindowY = 492.558-multiplierWindowOffsetY;
     multiplierWindow.setPosition(multiplierWindowX, multiplierWindowY);
 
-    cashoutButton.setPosition(30, 312);
+    cashoutButton.setPosition(28.35, 277.87);
     betButton.setPosition(28.35, 277.87);
     wagerOptions.setPosition();
     mineOptions.setPosition(28.35, 204.24);
@@ -557,7 +557,8 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     gameSaver = new GameSaver();
     payoutDisplay = new PayoutDisplay(&gameState, &multiplier);
     history = new History(&multiplier);
-    menu = new Menu(&gameState, &wallpapers, payoutDisplay, history, &bank, &easterEgg);
-    gameSaver->loadGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount);
+    jeff = new Jeff(&bank);
+    menu = new Menu(&gameState, &wallpapers, payoutDisplay, history, &bank, &easterEgg, jeff);
+    gameSaver->loadGame(&easterEgg, menu, &bank, &gameState, history, payoutDisplay, &wallpapers, wagerAmount, jeff);
     InitializeTiles();
 }

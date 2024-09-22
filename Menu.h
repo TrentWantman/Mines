@@ -9,6 +9,7 @@
 #include "Bank.h"
 #include "EasterEgg.h"
 #include "Texture.h"
+#include "Jeff.h"
 
 class Menu {
 private:
@@ -21,6 +22,10 @@ private:
     sf::Sprite achievementsSprite;
     sf::Sprite phoneSprite;
 
+    sf::Sprite yes;
+    sf::Sprite no;
+    sf::Sprite confirmClose;
+
     sf::Sprite confirmSprite; // Used for restart/close confirmation
 
     bool showDropdown;
@@ -31,6 +36,7 @@ private:
     History* history;
     Bank* bank;
     EasterEgg* easterEgg;
+    Jeff* jeff;
 
 
     void changeMenuState(sf::Vector2i mousePos);
@@ -43,6 +49,8 @@ private:
 
 public:
 
+    bool confirmingClose;
+
     enum MenuState {
         ACHIEVEMENTS,
         HISTORY,
@@ -51,8 +59,9 @@ public:
         CLOSE,
     };
 
+    MenuState prevMenuState;
     MenuState menuState;
-    Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history, Bank* bank, EasterEgg* easterEgg);
+    Menu(GameState* state, Wallpapers* wallpapers, PayoutDisplay* payoutDisplay, History* history, Bank* bank, EasterEgg* easterEgg, Jeff* jeff);
     void render(sf::RenderWindow& window);
     void update(sf::Vector2i mousePos);
     void handleClick(sf::Vector2i mousePos);

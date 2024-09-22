@@ -8,6 +8,7 @@
 #include <ostream>
 #include <sstream>
 #include <iomanip>
+#include "Jeff.h"
 #include "GameSaver.h"
 #include "History.h"
 #include "PayoutDisplay.h"
@@ -79,6 +80,7 @@ private:
     Wallpapers wallpapers;
     Bank bank;
     GameSaver* gameSaver;
+    Jeff* jeff;
 
     int tilesRevealed;
     int gemsRevealed = 0;

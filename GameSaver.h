@@ -11,13 +11,14 @@
 #include "PayoutDisplay.h"
 #include "Wallpapers.h"
 #include "WallPaper.h"
+#include "Jeff.h"
 
 class GameSaver {
 public:
     GameSaver();
     //void saveGame();
-    void saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount);
-    void loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount);
+    void saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount, Jeff* jeff);
+    void loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount, Jeff* jeff);
 };
 
 #endif // GAMESAVER_H

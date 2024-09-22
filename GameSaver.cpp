@@ -8,7 +8,7 @@ GameSaver::GameSaver() {
 
 };
 
-void GameSaver::saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount) {
+void GameSaver::saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount, Jeff* jeff) {
     std::ofstream mainSave("saveFile.txt");
 
     if (!mainSave) {
@@ -25,6 +25,8 @@ void GameSaver::saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState
     }
 
     mainSave << easterEgg->step << std::endl;
+
+    mainSave << jeff->owedMoney << std::endl;
 
     for (auto& wallpaper : wallpapers->wallPaperMenu) {
         // if(wallpaper.unlocked) {
@@ -45,7 +47,7 @@ void GameSaver::saveGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState
     mainSave.close();
 }
 
-void GameSaver::loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount) {
+void GameSaver::loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState* gameState, History* history, PayoutDisplay* payoutDisplay, Wallpapers* wallpapers, double wagerAmount, Jeff* jeff) {
     std::ifstream mainLoad("saveFile.txt");
 
     if (!mainLoad) {
@@ -69,6 +71,10 @@ void GameSaver::loadGame(EasterEgg* easterEgg, Menu* menu, Bank* bank, GameState
     int step;
     mainLoad >> step;
     easterEgg->step = step;
+
+    int owedMoney;
+    mainLoad >> owedMoney;
+    jeff->owedMoney = owedMoney;
 
     // Load wallpapers unlocked status
     int index = 1;

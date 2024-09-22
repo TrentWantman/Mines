@@ -264,4 +264,5 @@ CMakeFiles/Mines.dir/GameSaver.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
  C:\Users\Trent\Desktop\MinesGame\History.h \
  C:\Users\Trent\Desktop\MinesGame\multiplier.h \
- C:\Users\Trent\Desktop\MinesGame\Bank.h
+ C:\Users\Trent\Desktop\MinesGame\Bank.h \
+ C:\Users\Trent\Desktop\MinesGame\Jeff.h

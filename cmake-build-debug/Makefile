@@ -296,6 +296,30 @@ History.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.s
 .PHONY : History.cpp.s
 
+Jeff.obj: Jeff.cpp.obj
+.PHONY : Jeff.obj
+
+# target to build an object file
+Jeff.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Jeff.cpp.obj
+.PHONY : Jeff.cpp.obj
+
+Jeff.i: Jeff.cpp.i
+.PHONY : Jeff.i
+
+# target to preprocess a source file
+Jeff.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Jeff.cpp.i
+.PHONY : Jeff.cpp.i
+
+Jeff.s: Jeff.cpp.s
+.PHONY : Jeff.s
+
+# target to generate assembly for a file
+Jeff.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Jeff.cpp.s
+.PHONY : Jeff.cpp.s
+
 Menu.obj: Menu.cpp.obj
 .PHONY : Menu.obj
 
@@ -590,6 +614,9 @@ help:
 	@echo ... History.obj
 	@echo ... History.i
 	@echo ... History.s
+	@echo ... Jeff.obj
+	@echo ... Jeff.i
+	@echo ... Jeff.s
 	@echo ... Menu.obj
 	@echo ... Menu.i
 	@echo ... Menu.s
