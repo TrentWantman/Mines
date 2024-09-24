@@ -128,6 +128,414 @@ Mines/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/build
 .PHONY : Mines/fast
 
+Bank.obj: Bank.cpp.obj
+.PHONY : Bank.obj
+
+# target to build an object file
+Bank.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Bank.cpp.obj
+.PHONY : Bank.cpp.obj
+
+Bank.i: Bank.cpp.i
+.PHONY : Bank.i
+
+# target to preprocess a source file
+Bank.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Bank.cpp.i
+.PHONY : Bank.cpp.i
+
+Bank.s: Bank.cpp.s
+.PHONY : Bank.s
+
+# target to generate assembly for a file
+Bank.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Bank.cpp.s
+.PHONY : Bank.cpp.s
+
+BetButton.obj: BetButton.cpp.obj
+.PHONY : BetButton.obj
+
+# target to build an object file
+BetButton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetButton.cpp.obj
+.PHONY : BetButton.cpp.obj
+
+BetButton.i: BetButton.cpp.i
+.PHONY : BetButton.i
+
+# target to preprocess a source file
+BetButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetButton.cpp.i
+.PHONY : BetButton.cpp.i
+
+BetButton.s: BetButton.cpp.s
+.PHONY : BetButton.s
+
+# target to generate assembly for a file
+BetButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/BetButton.cpp.s
+.PHONY : BetButton.cpp.s
+
+CashoutButton.obj: CashoutButton.cpp.obj
+.PHONY : CashoutButton.obj
+
+# target to build an object file
+CashoutButton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.obj
+.PHONY : CashoutButton.cpp.obj
+
+CashoutButton.i: CashoutButton.cpp.i
+.PHONY : CashoutButton.i
+
+# target to preprocess a source file
+CashoutButton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.i
+.PHONY : CashoutButton.cpp.i
+
+CashoutButton.s: CashoutButton.cpp.s
+.PHONY : CashoutButton.s
+
+# target to generate assembly for a file
+CashoutButton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/CashoutButton.cpp.s
+.PHONY : CashoutButton.cpp.s
+
+EasterEgg.obj: EasterEgg.cpp.obj
+.PHONY : EasterEgg.obj
+
+# target to build an object file
+EasterEgg.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/EasterEgg.cpp.obj
+.PHONY : EasterEgg.cpp.obj
+
+EasterEgg.i: EasterEgg.cpp.i
+.PHONY : EasterEgg.i
+
+# target to preprocess a source file
+EasterEgg.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/EasterEgg.cpp.i
+.PHONY : EasterEgg.cpp.i
+
+EasterEgg.s: EasterEgg.cpp.s
+.PHONY : EasterEgg.s
+
+# target to generate assembly for a file
+EasterEgg.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/EasterEgg.cpp.s
+.PHONY : EasterEgg.cpp.s
+
+GameController.obj: GameController.cpp.obj
+.PHONY : GameController.obj
+
+# target to build an object file
+GameController.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.obj
+.PHONY : GameController.cpp.obj
+
+GameController.i: GameController.cpp.i
+.PHONY : GameController.i
+
+# target to preprocess a source file
+GameController.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.i
+.PHONY : GameController.cpp.i
+
+GameController.s: GameController.cpp.s
+.PHONY : GameController.s
+
+# target to generate assembly for a file
+GameController.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameController.cpp.s
+.PHONY : GameController.cpp.s
+
+GameSaver.obj: GameSaver.cpp.obj
+.PHONY : GameSaver.obj
+
+# target to build an object file
+GameSaver.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameSaver.cpp.obj
+.PHONY : GameSaver.cpp.obj
+
+GameSaver.i: GameSaver.cpp.i
+.PHONY : GameSaver.i
+
+# target to preprocess a source file
+GameSaver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameSaver.cpp.i
+.PHONY : GameSaver.cpp.i
+
+GameSaver.s: GameSaver.cpp.s
+.PHONY : GameSaver.s
+
+# target to generate assembly for a file
+GameSaver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/GameSaver.cpp.s
+.PHONY : GameSaver.cpp.s
+
+History.obj: History.cpp.obj
+.PHONY : History.obj
+
+# target to build an object file
+History.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.obj
+.PHONY : History.cpp.obj
+
+History.i: History.cpp.i
+.PHONY : History.i
+
+# target to preprocess a source file
+History.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.i
+.PHONY : History.cpp.i
+
+History.s: History.cpp.s
+.PHONY : History.s
+
+# target to generate assembly for a file
+History.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/History.cpp.s
+.PHONY : History.cpp.s
+
+Jeff.obj: Jeff.cpp.obj
+.PHONY : Jeff.obj
+
+# target to build an object file
+Jeff.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Jeff.cpp.obj
+.PHONY : Jeff.cpp.obj
+
+Jeff.i: Jeff.cpp.i
+.PHONY : Jeff.i
+
+# target to preprocess a source file
+Jeff.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Jeff.cpp.i
+.PHONY : Jeff.cpp.i
+
+Jeff.s: Jeff.cpp.s
+.PHONY : Jeff.s
+
+# target to generate assembly for a file
+Jeff.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Jeff.cpp.s
+.PHONY : Jeff.cpp.s
+
+Menu.obj: Menu.cpp.obj
+.PHONY : Menu.obj
+
+# target to build an object file
+Menu.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Menu.cpp.obj
+.PHONY : Menu.cpp.obj
+
+Menu.i: Menu.cpp.i
+.PHONY : Menu.i
+
+# target to preprocess a source file
+Menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Menu.cpp.i
+.PHONY : Menu.cpp.i
+
+Menu.s: Menu.cpp.s
+.PHONY : Menu.s
+
+# target to generate assembly for a file
+Menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Menu.cpp.s
+.PHONY : Menu.cpp.s
+
+MineOptions.obj: MineOptions.cpp.obj
+.PHONY : MineOptions.obj
+
+# target to build an object file
+MineOptions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.obj
+.PHONY : MineOptions.cpp.obj
+
+MineOptions.i: MineOptions.cpp.i
+.PHONY : MineOptions.i
+
+# target to preprocess a source file
+MineOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.i
+.PHONY : MineOptions.cpp.i
+
+MineOptions.s: MineOptions.cpp.s
+.PHONY : MineOptions.s
+
+# target to generate assembly for a file
+MineOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/MineOptions.cpp.s
+.PHONY : MineOptions.cpp.s
+
+PayoutDisplay.obj: PayoutDisplay.cpp.obj
+.PHONY : PayoutDisplay.obj
+
+# target to build an object file
+PayoutDisplay.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj
+.PHONY : PayoutDisplay.cpp.obj
+
+PayoutDisplay.i: PayoutDisplay.cpp.i
+.PHONY : PayoutDisplay.i
+
+# target to preprocess a source file
+PayoutDisplay.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/PayoutDisplay.cpp.i
+.PHONY : PayoutDisplay.cpp.i
+
+PayoutDisplay.s: PayoutDisplay.cpp.s
+.PHONY : PayoutDisplay.s
+
+# target to generate assembly for a file
+PayoutDisplay.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/PayoutDisplay.cpp.s
+.PHONY : PayoutDisplay.cpp.s
+
+Texture.obj: Texture.cpp.obj
+.PHONY : Texture.obj
+
+# target to build an object file
+Texture.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Texture.cpp.obj
+.PHONY : Texture.cpp.obj
+
+Texture.i: Texture.cpp.i
+.PHONY : Texture.i
+
+# target to preprocess a source file
+Texture.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Texture.cpp.i
+.PHONY : Texture.cpp.i
+
+Texture.s: Texture.cpp.s
+.PHONY : Texture.s
+
+# target to generate assembly for a file
+Texture.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Texture.cpp.s
+.PHONY : Texture.cpp.s
+
+Tile.obj: Tile.cpp.obj
+.PHONY : Tile.obj
+
+# target to build an object file
+Tile.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.obj
+.PHONY : Tile.cpp.obj
+
+Tile.i: Tile.cpp.i
+.PHONY : Tile.i
+
+# target to preprocess a source file
+Tile.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.i
+.PHONY : Tile.cpp.i
+
+Tile.s: Tile.cpp.s
+.PHONY : Tile.s
+
+# target to generate assembly for a file
+Tile.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Tile.cpp.s
+.PHONY : Tile.cpp.s
+
+UI.obj: UI.cpp.obj
+.PHONY : UI.obj
+
+# target to build an object file
+UI.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/UI.cpp.obj
+.PHONY : UI.cpp.obj
+
+UI.i: UI.cpp.i
+.PHONY : UI.i
+
+# target to preprocess a source file
+UI.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/UI.cpp.i
+.PHONY : UI.cpp.i
+
+UI.s: UI.cpp.s
+.PHONY : UI.s
+
+# target to generate assembly for a file
+UI.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/UI.cpp.s
+.PHONY : UI.cpp.s
+
+WagerOptions.obj: WagerOptions.cpp.obj
+.PHONY : WagerOptions.obj
+
+# target to build an object file
+WagerOptions.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.obj
+.PHONY : WagerOptions.cpp.obj
+
+WagerOptions.i: WagerOptions.cpp.i
+.PHONY : WagerOptions.i
+
+# target to preprocess a source file
+WagerOptions.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.i
+.PHONY : WagerOptions.cpp.i
+
+WagerOptions.s: WagerOptions.cpp.s
+.PHONY : WagerOptions.s
+
+# target to generate assembly for a file
+WagerOptions.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WagerOptions.cpp.s
+.PHONY : WagerOptions.cpp.s
+
+WallPaper.obj: WallPaper.cpp.obj
+.PHONY : WallPaper.obj
+
+# target to build an object file
+WallPaper.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WallPaper.cpp.obj
+.PHONY : WallPaper.cpp.obj
+
+WallPaper.i: WallPaper.cpp.i
+.PHONY : WallPaper.i
+
+# target to preprocess a source file
+WallPaper.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WallPaper.cpp.i
+.PHONY : WallPaper.cpp.i
+
+WallPaper.s: WallPaper.cpp.s
+.PHONY : WallPaper.s
+
+# target to generate assembly for a file
+WallPaper.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/WallPaper.cpp.s
+.PHONY : WallPaper.cpp.s
+
+Wallpapers.obj: Wallpapers.cpp.obj
+.PHONY : Wallpapers.obj
+
+# target to build an object file
+Wallpapers.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Wallpapers.cpp.obj
+.PHONY : Wallpapers.cpp.obj
+
+Wallpapers.i: Wallpapers.cpp.i
+.PHONY : Wallpapers.i
+
+# target to preprocess a source file
+Wallpapers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Wallpapers.cpp.i
+.PHONY : Wallpapers.cpp.i
+
+Wallpapers.s: Wallpapers.cpp.s
+.PHONY : Wallpapers.s
+
+# target to generate assembly for a file
+Wallpapers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/Wallpapers.cpp.s
+.PHONY : Wallpapers.cpp.s
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -176,30 +584,6 @@ random.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/random.cpp.s
 .PHONY : random.cpp.s
 
-texture.obj: texture.cpp.obj
-.PHONY : texture.obj
-
-# target to build an object file
-texture.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/texture.cpp.obj
-.PHONY : texture.cpp.obj
-
-texture.i: texture.cpp.i
-.PHONY : texture.i
-
-# target to preprocess a source file
-texture.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/texture.cpp.i
-.PHONY : texture.cpp.i
-
-texture.s: texture.cpp.s
-.PHONY : texture.s
-
-# target to generate assembly for a file
-texture.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mines.dir\build.make CMakeFiles/Mines.dir/texture.cpp.s
-.PHONY : texture.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -209,15 +593,63 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Mines
+	@echo ... Bank.obj
+	@echo ... Bank.i
+	@echo ... Bank.s
+	@echo ... BetButton.obj
+	@echo ... BetButton.i
+	@echo ... BetButton.s
+	@echo ... CashoutButton.obj
+	@echo ... CashoutButton.i
+	@echo ... CashoutButton.s
+	@echo ... EasterEgg.obj
+	@echo ... EasterEgg.i
+	@echo ... EasterEgg.s
+	@echo ... GameController.obj
+	@echo ... GameController.i
+	@echo ... GameController.s
+	@echo ... GameSaver.obj
+	@echo ... GameSaver.i
+	@echo ... GameSaver.s
+	@echo ... History.obj
+	@echo ... History.i
+	@echo ... History.s
+	@echo ... Jeff.obj
+	@echo ... Jeff.i
+	@echo ... Jeff.s
+	@echo ... Menu.obj
+	@echo ... Menu.i
+	@echo ... Menu.s
+	@echo ... MineOptions.obj
+	@echo ... MineOptions.i
+	@echo ... MineOptions.s
+	@echo ... PayoutDisplay.obj
+	@echo ... PayoutDisplay.i
+	@echo ... PayoutDisplay.s
+	@echo ... Texture.obj
+	@echo ... Texture.i
+	@echo ... Texture.s
+	@echo ... Tile.obj
+	@echo ... Tile.i
+	@echo ... Tile.s
+	@echo ... UI.obj
+	@echo ... UI.i
+	@echo ... UI.s
+	@echo ... WagerOptions.obj
+	@echo ... WagerOptions.i
+	@echo ... WagerOptions.s
+	@echo ... WallPaper.obj
+	@echo ... WallPaper.i
+	@echo ... WallPaper.s
+	@echo ... Wallpapers.obj
+	@echo ... Wallpapers.i
+	@echo ... Wallpapers.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
 	@echo ... random.obj
 	@echo ... random.i
 	@echo ... random.s
-	@echo ... texture.obj
-	@echo ... texture.i
-	@echo ... texture.s
 .PHONY : help
 
 
