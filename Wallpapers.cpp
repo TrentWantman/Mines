@@ -1,6 +1,7 @@
 #include "Wallpapers.h"
 
 #include "Texture.h"
+#include <iostream>
 
 Wallpapers::Wallpapers() {
     // baseWallPaper.setTexture(Texture::GetTexture("1"));
@@ -26,8 +27,8 @@ Wallpapers::Wallpapers() {
         wallpaper.sprite.setTexture(Texture::GetTexture(number + "full"));
         wallpaper.miniSprite.setTexture(Texture::GetTexture(number));
         wallpaper.sprite.setPosition(450, 0);
-        wallpaper.miniSprite.setPosition(330, 425 + i * 67);
-        wallpaper.miniSprite.setScale(0.065f, 0.065f);
+        wallpaper.miniSprite.setPosition(57.78, (float)(i * 54) + 412);
+        wallpaper.miniSprite.setScale(0.054f, 0.054f);
         wallPaperMenu.push_back(wallpaper);
     }
     unlockWallPaper(1);

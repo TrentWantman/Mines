@@ -9,14 +9,16 @@ class Wallpapers {
 
     Wallpaper* currentWallPaper;
 
-    // sf::Sprite baseWallPaper;
-    // sf::Sprite phoneAFriendWallPaper;
-    // sf::Sprite imNotLeavingWallPaper;
-    // sf::Sprite babyYourARichManWallPaper;
-    // sf::Sprite babyYourOnFireWallPaper;
-    // sf::Sprite getOutNowWallpaper;
-    // sf::Sprite makeTheRighteousWallpaper;
-    // sf::Sprite theBadEndingsWallpaper;
+    sf::Text wallpaper1;
+    sf::Text wallpaper2;
+    sf::Text wallpaper3;
+    sf::Text wallpaper4;
+    sf::Text wallpaper5;
+    sf::Text wallpaper6;
+    sf::Text wallpaper7;
+    sf::Text wallpaper8;
+
+    std::vector<sf::Text> wallpaperTexts;
 
     std::vector<Wallpaper> wallPaperMenu;
 

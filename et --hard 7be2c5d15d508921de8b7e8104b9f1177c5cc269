@@ -1,0 +1,199 @@
+[33mcommit 281929bc676645bd7db2059d1bd44f37602e7a06[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mAddingEasterEgg[m[33m)[m
+Merge: 9f8e69e 7be2c5d
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Mon Sep 23 21:37:42 2024 -0400
+
+    Replaced restart button with phone button to add $100 to account. To unlock righteous achivement, must pay back friend all their money. Working on GameSaver.
+
+[33mcommit 9f8e69ec162fe0e3d69bdb5c1bb4a6ea1f22d371[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Mon Sep 23 21:35:53 2024 -0400
+
+    Replaced restart button with phone button to add $100 to account. To unlock righteous achivement, must pay back friend all their money. Working on GameSaver.
+
+[33mcommit 7be2c5d15d508921de8b7e8104b9f1177c5cc269[m[33m ([m[1;31morigin/AddingEasterEgg[m[33m)[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sun Sep 22 17:33:36 2024 -0400
+
+    Only thing left to do is fix achievements UI and add hints. Then test the game for more bugs.
+
+[33mcommit f13edb87594707c0bf43f41f7e2dc2cadd80481a[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sun Sep 22 17:26:41 2024 -0400
+
+    Only thing left to do is fix achievements UI and add hints. Then test the game for more bugs.
+
+[33mcommit 900b17fcb302797f24770e2c6cc1501ca59563c9[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sun Sep 22 17:14:59 2024 -0400
+
+    Only thing left to do is fix achievements UI and add hints. Then test the game for more bugs.
+
+[33mcommit efa40ca6e9836e7ce2a891e0908da53c5c288712[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sun Sep 22 15:23:22 2024 -0400
+
+    Finsihed Hisory UI and payouts UI. Discovered incorrect data for multiplier.h.
+
+[33mcommit cfd4c78339a1dd818e67f39568c97ed60fe579eb[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sun Sep 22 00:08:56 2024 -0400
+
+    Updated UI with button shadows. Fixed payout predictor bug. Need to finish menu UI and make it executable. GameSaver works!
+
+[33mcommit fd0646b57ea20e1007e84dc88fda7f87b03317e4[m
+Merge: 8aacaf3 64dc5a0
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sat Sep 21 16:23:55 2024 -0400
+
+    Merge remote-tracking branch 'origin/AddingEasterEgg' into AddingEasterEgg
+    
+    # Conflicts:
+    #       cmake-build-debug/CMakeFiles/Mines.dir/GameController.cpp.obj
+    #       cmake-build-debug/CMakeFiles/Mines.dir/GameController.cpp.obj.d
+    #       cmake-build-debug/CMakeFiles/Mines.dir/main.cpp.obj
+    #       cmake-build-debug/CMakeFiles/Mines.dir/main.cpp.obj.d
+    #       cmake-build-debug/CMakeFiles/Mines.dir/objects.a
+    #       cmake-build-debug/Testing/Temporary/LastTest.log
+
+[33mcommit 64dc5a03754f01e3f33a509770df008e20d325ff[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Sat Sep 21 16:23:27 2024 -0400
+
+    Replaced restart button with phone button to add $100 to account. To unlock righteous achivement, must pay back friend all their money. Working on GameSaver.
+
+[33mcommit 8aacaf39853ab504e567f1c8a34cf868b273a94f[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sat Sep 21 16:22:22 2024 -0400
+
+    History tracker added and functions. Needs UI update.
+
+[33mcommit 2bcef8b168a4a908cdf3613747eaa57c56e87ea6[m
+Merge: 126cc27 965bfa6
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sat Sep 21 16:22:14 2024 -0400
+
+    History tracker added and functions. Needs UI update.
+
+[33mcommit 126cc27143cae1e6b8ad610178e32184a0251dfd[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Sat Sep 21 16:20:16 2024 -0400
+
+    History tracker added and functions. Needs UI update.
+
+[33mcommit 965bfa6743fdd9c367327eaacb39248c1c8df3b5[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Sat Sep 21 15:06:38 2024 -0400
+
+    Replaced restart button with phone button to add $100 to account. To unlock righteous achivement, must pay back friend all their money. Working on GameSaver.
+
+[33mcommit 40ee35ce2254ae5ad7f52a2ed063914752e5cbaa[m
+Merge: 789937a 97ecea9
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Sat Sep 21 13:52:30 2024 -0400
+
+    Merge remote-tracking branch 'origin/AddingEasterEgg' into AddingEasterEgg
+    
+    # Conflicts:
+    #       cmake-build-debug/CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj
+    #       cmake-build-debug/CMakeFiles/Mines.dir/PayoutDisplay.cpp.obj.d
+
+[33mcommit 789937ad968f3548b8d21fd9b43d6f612ee9cb44[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Sat Sep 21 13:50:46 2024 -0400
+
+    .
+
+[33mcommit 97ecea9e37482b1b93b612f0c5569bd581198983[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Fri Sep 20 23:12:33 2024 -0400
+
+    History tracker added and functions. Needs UI update.
+
+[33mcommit 6610e25776bf0cec7fb5e1820166541831d898b9[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Fri Sep 20 21:45:19 2024 -0400
+
+    .
+
+[33mcommit fd9af3e63b58faa883b898839803bcbba402083d[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Fri Sep 20 21:16:42 2024 -0400
+
+    Added Payout displayer that shows possible displays. Biggest big fix I've had to deal with so far, and adding one line of code fixed it. If the gems revealed were 0, it would fail. So i had to make it start at gemsrevealed = 1!
+
+[33mcommit cb06dc519c77fea181762bd80b01f9159dca1643[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Fri Sep 20 14:26:35 2024 -0400
+
+    Added Bank class. Working on updated menu with temporary sprites.
+
+[33mcommit 20225093f9985282debe5ab1e4acc741b84a408b[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Fri Sep 20 13:48:42 2024 -0400
+
+    New multiplier class based on multiplier excel sheet. Wallpaper menu is almost finished. Need to complete artwork and can tweak menu code to work perfectly.
+
+[33mcommit 7bd6c074efefb73bab3aace1e6d6e2dfab3e6623[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Thu Sep 19 23:33:07 2024 -0400
+
+    Wallpapers updated. Easter Egg checker updated to allow for all wallpapers to be unlocked. Need to update UI for wallpaper menu, payout possibilities in UI when playing, and restart game state. Perhaps save user info to save achievments like wallpapers and high score. And ability to reset that info.
+
+[33mcommit 96e0f110cb64c46597a3d618d5960f2b577303c4[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Thu Sep 19 19:39:58 2024 -0400
+
+    Found better solution to easter egg handling. Still in the process.
+
+[33mcommit fd503d662716d1be347488ab8ecf6461a1a08317[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Thu Sep 19 18:42:10 2024 -0400
+
+    New multiplier class based on multiplier excel sheet. Wallpaper menu is almost finished. Need to complete artwork and can tweak menu code to work perfectly.
+
+[33mcommit 34ed3bd9a0433bae6660b774a9b0bef035a130d6[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Thu Sep 19 17:24:25 2024 -0400
+
+    New multiplier class based on multiplier excel sheet. Wallpaper menu is almost finished. Need to complete artwork and can tweak menu code to work perfectly.
+
+[33mcommit 98bba917bafed674ef954136cccfda9923fac325[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Thu Sep 19 17:23:36 2024 -0400
+
+    New multiplier class based on multiplier excel sheet. Wallpaper menu is almost finished. Need to complete artwork and can tweak menu code to work perfectly.
+
+[33mcommit 3c9ca175edfc0366e57251291098477a66bcffd5[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Thu Sep 19 13:27:08 2024 -0400
+
+    Easter Egg Checking Completed. Building Wallpaper Menu
+
+[33mcommit 7a41dff5e049ffad1b25a7d46d7307894caba72c[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Mon Sep 16 17:24:04 2024 -0400
+
+    Easter Egg Checking works up to (including) step 5
+
+[33mcommit b74a2a59bdc9a5244824f807368998aab9b82525[m
+Author: wprods02 <wantmantrent@gmail.com>
+Date:   Fri Sep 13 17:59:46 2024 -0400
+
+    Found better solution to easter egg handling. Still in the process.
+
+[33mcommit 517f7c5afcdee820ed1a8a8d9bb651f373a15ec9[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Fri Sep 13 16:19:00 2024 -0400
+
+    Building Easter Egg. Added Wallpaper Classes.
+
+[33mcommit 908eaefc87521607578036cdb6b76ef3441bd931[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Thu Sep 12 22:25:43 2024 -0400
+
+    Building Easter Egg. Added Wallpaper Classes.
+
+[33mcommit bdf5ed50621d9e666737902180fb69f39613a055[m
+Author: Trent <wantmantrent@ufl.edu>
+Date:   Thu Sep 12 21:15:44 2024 -0400
