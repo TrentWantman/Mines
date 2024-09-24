@@ -21,14 +21,45 @@ Wallpapers::Wallpapers() {
     // theBadEndingsWallpaper.setTexture(Texture::GetTexture("8"));
     // theBadEndingsWallpaper.setPosition(450,0);
 
-    for (int i = 0; i < 8; i++) {
+    font.loadFromFile("./fonts/ProximaNova.ttc");
+    for (int i = 0; i < 6; i++) {
         Wallpaper wallpaper;
+
         std::string number = std::to_string(i+1);
+
         wallpaper.sprite.setTexture(Texture::GetTexture(number + "full"));
-        wallpaper.miniSprite.setTexture(Texture::GetTexture(number));
         wallpaper.sprite.setPosition(450, 0);
-        wallpaper.miniSprite.setPosition(57.78, (float)(i * 54) + 412);
-        wallpaper.miniSprite.setScale(0.054f, 0.054f);
+
+        wallpaper.miniSprite.setTexture(Texture::GetTexture(number));
+        wallpaper.miniSprite.setPosition(57.78, (float)(i * 70) + 412);
+        wallpaper.miniSprite.setScale(0.07f, 0.07f);
+
+        wallpaper.description.setFont(font);
+        wallpaper.description.setStyle(sf::Text::Bold);
+
+        if (i == 0) {
+            wallpaper.description.setString("1) Welcome to Mines");
+        }
+        else if (i == 1) {
+            wallpaper.description.setString("2) Phone A Friend");
+        }
+        else if (i == 2) {
+            wallpaper.description.setString("3) Im Not Leaving");
+        }
+        else if (i == 3) {
+            wallpaper.description.setString("4) Money Money Money!");
+        }
+        else if (i == 4) {
+            wallpaper.description.setString("5) Go Big or Go Home");
+        }
+        else if (i == 5) {
+            wallpaper.description.setString("6) The Right Thing");
+        }
+
+        wallpaper.description.setCharacterSize(18);
+        wallpaper.description.setFillColor(sf::Color::White);
+        wallpaper.description.setPosition(160, (float)(i * 70) + 430);
+
         wallPaperMenu.push_back(wallpaper);
     }
     unlockWallPaper(1);
@@ -36,9 +67,8 @@ Wallpapers::Wallpapers() {
 
 void Wallpapers::drawMenu(sf::RenderWindow &window) {
     for (auto& wallpaper : wallPaperMenu) {
-        // if(wallpaper.unlocked) {
-             window.draw(wallpaper.miniSprite);
-        // }
+        window.draw(wallpaper.miniSprite);
+        window.draw(wallpaper.description);
     }
 }
 
@@ -48,6 +78,7 @@ void Wallpapers::unlockWallPaper(int number) {
     currentWallPaper = &wallPaperMenu[number];
     std::string numberString = std::to_string(number+1);
     wallPaperMenu[number].miniSprite.setTexture(Texture::GetTexture(numberString + "full"));
+    wallPaperMenu[number].description.setFillColor(sf::Color(0,230,1));
 }
 
 void::Wallpapers::clickCheck(const sf::Vector2i& mousePos) {

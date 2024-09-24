@@ -7,6 +7,7 @@ public:
     Wallpaper();
     sf::Sprite sprite;
     sf::Sprite miniSprite;
+    sf::Text description;
     bool unlocked;
 };
 

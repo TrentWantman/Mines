@@ -9,16 +9,7 @@ class Wallpapers {
 
     Wallpaper* currentWallPaper;
 
-    sf::Text wallpaper1;
-    sf::Text wallpaper2;
-    sf::Text wallpaper3;
-    sf::Text wallpaper4;
-    sf::Text wallpaper5;
-    sf::Text wallpaper6;
-    sf::Text wallpaper7;
-    sf::Text wallpaper8;
-
-    std::vector<sf::Text> wallpaperTexts;
+    sf::Font font;
 
     std::vector<Wallpaper> wallPaperMenu;
 
