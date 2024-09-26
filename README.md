@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-MinesGame is a C++ game involving tile reveals, bets, and interaction with various game objects. The game incorporates various modules to handle different aspects like UI, wagers, bank management, Easter eggs, and more. This documentation provides a detailed explanation of all functions in the key files.
+This is a remastered version of the Stake.com game "Mines" with improvements to the UI, and brand new creative story components and achievements. The best part: you don't lose money!
 
 ---
 
