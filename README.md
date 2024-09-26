@@ -1,4 +1,4 @@
-# MinesGame Documentation
+# Mines Documentation
 
 ## **Overview**
 
