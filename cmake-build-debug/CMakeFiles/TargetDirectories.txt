@@ -1,3 +1,0 @@
-C:/Users/litte/CLionProjects/Mines/cmake-build-debug/CMakeFiles/Mines.dir
-C:/Users/litte/CLionProjects/Mines/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/litte/CLionProjects/Mines/cmake-build-debug/CMakeFiles/rebuild_cache.dir
