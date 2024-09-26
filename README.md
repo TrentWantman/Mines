@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-This is a remastered version of the Stake.com game "Mines" with improvements to the UI, and brand new creative story components and achievements. The best part: you don't lose money!
+This is a remastered version of the Stake.com game "Mines" with improvements to the UI and brand new creative story components and achievements. The best part: you don't lose money!
 
 ---
 
