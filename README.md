@@ -399,7 +399,3 @@ Contains multiplier data used to calculate payouts. This file provides the data 
 3. **Saving and Loading**: The game’s state is automatically saved to `saveFile.txt` when the game ends, and it can be loaded when the game restarts.
 
 ---
-
-### **Conclusion**
-This documentation provides a detailed overview of every file and function in the MinesGame project, from core gameplay logic to UI handling, randomization, and persistence through file saving. The documentation is meant to give developers and contributors a comprehensive understanding of the project structure, enabling easier development and debugging.
-
