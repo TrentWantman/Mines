@@ -21,7 +21,7 @@ Wallpapers::Wallpapers() {
     // theBadEndingsWallpaper.setTexture(Texture::GetTexture("8"));
     // theBadEndingsWallpaper.setPosition(450,0);
 
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
     for (int i = 0; i < 6; i++) {
         Wallpaper wallpaper;
 

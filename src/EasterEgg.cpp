@@ -1,7 +1,7 @@
 #include "EasterEgg.h"
 
 EasterEgg::EasterEgg() : step(0), allInStep4(false) {
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
     // Initialize rectangle shapes
     rect1.setSize(sf::Vector2f(414, 554));  // Size: 200x100
     rect1.setPosition(18, 414);  // Position rect1 at (100, 100)

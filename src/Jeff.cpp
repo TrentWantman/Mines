@@ -3,7 +3,7 @@
 
 // Constructor initializes owedMoney to 0 and stores the Bank reference
 Jeff::Jeff(Bank* bankRef) : owedMoney(0), bank(bankRef) {
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
     money.setFont(font);
     money.setStyle(sf::Text::Bold);
     money.setString("You Owe Jeff: $");

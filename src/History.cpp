@@ -1,7 +1,7 @@
 #include "History.h"
 
 History::History(Multiplier* mult) : multiplier(mult), currentStartIndex(0) {
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
     int headerSize = 20;
 
     upArrow.setTexture(Texture::GetTexture("upArrow"));

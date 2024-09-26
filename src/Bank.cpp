@@ -1,7 +1,7 @@
 #include "Bank.h"
 
 Bank::Bank() {
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
     balance = 100;
     bankText.setFont(font);
     bankText.setStyle(sf::Text::Bold);

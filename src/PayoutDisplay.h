@@ -2,7 +2,7 @@
 #define PAYOUTDISPLAY_H
 
 #include "GameState.h"
-#include "Multiplier.h"
+#include "multiplier.h"
 #include "Texture.h"
 
 struct PayoutInfo {

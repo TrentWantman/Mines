@@ -505,7 +505,7 @@ GameController::GameController() : window(sf::VideoMode(1800, 980), "Mines") {
     mineOptions.setPosition(28.35, 204.24);
 
     //Initialize Texts
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
 
     mineOutput.setFont(font);
     mineOutput.setStyle(sf::Text::Bold);

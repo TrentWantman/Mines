@@ -2,7 +2,7 @@
 
 UI::UI() {
     // Initialize main menu elements
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
 
     title.setFont(font);
     title.setString("Mines");

@@ -4,7 +4,7 @@
 #include <iomanip>
 
 PayoutDisplay::PayoutDisplay(GameState* state, Multiplier* mult) : gameState(state), multiplier(mult) {
-    font.loadFromFile("./fonts/ProximaNova.ttc");
+    font.loadFromFile("../fonts/ProximaNova.ttc");
 
     payoutScreen.setTexture(Texture::GetTexture("payoutScreen"));
     payoutScreen.setPosition(37.67, 416.960);
