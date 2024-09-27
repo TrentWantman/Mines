@@ -6,6 +6,10 @@ This is a remastered version of the Stake.com game "Mines" with improvements to 
 
 ---
 
+![Project Demo](./demo.gif)
+
+---
+
 ## **Files and Functions**
 
 ### **GameController.cpp**
