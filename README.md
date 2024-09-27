@@ -6,7 +6,7 @@ This is a remastered version of the Stake.com game "Mines" with improvements to 
 
 ---
 
-![Project Demo](./demo.gif)
+![Project Demo](demo.gif)
 
 ---
 
