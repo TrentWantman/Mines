@@ -98,23 +98,18 @@ void Menu::handleClick(sf::Vector2i mousePos) {
 
 void::Menu::changeMenuState(sf::Vector2i mousePos) {
     if (closeSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "closeSprite" << std::endl;
         confirmingClose = true;
     }
     else if (phoneSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "phoneprite" << std::endl;
         menuState = MenuState::PHONE;
     }
     else if (payoutSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "payoutSprite" << std::endl;
         menuState = MenuState::PAYOUT;
     }
     else if (historySprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "historySprite" << std::endl;
         menuState = MenuState::HISTORY;
     }
     else if (achievementsSprite.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePos))) {
-        std::cout << "achievementsSprite" << std::endl;
         menuState = MenuState::ACHIEVEMENTS;
     }
 }
