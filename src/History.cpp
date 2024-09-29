@@ -48,7 +48,7 @@ void History::AddRound(int numberOfMines, int gemsRevealed, double wager, double
 
     std::stringstream payoutStream;
     payoutStream << std::fixed << std::setprecision(2) << payout;
-    rounds.push_back({numberOfMines, gemsRevealed, wagerStream.str(), multiStream.str(), payoutStream.str()});
+    rounds.push_back({numberOfMines, gemsRevealed, stod(wagerStream.str()),stod( multiStream.str()), stod(payoutStream.str())});
 }
 
 void History::scrollDown() {
@@ -92,9 +92,9 @@ void History::displayHistory(sf::RenderWindow &window) {
 
         // Create a stringstream to combine round data with the desired formatting
         std::stringstream roundStream;
-        roundStream << "Wager: $" << std::fixed << std::setprecision(2) << std::stod(round.wager)
-                    << " , Multiplier: " << std::fixed << std::setprecision(2) << std::stod(round.multiplier) << "x"
-                    << " , Payout: $" << std::fixed << std::setprecision(2) << std::stod(round.payout);
+        roundStream << "Wager: $" << std::fixed << std::setprecision(2) << round.wager
+                    << " , Multiplier: " << std::fixed << std::setprecision(2) << round.multiplier << "x"
+                    << " , Payout: $" << std::fixed << std::setprecision(2) << round.payout;
 
         // Create a single sf::Text object with the combined string
         sf::Text roundText(roundStream.str(), font, fontSize);

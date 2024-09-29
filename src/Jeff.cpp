@@ -48,7 +48,7 @@ void Jeff::draw(sf::RenderWindow &window) {
     money.setOrigin(textRect.left + textRect.width / 2.0f, textRect.top + textRect.height / 2.0f);
 
     // Set the position after setting the origin
-    money.setPosition(222.24, 540z);  // Adjust position as needed
+    money.setPosition(222.24, 540);  // Adjust position as needed
 
     money.setString("You Owe Jeff: $" + to_string(owedMoney));
     //window.draw(jeffBackground);

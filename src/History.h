@@ -11,9 +11,9 @@ using namespace std;
 struct Round{
     int mines;
     int gemsRevealed;
-    string wager;
-    string multiplier;
-    string payout;
+    double wager;
+    double multiplier;
+    double payout;
 
 };
 
